@@ -148,6 +148,47 @@ main, footer { position: relative; z-index: 2; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-bottom { display: block; margin: 16px 0 28px; font-size: 12px; color: #7c627c; }
 
+.real-note-banner {
+  margin: 0 0 28px;
+  padding: 22px 24px;
+  background: rgba(255, 245, 240, 0.96);
+  border: 1.5px dashed #f29ca3;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(230, 90, 115, 0.1);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  backdrop-filter: blur(8px);
+}
+.real-note-banner .real-pin {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+  transform: rotate(-10deg);
+}
+.real-note-banner strong {
+  display: block;
+  font-size: 16px;
+  color: #a82346;
+  margin-bottom: 8px;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.real-note-banner p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #613b48;
+}
+.real-note-banner em {
+  color: #8c1d3a;
+  font-weight: 600;
+  font-style: normal;
+  background: #fde2e6;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
 .scene-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 .scene-picker > span { flex-basis: 100%; font: 500 21px var(--hand); color: #855373; margin-bottom: 2px; }
 .scene-picker button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(153, 125, 151, 0.35); min-height: 38px; padding: 7px 13px; border-radius: 99px; background: rgba(255, 253, 247, 0.85); font-size: 12px; color: #674c6b; transition: all .2s; }
@@ -958,16 +999,26 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
  <img class="hero-scene" id="heroScene" src="assets/rose-dawn.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async">
  <div class="container hero-grid">
   <div class="hero-content">
-   <p class="dedication">a little sky, a softer heart.<br>a letter from <span data-your-name>Suraj</span> ♡</p>
-   <h1 id="coverTitle"><span data-her-name>Harshu</span>,<span class="sorry">dil se sorry.</span></h1>
-   <p class="hero-copy">Tumhari yaad aati hai. Aur us din ke shabdon ka sach mein bahut afsos hai. <strong>Is baar, koi justification nahi — sirf dil se maafi aur tumhari respect.</strong></p>
-   <div class="hero-actions">
-     <a href="#letter" class="pill pill-primary">Meri dil ki baat <span class="button-heart" aria-hidden="true">♡</span></a>
-     <a href="#validation" class="pill pill-secondary">Pehle yeh padho <span aria-hidden="true">↘</span></a>
+   
+   <!-- Real Pinned Note directly addressing Harshu and Himanshu's reaction -->
+   <div class="real-note-banner reveal">
+     <span class="real-pin">💭</span>
+     <div class="real-note-text">
+       <strong>Harshu, sunn… ek baat sach bolun?</strong>
+       <p>Pata hai abhi tu aur Himanshu chat par bol rahe the na ki <em>“Yeh kya AI slop hai… atleast yeh toh khud se likhta…”</em>. Yaar, website maine isliye banwai kyuki mujhe coding nahi aati aur phone par samajh nahi aa raha tha ki main tujhe humari photos, ye gaana aur apni feelings ek saath kaise saja ke dikhau. Par kasam se, <strong>ye feelings kisi robot ya AI ki nahi hain — ye 100% mera dil bol raha hai.</strong> Ek baar bina judge kiye aage padh le please.</p>
+     </div>
    </div>
-   <small class="hero-bottom">Jab tumhara mann ho. Jitna tumhara mann ho.</small>
+
+   <p class="dedication">sirf Harshu ke liye ♡<br>Suraj ki taraf se</p>
+   <h1 id="coverTitle"><span data-her-name>Harshu</span>,<span class="sorry">sach me bohot badi galti hui.</span></h1>
+   <p class="hero-copy">Gusse me aake dimaag kho diya tha maine. Tujhe jo bhi bola, uska har ek second mujhe andar se guilt de raha hai. <strong>Is baar koi bahana nahi, koi justification nahi — sirf dil se maafi maangni hai tujhse.</strong></p>
+   <div class="hero-actions">
+     <a href="#truth" class="pill pill-primary">Meri baat sun le <span class="button-heart" aria-hidden="true">♡</span></a>
+     <a href="#memories" class="pill pill-secondary">Humari yaadein <span aria-hidden="true">↘</span></a>
+   </div>
+   <small class="hero-bottom">Jab tera mann ho, aaram se padhna.</small>
    <div class="scene-picker" role="group" aria-label="Choose the opening scene">
-    <span aria-hidden="true">a little change of sky…</span>
+    <span aria-hidden="true">background change karein…</span>
     <button type="button" data-scene="dawn" aria-pressed="true"><i class="scene-dot" aria-hidden="true"></i>Rose morning</button>
     <button type="button" data-scene="clouds" aria-pressed="false"><i class="scene-dot" aria-hidden="true"></i>Blue clouds</button>
     <button type="button" data-scene="garden" aria-pressed="false"><i class="scene-dot" aria-hidden="true"></i>Quiet garden</button>
@@ -976,125 +1027,69 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
   <div class="cover-keepsake" aria-hidden="true">
     <div class="cover-inner">
       <span class="cover-stamp">♡</span>
-      <span class="cover-label">a letter, with care</span>
+      <span class="cover-label">dil se likha hua</span>
       <span class="cover-name" data-her-name>Harshu</span>
-      <span class="cover-words">Some words deserve<br><em>a softer place.</em></span>
+      <span class="cover-words">Kuch baatein<br><em>sirf tere liye.</em></span>
       <span class="cover-from">— <span data-your-name>Suraj</span></span>
     </div>
-    <span class="cover-caption">a sincere sorry, just for you.</span>
+    <span class="cover-caption">I am really sorry, Harshu.</span>
   </div>
  </div>
- <p class="hero-footnote">no rush. just honesty and sukoon. ♡</p>
+ <p class="hero-footnote">tere bina sach me sab soona hai. ♡</p>
 </section>
 
 <!-- Route Strip -->
 <div class="route-strip">
   <div class="container route-inner">
-    <span>One quiet little journey</span>
-    <a href="#validation"><b>01</b> Tumhara Gussa</a>
-    <a href="#openWhen"><b>02</b> Open When</a>
-    <a href="#memories"><b>03</b> Yaadein</a>
-    <a href="#sukoon"><b>04</b> Sukoon</a>
-    <a href="#promises"><b>05</b> Mera Wada</a>
-    <a href="#letter"><b>06</b> Letter</a>
-    <a href="#restart"><b>07</b> Restart</a>
+    <span>Humari baatein</span>
+    <a href="#truth"><b>01</b> Sach Bolun Toh</a>
+    <a href="#memories"><b>02</b> Humari Yaadein</a>
+    <a href="#openWhen"><b>03</b> Chhote Envelopes</a>
+    <a href="#letter"><b>04</b> Mera Asli Letter</a>
+    <a href="#restart"><b>05</b> Ab Tu Bol</a>
   </div>
 </div>
 
 <!-- ========================================================
-     01 · "TUMHARA GUSSA BILKUL SAHI HAI" (EMPATHY CARD)
+     01 · SACH BOLUN TOH (100% ADMISSION & NO EXCUSES)
      ======================================================== -->
-<section class="validation-section" id="validation">
+<section class="validation-section" id="truth">
   <div class="container">
     <div class="validation-card reveal">
-      <span class="validation-badge">01 · Sabse Pehle Yeh Baat</span>
-      <h2 class="validation-heading">Tumhara gussa aur doori,<br><em>100% justified hai.</em></h2>
+      <span class="validation-badge">Sach Bolun Toh · Dil Se</span>
+      <h2 class="validation-heading">Gusse me maine dimaag kho diya tha,<br><em>aur tujhe bohot zyada dukh diya.</em></h2>
       <p class="validation-text">
-        Main yahan yeh kehne nahi aaya ki <em>“tum gussa mat ho”</em> ya <em>“meri baat sun lo”</em>. Main bohot achchi tarah jaanta hoon ki <strong>tumhari nazar mein shayad ab meri koi jagah nahi bachi, aur tum mujhe ab kuch bhi nahi manti.</strong> Aur sach kahun toh tumhari is narazgi ki wajah bhi main hi hoon.
+        Harshu, maine us din bol toh diya gusse me aake ki <em>“Jao, mujhe bhi nahi rehna”</em>… par sach bolun na? Us pal andar se meri jaan nikal rahi thi. Mujhe lag raha tha ki tu mujhse door jaa rahi hai, aur us darr ke chakkar me maine bachkani harkat kar di aur itna sab galat bol diya.
       </p>
       <p class="validation-text">
-        Jab kisi par bharosa hota hai aur wahi insaan gusse mein aakar aise shabd bol de jo dil dukhayein, toh door ho jaana aur baat na karna bilkul natural hai. Maine jo kaha uski koi justification nahi hai. Isliye agar tum mujhse baat nahi karna chahti, toh <strong>tumhara haq hai. Main tumhari us doori aur us khamoshi ki poori izzat karta hoon.</strong>
+        Lekin darr ka matlab ye thodi na hota hai ki main tujhe hurt karun? Dard mera tha, par takleef maine tujhe di. Aur jab tune baat karni band kar di, toh main aur panic kar gaya aur baar-baar messages karke tujhe aur pareshan kiya. Mujhe us waqt samajhna chahiye tha ki jab galti meri hai, toh tera gussa hona aur mujhse door hona 100% banta hai. Teri jagah koi bhi hota na, toh wo bhi mujhse baat na karta.
+      </p>
+      <p class="validation-text">
+        Main yahan koi safai dene ya behes karne nahi aaya hoon Harshu. Galti 100% meri thi, aur uska pachtawa mujhe har roz ho raha hai.
       </p>
       <div class="validation-pills">
-        <div class="validation-pill"><span>✓</span> Tumhara faisla aur gussa bilkul sahi hai</div>
-        <div class="validation-pill"><span>✓</span> Meri taraf se koi safai ya bahana nahi</div>
-        <div class="validation-pill"><span>✓</span> Tumhare space ki 100% respect</div>
-      </div>
-    </div>
-
-    <!-- Mood Check-in Widget -->
-    <div class="mood-checkin-wrap reveal">
-      <div class="mood-checkin-card">
-        <span class="mood-badge">🧸 Ek chhota sa check-in</span>
-        <h3 class="mood-title">Harshu, abhi kaisa feel ho raha hai? <em>(Koi pressure nahi)</em></h3>
-        <div class="mood-btn-group" role="group" aria-label="How are you feeling right now">
-          <button type="button" class="mood-btn" data-mood="angry"><span class="m-emoji">😠</span><span>Gussa aa raha hai</span></button>
-          <button type="button" class="mood-btn" data-mood="hurt"><span class="m-emoji">🥺</span><span>Dil dukha hai</span></button>
-          <button type="button" class="mood-btn" data-mood="tired"><span class="m-emoji">🌧️</span><span>Thak chuki hoon</span></button>
-          <button type="button" class="mood-btn" data-mood="space"><span class="m-emoji">🕊️</span><span>Bas shaanti chahiye</span></button>
-        </div>
-        <div class="mood-feedback-box" id="moodFeedbackBox" hidden>
-          <div class="mood-feedback-content" id="moodFeedbackContent"></div>
-        </div>
+        <div class="validation-pill"><span>💔</span> Jo bola uska har second guilt hai</div>
+        <div class="validation-pill"><span>🕊️</span> Tera gussa bilkul sahi hai yaar</div>
+        <div class="validation-pill"><span>🌸</span> Mujhe bas sab theek karna hai</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 02 · TRUTH / APOLOGY -->
-<section class="section truth" id="truth" aria-labelledby="truthTitle">
-  <div class="container truth-layout">
-   <div class="truth-copy reveal">
-     <span class="eyebrow">02 · Meri Galti, Meri Zimmedari</span>
-     <h2 class="section-heading" id="truthTitle">Gusse ke shabdon ka,<br><em>dil se afsos.</em></h2>
-     <p class="intro">Main us pal ko waapis toh nahi laa sakta, par jo maine kaha uski poori zimmedari leta hoon. Tumhare saath hamesha zyada patience, zyada izzat aur narmi honi chahiye thi.</p>
-     <p class="handwritten">Sorry for the harsh words.<br>Sorry for the hurt.</p>
-   </div>
-   <article class="truth-paper reveal">
-     <p class="dear"><span data-her-name>Harshu</span>, sach mein…</p>
-     <p>Gusse mein aakar maine keh diya tha ki <em>“Jao, mujhe bhi nahi rehna”</em>. Woh bolna aasaan tha, par andar se sach yeh tha ki main tumhe khone se darr raha tha.</p>
-     <p>Lekin darr ka matlab yeh nahi ki main tumse rude baat karun. <strong>Dard mera tha, par maine dukh tumhe diya.</strong> Aur is baat ka pachtawa mujhe har roz hota hai.</p>
-     <p class="paper-end">I am sorry. Dil se.</p>
-     <span class="chapter-number" aria-hidden="true">♡</span>
-   </article>
-  </div>
-
+<!-- ========================================================
+     02 · MEMORIES (POLAROID GALLERY)
+     ======================================================== -->
+<section class="section memories" id="memories" aria-labelledby="memoriesTitle">
   <div class="container">
-    <div class="word-keepsake reveal">
-      <h3>Kaash main<br>narmi se kehta…</h3>
-      <div class="word-tabs" role="tablist" aria-label="Three honest thoughts">
-        <button type="button" role="tab" id="wordsTab0" data-word="0" aria-selected="true" aria-controls="wordsPanel0">Gusse ke shabd</button>
-        <button type="button" role="tab" id="wordsTab1" data-word="1" aria-selected="false" aria-controls="wordsPanel1" tabindex="-1">Baar-baar koshish</button>
-        <button type="button" role="tab" id="wordsTab2" data-word="2" aria-selected="false" aria-controls="wordsPanel2" tabindex="-1">Tumhara faisla</button>
-      </div>
-      <div class="word-panel" role="tabpanel" id="wordsPanel0" aria-labelledby="wordsTab0">
-        <span class="word-label">What I should have said</span>
-        <blockquote>“Mujhe bura lag raha hai.<br>Par main tumse narmi se baat karna chahta hoon.”</blockquote>
-        <p>Gusse mein bola gaya ek lafz bhi dil par gehra chot chhod jaata hai. Maine bina soche bola, aur uska bhojh tumhare dil par pada. <strong>Mujhe uska tahe-dil se afsos hai.</strong></p>
-      </div>
-      <div class="word-panel" role="tabpanel" id="wordsPanel1" aria-labelledby="wordsTab1" hidden>
-        <span class="word-label">What I am beginning to understand</span>
-        <blockquote>“Tumhe miss karna meri feeling hai.<br>Uska jawab dena tumhari majboori nahi.”</blockquote>
-        <p>Main dar gaya tha ki tum chali jaogi, isliye baar-baar message karta raha. Lekin meri bechaini tumhe overwhelm kar rahi thi. Mujhe samajhna chahiye tha ki kabhi-kabhi shaanti aur waqt dena hi asli care hoti hai.</p>
-      </div>
-      <div class="word-panel" role="tabpanel" id="wordsPanel2" aria-labelledby="wordsTab2" hidden>
-        <span class="word-label">What I want to respect</span>
-        <blockquote>“Tum jo feel karti ho,<br>main use bina kisi argument ke sununga.”</blockquote>
-        <p>Yeh maafi koi agreement nahi hai ki tumhe mujhse baat karni hi padegi. Tumhara dil, tumhara faisla aur tumhari khushi sabse upar hai.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Quiet Scene -->
-<section class="quiet-scene" aria-label="A quieter moment">
-  <div class="scene-window">
-    <img src="assets/quiet-garden.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
-    <div class="scene-quote reveal">
-      <span aria-hidden="true">♡</span>
-      <p>“Kaash mere shabd bhi<br>meri feelings jitne narm hote.”</p>
-      <small>is baar, sirf narmi aur sukoon.</small>
-    </div>
+   <div class="album-header">
+     <div class="reveal">
+       <span class="eyebrow">Humari Yaadein</span>
+       <h2 class="section-heading" id="memoriesTitle">Wo pal jab hum dono<br><em>kitne khush the.</em></h2>
+     </div>
+     <p class="intro reveal">Harshu, in photos ko dekh kar dil dukh raha hai ki maine itna sab bekaar ladai me kaise kharab kar diya. Ye din sach me bohot special the mere liye.</p>
+   </div>
+   <div class="gallery" id="gallery" aria-label="Six spaces for memories"></div>
+   <p class="album-note reveal">kuch yaadein dil ke bohot paas rehti hain. ♡</p>
   </div>
 </section>
 
@@ -1103,33 +1098,33 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
      ======================================================== -->
 <section class="open-when-section" id="openWhen">
   <div class="container center">
-    <span class="eyebrow reveal">03 · Virtual Letter Capsules</span>
-    <h2 class="section-heading reveal">Open when you need<br><em>a little comfort.</em></h2>
-    <p class="intro reveal">Yeh 4 chhote envelopes hain. Inhe tab kholna jab tumhara mann ho — koi jaldi nahi hai.</p>
+    <span class="eyebrow reveal">Chhote Envelopes</span>
+    <h2 class="section-heading reveal">Jab bhi tera mann ho,<br><em>tab kholna inhe.</em></h2>
+    <p class="intro reveal">Koi jaldi nahi hai, jab jaisa feel ho tab tap karke dekh lena.</p>
     
     <div class="open-grid">
       <div class="open-card reveal" data-open="mad">
         <span class="open-card-icon">💌</span>
-        <h3>When you're mad at me</h3>
-        <p>Jab mera naam dekh kar bhi gussa aaye aur lage ki mujhe sunna hi nahi…</p>
+        <h3>Jab mujh par bohot gussa ho</h3>
+        <p>Jab mera naam dekh kar bhi chid mach rahi ho aur lage ki block hi kar de…</p>
         <span class="open-badge">Tap to read</span>
       </div>
       <div class="open-card reveal" data-open="tired">
         <span class="open-card-icon">🌧️</span>
-        <h3>When you had a tiring day</h3>
-        <p>Jab duniya thaka de aur sab kuch heavy lag raha ho…</p>
+        <h3>Jab din bekar gaya ho</h3>
+        <p>Jab thak chuki ho aur sab kuch bohot heavy lag raha ho…</p>
         <span class="open-badge">Tap to read</span>
       </div>
       <div class="open-card reveal" data-open="sleep">
         <span class="open-card-icon">🌙</span>
-        <h3>When you can't sleep at 2 AM</h3>
-        <p>Jab dimag mein bohot saare thoughts chal rahe hon aur neend na aaye…</p>
+        <h3>Jab raat ko neend na aaye</h3>
+        <p>Jab dimag me hazar baatein chal rahi hon aur neend na aa rahi ho…</p>
         <span class="open-badge">Tap to read</span>
       </div>
       <div class="open-card reveal" data-open="memories">
         <span class="open-card-icon">☕</span>
-        <h3>When you miss old days</h3>
-        <p>Jab purani kisi baat par achanak chehre par halki si muskaan aa jaye…</p>
+        <h3>Jab purani baatein yaad aayein</h3>
+        <p>Jab purani kisi baat par chehre par halki si muskaan aa jaye…</p>
         <span class="open-badge">Tap to read</span>
       </div>
     </div>
@@ -1137,193 +1132,20 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
 </section>
 
 <!-- ========================================================
-     04 · CHHOTI-CHHOTI BAATEIN (MEMORY JAR / STICKY NOTES)
+     04 · THE MAIN APOLOGY LETTER & DIARY
      ======================================================== -->
-<section class="moments-section" id="moments">
-  <div class="container center">
-    <span class="eyebrow reveal">04 · Sukoon Bhari Yaadein</span>
-    <h2 class="section-heading reveal">Woh chhoti baatein jo<br><em>hamesha yaad rehti hain.</em></h2>
-    <p class="intro reveal">Yeh un lamho ke baare mein hai jo bina kisi shor ke mere dil mein bas gaye.</p>
-    
-    <div class="sticky-grid">
-      <div class="sticky-note reveal">
-        <h4>Tumhari Pyaari Hasi</h4>
-        <p>Jab tum bina kisi hesitation ke khul kar hasti ho, woh duniya ki sabse genuine aur sukoon dene wali cheez lagti hai.</p>
-      </div>
-      <div class="sticky-note reveal">
-        <h4>Chhoti Care</h4>
-        <p>Kaise tum chhoti-chhoti baaton ka dhyan rakhti ho jo doosre log notice bhi nahi karte. Tumhara dil bohot saaf hai.</p>
-      </div>
-      <div class="sticky-note reveal">
-        <h4>Bina Rukawat Ki Baatein</h4>
-        <p>Woh waqt jab ghanto nikal jaate the aur pata bhi nahi chalta tha. Jahan koi formality nahi thi, bas honesty thi.</p>
-      </div>
-      <div class="sticky-note reveal">
-        <h4>Tumhara Real Nature</h4>
-        <p>Bina kisi fake dikhawe ke — jo ho, waisi hi rehna. Yeh quality bohot rare hai, Harshu.</p>
-      </div>
-    </div>
-
-    <!-- Aaj Ka Sukoon Note (Interactive Fortune Generator) -->
-    <div class="sukoon-cookie-wrap reveal">
-      <div class="sukoon-cookie-card">
-        <div class="cookie-header">
-          <span class="cookie-icon">🥠</span>
-          <div>
-            <h3>Aaj Ka Sukoon Note ✨</h3>
-            <p>Jab bhi thoda low ya tired feel ho, tap karke ek gentle thought draw kar sakti ho.</p>
-          </div>
-        </div>
-        <div class="cookie-note-box" id="cookieNoteBox">
-          <p id="cookieNoteText">“Chahe aaj ka din kaisa bhi raha ho, tum bohot precious ho. Thoda sa paani piyo aur relax karo. 🌸”</p>
-        </div>
-        <button type="button" class="cookie-draw-btn" id="cookieDrawBtn"><span>✨ Ek naya sukoon note draw karein</span></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 · MEMORIES (POLAROID GALLERY) -->
-<section class="section memories" id="memories" aria-labelledby="memoriesTitle">
-  <div class="container">
-   <div class="album-header">
-     <div class="reveal">
-       <span class="eyebrow">05 · Dil Ke Paas</span>
-       <h2 class="section-heading" id="memoriesTitle">Yaadon ki ek gallery.<br><em>A soft corner.</em></h2>
-     </div>
-     <p class="intro reveal">Kuch pal yaad aate hain toh dil narm ho jaata hai. Yahan 6 memories ki jagah rakhi hai.</p>
-   </div>
-   <div class="gallery" id="gallery" aria-label="Six spaces for memories"></div>
-   <p class="album-note reveal">some moments stay, very quietly. ♡</p>
-  </div>
-</section>
-
-<!-- ========================================================
-     06 · "MERA WADA" / CONCRETE CHANGES
-     ======================================================== -->
-<section class="section wishes center" id="promises" aria-labelledby="promisesTitle">
-  <div class="container">
-    <span class="eyebrow reveal">06 · Words Se Aage</span>
-    <h2 class="section-heading reveal" id="promisesTitle">Sorry ke saath saath,<br><em>mera ek pakka wada.</em></h2>
-    <p class="intro reveal">Sirf kehne se kuch theek nahi hota. Mujhe apne behave aur apne tareeke mein yeh badlaav laane hain.</p>
-    
-    <div class="promise-grid">
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">⏸️</span>
-        <span class="promise-num">Wada 01</span>
-        <h3>5-Second Pause</h3>
-        <p>Gusse ya hurt hone par turant react nahi karna. 5 second ruk kar sochna taaki meri aawaz kabhi dard na bane.</p>
-      </div>
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">👂</span>
-        <span class="promise-num">Wada 02</span>
-        <h3>Pehle Sunna</h3>
-        <p>Apni safai dene ya argument jeetne ke bajaye, pehle tumhari baat poori sunna — bina interrupt kiye.</p>
-      </div>
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">🛡️</span>
-        <span class="promise-num">Wada 03</span>
-        <h3>Space Ki Izzat</h3>
-        <p>Agar tumhe shaanti ya waqt chahiye, toh bina baar-baar pareshan kiye us boundary ki poori respect karna.</p>
-      </div>
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">🌸</span>
-        <span class="promise-num">Wada 04</span>
-        <h3>Hamesha Narmi</h3>
-        <p>Chahe situation kitni bhi mushkil ho, shabdon mein hamesha tehzeeb, narmi aur care rakhna.</p>
-      </div>
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">🚫</span>
-        <span class="promise-num">Wada 05</span>
-        <h3>No Guilt or Pressure</h3>
-        <p>Apne darr ya bechaini ki wajah se kabhi tumhe guilt-trip ya reply karne ka pressure nahi daalunga.</p>
-      </div>
-      <div class="promise-card reveal">
-        <span class="promise-badge-pill">✓ Pakka Wada</span>
-        <span class="promise-icon">🤍</span>
-        <span class="promise-num">Wada 06</span>
-        <h3>Tumhari Choice Sabse Pehle</h3>
-        <p>Tum jo bhi faisla lo — chahe baat karna, dosti ya doori — uski dil se hamesha poori izzat rahegi.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================================
-     07 · THODA SUKOON / VIRTUAL WARM HUG & CALM SPACE
-     ======================================================== -->
-<section class="hug-section" id="sukoon">
-  <div class="container">
-    <div class="hug-widget reveal">
-      <span class="eyebrow" style="margin-bottom:12px">Thoda Sukoon · Just for You</span>
-      <h3 class="hug-title">Harshu, agar kabhi dil thak jaaye…</h3>
-      <p class="hug-subtitle">Bina kisi sawaal ke, bina kisi ladai ya shikayat ke. Sirf thoda sukoon aur ek pyara, gentle hug.</p>
-      
-      <div class="hug-cute-sticker" aria-hidden="true">
-        <span class="sticker-bear">🧸</span>
-        <span class="sticker-heart">💖</span>
-        <span class="sticker-sparkle">🌸</span>
-      </div>
-
-      <div class="hug-stage">
-        <div class="hug-pulse-ring ring-1" aria-hidden="true"></div>
-        <div class="hug-pulse-ring ring-2" aria-hidden="true"></div>
-        <button class="hug-button" id="hugBtn" type="button" aria-label="Hold button for 3 seconds for a warm hug">
-          <span class="hug-icon" id="hugIcon">♡</span>
-        </button>
-      </div>
-
-      <div class="hug-progress-wrap">
-        <div class="hug-progress-bar"><div class="hug-progress-fill" id="hugFill"></div></div>
-        <span class="hug-hint-pill" id="hugHintBadge">Press & hold for 3 seconds</span>
-      </div>
-
-      <div class="hug-message-box" id="hugMessageBox">
-        <p class="hug-message" id="hugMessage" aria-live="polite">Dheere se button ko press karke hold karein…</p>
-      </div>
-
-      <div class="hug-result-card" id="hugResultCard" hidden>
-        <span class="hug-sparkle">🌸</span>
-        <h4>Breathe out, Harshu…</h4>
-        <p>Ek warm, gentle virtual hug sirf tumhare liye. Tumhara sukoon, tumhari muskaan aur tumhari mental peace sabse zaroori hai. Sab theek ho jayega, dheere-dheere. Apne aap ko sambhaalo aur apna khayal rakho. ♡</p>
-        <button type="button" class="hug-again-btn" id="hugAgainBtn">Take another hug ♡</button>
-      </div>
-
-      <!-- Optional Calm 1-Minute Breathing Space -->
-      <div class="breathing-space" id="breathingSpace">
-        <button type="button" class="breathe-toggle-btn" id="breatheToggleBtn">
-          <span>🌿</span> Need a 1-Minute Calm Breathing Space?
-        </button>
-        <div class="breathe-guide-box" id="breatheGuideBox" hidden>
-          <div class="breathe-circle" id="breatheCircle">
-            <span class="breathe-state-text" id="breatheStateText">Inhale</span>
-          </div>
-          <p class="breathe-guide-note" id="breatheGuideNote">Saans andar lo... relax your shoulders (4s)</p>
-          <button type="button" class="breathe-close-btn" id="breatheCloseBtn">Done / Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 · THE MAIN APOLOGY LETTER & DIARY -->
 <section class="section letter-section" id="letter" aria-labelledby="letterTitle">
   <div class="container">
    <div class="letter-intro">
      <div class="reveal">
-       <span class="eyebrow">08 · Mere Dil Se, Tum Tak</span>
-       <h2 class="section-heading" id="letterTitle">Kuch baatein,<br><em>dil se likhi hui.</em></h2>
-       <p class="intro">Jo kehna pehle chahiye tha.<br>Woh aaj, zyada honesty, narmi aur care ke saath.</p>
+       <span class="eyebrow">Dil Ki Baat</span>
+       <h2 class="section-heading" id="letterTitle">Ek aakhri letter,<br><em>jo mujhe pehle bolna tha.</em></h2>
+       <p class="intro">Bina kisi dikhawe ke, jo main sach me feel karta hoon.</p>
      </div>
      <div class="book-invite reveal">
        <span aria-hidden="true">♡</span>
-       <button type="button" class="book-open" id="openBook">Open my little diary</button>
-       <small>one page at a time.<br>at your own pace.</small>
+       <button type="button" class="book-open" id="openBook">Diary ki tarah padho</button>
+       <small>ek-ek page aaram se.</small>
      </div>
    </div>
    
@@ -1335,38 +1157,37 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
    <div class="letter-shell reveal">
      <article class="letter-sheet">
        <span class="letter-stamp" aria-hidden="true">♡</span>
-       <span class="letter-date">For you, with honesty & care</span>
-       <h3>Dear <span data-her-name>Harshu</span>,</h3>
-       <p>Main jaanta hoon ki shayad ab meri baaton ya mere hone ki koi value nahi bachi tumhare liye. Shayad tum mujhe ab kuch bhi nahi manti, aur tumhare dil mein mere liye sab khatam ho chuka hai. Lekin main yeh sab tumhe kisi tarah convince karne ya manane ke pressure se nahi keh raha. <strong>Main bas isliye yeh likh raha hoon kyunki jo maine gusse mein kaha, woh meri sabse badi galti thi — aur mujhe uska sach mein dil se afsos hai.</strong></p>
-       <p>Jab humare beech sab bigad raha tha, main apne darr aur apne dard ko sambhal nahi paaya. Maine keh diya, “Jao, mujhe bhi nahi rehna.” Sach yeh hai ki main tumhe khona nahi chahta tha. Lekin us darr ka matlab yeh nahi tha ki main tumse us tarah rude behave karun. Jo dard mera tha, uska dukh maine tumhe diya.</p>
-       <p>Aaj sochta hoon toh lagta hai, mujhe apni baat jeetne ki jagah us pal ko sambhalna chahiye tha. Thoda rukna chahiye tha. Tumhe sunna chahiye tha. Jo baat narmi se kahi jaa sakti thi, maine use gusse mein keh kar sab tod diya.</p>
-       <p>Tumhari yaad aati hai. Tumhare saath ki chhoti si baatein bhi mere liye chhoti nahi thi. Main un yaadon ko pyaar se rakhna chahta hoon. <strong>Un achchhe palon ke liye thank you.</strong> Unka apna ek soft corner rahega.</p>
-       <p>Jab doori badhi aur jawab aane band ho gaye, main darr ke maare baar-baar koshish karta raha. Ab mujhe samajh aaya ki <strong>meri urgency tumhari zimmedari nahi ban sakti.</strong> Agar tum mujhe pehle jaisa nahi maanti, toh woh tumhara haq hai. Main tumhari marzi ko respect karta hoon.</p>
-       <p>Main sirf apni galti kehna nahi, usse seekhna bhi chahta hoon. Apne shabdon mein zyada tehzeeb, gusse ke beech ek pause, aur kisi ki baat sunne ki patience. Main bas ek better insaan banne ki koshish kar raha hoon.</p>
-       <p>Agar kabhi tum khud baat karna chaho, main bina kisi argument ke sununga. Aur aaj agar tum bas yeh letter padhkar band karna chaho, woh bhi theek hai. Tumhari khushi aur tumhara sukoon mere liye sabse zaroori hai.</p>
-       <p><strong>I'm sorry, <span data-her-name>Harshu</span>.</strong> Jo kehna pehle chahiye tha, woh aaj dil se keh raha hoon. Tumhe turant reply karne, mujhe maaf karne, ya kuch decide karne ki koi majboori nahi hai.</p>
-       <div class="signature">With a softer heart,<br><span data-your-name>Suraj</span> ♡<small>And a sincere sorry.</small></div>
+       <span class="letter-date">Sirf tere liye, dil se</span>
+       <h3>Harshu,</h3>
+       <p>Mujhe nahi pata tu ye kab padhegi, ya shayad padh ke aur gussa karegi. Par mujhe ye likhna hi tha kyuki tere bina sab ajeeb sa aur sunsaan lag raha hai.</p>
+       <p>Pata hai, jab se tune baat karni band ki hai na, din nikal toh jata hai par kisi cheez me mann nahi lagta. Har baar lagta hai shayad abhi phone me tera notification aa jaye. Maine us din gusse me jo bola na, uska har ek second mujhe guilt deta hai. Mujhe achhi tarah pata hai ki tu aisi baatein bilkul deserve nahi karti thi.</p>
+       <p>Maine gusse me bol diya 'Jao mujhe nahi rehna', par sach ye hai ki main tere bina reh hi nahi sakta. Main darr gaya tha ki kahi tu mujhse door na chali jaye, aur us darr ke chakkar me maine khud hi tujhe itna hurt kar diya. Fir jab tu chup hui toh main baar-baar text karke tujhe aur irritate karta raha.</p>
+       <p>Agar tujhe lag raha hai na ki ye sab maine kisi AI se likhwa ke bhej diya... toh sach bolun, coding mujhe aati nahi thi isliye website banane ke liye help li, par ye jo dard hai, ye pachtawa hai, aur ye jo feelings hain — ye 100% meri hain. Kisi bot ko nahi pata ki tu mere liye kitni special hai.</p>
+       <p>Main perfect nahi hoon Harshu, galti hui mujhse, bohot badi galti hui. Par main tujhe khona nahi chahta. Agar tujhe time chahiye, tu le le. Daantna hai, daant le. Par please humari is dosti aur rishte ko aise khatam mat hone de.</p>
+       <p>Ek aakhri baar sorry yaar. Sach me dil se sorry.</p>
+       <div class="signature">Tera hi Suraj ♡<small>Hamesha.</small></div>
      </article>
    </div>
-   <p class="letter-after reveal">a little paper. a lot of feeling.</p>
+   <p class="letter-after reveal">tere bina sach me sab adhoora hai. ♡</p>
   </div>
 </section>
 
-<!-- 11 · WAX-SEAL SECRET ENVELOPE -->
+<!-- ========================================================
+     05 · WAX-SEAL SECRET ENVELOPE
+     ======================================================== -->
 <section class="section secret" id="secret" aria-labelledby="secretTitle">
   <div class="container secret-layout">
    <div class="secret-copy reveal">
-     <span class="eyebrow">09 · Sirf Tumhare Liye</span>
-     <h2 class="secret-heading" id="secretTitle">Ek chhota envelope.<br><em>Thoda aur dil.</em></h2>
-     <p class="intro">Kuch baatein is chhote se envelope mein rakhi hain. Jab tumhara mann ho, tab tap karke kholna.</p>
-     <span class="secret-small">Your pace. Your choice. Always.</span>
+     <span class="eyebrow">Sirf Tere Liye</span>
+     <h2 class="secret-heading" id="secretTitle">Ek chhota sa envelope.<br><em>Thoda aur dil se.</em></h2>
+     <p class="intro">Ek chhota note is envelope ke andar bhi band hai. Tap karke kholna jab mann kare.</p>
    </div>
    <div class="envelope-stage reveal">
      <button class="envelope" type="button" id="envelopeButton" aria-label="Open the secret message">
        <span class="folds" aria-hidden="true"></span>
        <span class="flap" aria-hidden="true"></span>
        <span class="seal" aria-hidden="true">♡</span>
-       <span class="address" aria-hidden="true">for <span data-her-name>Harshu</span>, with care.</span>
+       <span class="address" aria-hidden="true">for Harshu, with love.</span>
      </button>
      <p class="envelope-caption">a little note, sealed with feeling.</p>
      <button class="secret-link" type="button" id="readSecret">Open the letter</button>
@@ -1374,42 +1195,36 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
   </div>
 </section>
 
-<!-- Ending Heart Thank You -->
+<!-- Ending Heart -->
 <section class="ending" id="ending" aria-labelledby="thanksTitle">
   <button class="ending-heart" id="heartButton" type="button" aria-label="Release a few gentle hearts">♡</button>
-  <h2 id="thanksTitle">Padhne ke liye,<br><em>thank you.</em></h2>
-  <p><span data-her-name>Harshu</span>, meri maafi tumhare jawab par depend nahi karti. Jo kaha uska afsos hai, aur jo hurt hua uski zimmedari meri hai.</p>
-  <p class="ending-note">Ek dil se sorry.<br>Bas tumhare liye.</p>
+  <h2 id="thanksTitle">Padhne ke liye,<br><em>thank you Harshu.</em></h2>
+  <p>Jo maine kaha uska dil se afsos hai, aur jo hurt hua uski poori zimmedari meri hai.</p>
+  <p class="ending-note">Ek sacha sorry.<br>Bas tere liye.</p>
   <div class="last-sign">— <span data-your-name>Suraj</span> ♡</div>
 </section>
 
 <!-- ========================================================
-     10 · EK PYAARI SHURUAAT (RESTART & REPLY SECTION)
+     06 · AB TU BOL (RESTART & REPLY SECTION)
      ======================================================== -->
 <section class="restart" id="restart" aria-labelledby="restartTitle">
  <img class="restart-scene" src="assets/quiet-garden.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
  <div class="container">
   <div class="restart-header reveal">
-    <span class="eyebrow">A Little Hope · Sirf Tumhare Liye ♡</span>
-    <h2 class="section-heading" id="restartTitle">Harshu, ek baar phir…<br><em>ek pyaari shuruaat?</em></h2>
-    <p class="restart-hand">Sirf agar tum bhi chaho, <span data-her-name>Harshu</span>…</p>
-    <p class="intro">Main jaanta hoon ki shayad ab meri baaton ya mere hone par tumhara vishwas toot chuka ho. Par sach yeh hai ki main tumhe khona nahi chahta. Maine jo gusse mein galat bola, uska har ek pal mujhe andar se guilt deta hai. Tum meri zindagi ka sabse khoobsurat hissa rahi ho, aur main bina kisi ladai ke bas ek baar sab theek karna chahta hoon.</p>
-    <p class="intro">Pehla kadam koi bada wada ya pressure nahi hai — sirf ek shant si, bina ladai wali conversation. Jahan hum dono ek doosre ko sun sakein, samajh sakein, aur dheere se sab theek kar sakein. Agar tumhe waqt chahiye, main intezaar karunga. Aur agar tum restart nahi chahti, toh main tumhare faisle ki bhi hamesha dil se poori izzat karunga.</p>
-    <div class="restart-steps" aria-label="A gentler beginning">
-      <span>🌸 Pehle ek doosre ko bina gusse ke sunna</span>
-      <span>☕ Puraani ladai bhool kar samajhna</span>
-      <span>💖 Dono ki marzi se dheere se aage badhna</span>
-    </div>
+    <span class="eyebrow">Ab Tu Bol ♡</span>
+    <h2 class="section-heading" id="restartTitle">Harshu, ek baar please…<br><em>ek aakhri chance?</em></h2>
+    <p class="restart-hand">Sirf agar tu bhi chahe toh…</p>
+    <p class="intro">Main bas ek baar sab theek karna chahta hoon Harshu. Bina kisi ladai ke, bina kisi behes ke. Main tujhe kabhi dukh nahi dena chahta tha. Agar tujhe abhi bhi gussa hai, daant le mujhe WhatsApp par. Aur agar waqt chahiye, main wait karunga.</p>
   </div>
   
-  <!-- Suraj's Heartfelt Confession Card -->
+  <!-- Suraj's Confession Card -->
   <div class="suraj-confession-card reveal">
-    <span class="confession-badge">Ek Aakhri Baat · Dil Se</span>
-    <h3 class="confession-title">“Harshu, tum meri aadat nahi… mera sukoon ho.”</h3>
-    <p class="confession-quote">“Log kehte hain jo toot gaya woh jud nahi sakta, par mujhe vishwas hai ki humare beech ka rishta itna kamzor nahi tha. Main badal raha hoon, apne gusse par kabu karna seekh raha hoon — sirf isliye taaki tumhare chehre ki pyari muskaan kabhi meri wajah se na chhine. <strong>Agar tumne mujhe ek aakhri mauka diya, toh main tumhe kabhi regret nahi hone dunga.</strong>”</p>
+    <span class="confession-badge">Dil Se · Ek Baat</span>
+    <h3 class="confession-title">“Harshu, tu mere liye koi aadat nahi hai… tu mera sukoon hai.”</h3>
+    <p class="confession-quote">“Mujhe pata hai mera gussa kharab hai, par main badal raha hoon. Apne gusse par kabu karna seekh raha hoon — sirf isliye taaki meri wajah se tere chehre ki smile kabhi na chheene. <strong>Agar tune mujhe ek chance diya na, toh main tujhe kabhi regret nahi hone dunga.</strong>”</p>
     <div class="confession-foot">
-      <span>Tum mere liye bohot precious ho. Hamesha.</span>
-      <strong>— Hamesha tumhara, Suraj ♡</strong>
+      <span>Tere bina sach me sab adhoora hai.</span>
+      <strong>— Tera Suraj ♡</strong>
     </div>
   </div>
 
@@ -1417,48 +1232,48 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
    <div class="reply-heading">
      <span aria-hidden="true">💌</span>
      <div>
-       <h3 id="replyTitle">Ab, tumhare words…</h3>
-       <p>Jo tum sach mein feel karti ho. Chahe gussa ho ya narmi, bina kisi darr ke keh sakti ho.</p>
+       <h3 id="replyTitle">Ab jo bhi dil me hai, bol de…</h3>
+       <p>Chahe daantna ho, gussa nikalna ho ya kuch bhi kehna ho.</p>
      </div>
    </div>
    <fieldset>
-     <legend>Abhi tum kya kehna chahti ho, Harshu?</legend>
+     <legend>Abhi kya kehna chahti hai?</legend>
      <div class="reply-options">
       <label class="reply-option">
         <input type="radio" name="replyChoice" value="talk">
-        <strong>Chalo, ek baar baat karte hain ☕</strong>
-        <small>Bina kisi ladai ke, shaanti se ek doosre ko sunte hain.</small>
+        <strong>Chalo ek baar baat karte hain ☕</strong>
+        <small>Bina kisi ladai ke, shanti se ek doosre ko sunte hain.</small>
       </label>
       <label class="reply-option">
         <input type="radio" name="replyChoice" value="friends">
-        <strong>Dheere-dheere baat karte hain 🌸</strong>
-        <small>Bina kisi pressure ke, ek gentle fresh start.</small>
+        <strong>Dheere-dheere normal hote hain 🌸</strong>
+        <small>Bina kisi pressure ke, normal tareeke se.</small>
       </label>
       <label class="reply-option">
         <input type="radio" name="replyChoice" value="time">
-        <strong>Thoda waqt chahiye, Suraj ⏳</strong>
-        <small>Abhi koi jaldi nahi, main intezaar karunga jab tak tum chaho.</small>
+        <strong>Thoda time chahiye mujhe ⏳</strong>
+        <small>Abhi thoda chill hone de, jaldi nahi hai.</small>
       </label>
       <label class="reply-option">
         <input type="radio" name="replyChoice" value="listen">
-        <strong>Gussa hoon par baat sun li 🕊️</strong>
-        <small>Tumhara gussa bilkul sahi hai, par thank you ki tumne yeh padha.</small>
+        <strong>Gussa hoon par padh liya 🕊️</strong>
+        <small>Gussa apni jagah hai, par message dekh liya tera.</small>
       </label>
      </div>
    </fieldset>
-   <p class="reply-hint" id="replyHint" aria-live="polite">Upar kisi bhi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡</p>
+   <p class="reply-hint" id="replyHint" aria-live="polite">Upar kisi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡</p>
    
-   <label class="message-label" for="replyMessage">Apne words mein kuch kehna chaho… <span>(optional)</span></label>
-   <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi tumhare dil mein ho — chahe gussa, shikayat ya koi baat — bina kisi hesitation ke yahan likh sakti ho. Main har ek lafz dil se sununga… ♡" autocomplete="off"></textarea>
+   <label class="message-label" for="replyMessage">Apne words me kuch bolna ho toh… <span>(optional)</span></label>
+   <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi dil me hai likh de — daant le, gussa nikal le, ya jo bhi kehna ho... Main har ek lafz sununga. ♡" autocomplete="off"></textarea>
    
-   <p class="reply-privacy" id="replyPrivacy">Yeh reply automatically kisi ko nahi jaata. Neeche button par tap karke tum khud Suraj ko WhatsApp par bhej sakti ho ya message copy kar sakti ho.</p>
+   <p class="reply-privacy" id="replyPrivacy">Neeche green button par tap karke ye direct Suraj ko WhatsApp par chala jaayega.</p>
    
    <div class="reply-actions">
      <a class="btn-whatsapp-hero disabled" id="whatsappReply" href="#" target="_blank" rel="noopener">
        <span>💬</span> Suraj ko WhatsApp par bhej do
      </a>
      <div class="reply-actions-row">
-       <button type="button" id="copyReply" disabled>Copy reply message 📋</button>
+       <button type="button" id="copyReply" disabled>Message Copy karo 📋</button>
        <button type="button" class="clear-reply" id="clearReply">Clear text ↺</button>
      </div>
    </div>
@@ -1466,31 +1281,29 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
    <p class="reply-status" id="replyStatus" role="status" aria-live="polite"></p>
    
    <div class="reply-preview" id="replyPreview" hidden>
-     <h4><label for="replyText">Tumhara reply message — exactly as it will be sent</label></h4>
+     <h4><label for="replyText">Tera reply message — exactly aise jaayega:</label></h4>
      <textarea id="replyText" rows="5" readonly spellcheck="false"></textarea>
    </div>
   </form>
   
-  <p class="restart-final">Umeed hai. Jaldi nahi.<br>Tumhari marzi, hamesha. ♡</p>
+  <p class="restart-final">Umeed hai. Jaldi nahi.<br>Teri marzi, hamesha. ♡</p>
  </div>
 </section>
 </main>
 
 <!-- Chapter Dock Navigation Bar -->
 <nav class="chapter-dock" aria-label="Letter chapters">
- <a href="#beginning" class="active" aria-current="location"><span class="nav-dot" aria-hidden="true"></span>Start</a>
- <a href="#validation"><span class="nav-dot" aria-hidden="true"></span>Gussa</a>
- <a href="#openWhen"><span class="nav-dot" aria-hidden="true"></span>Envelopes</a>
+ <a href="#beginning" class="active" aria-current="location"><span class="nav-dot" aria-hidden="true"></span>Shuruat</a>
+ <a href="#truth"><span class="nav-dot" aria-hidden="true"></span>Sach Bolun Toh</a>
  <a href="#memories"><span class="nav-dot" aria-hidden="true"></span>Yaadein</a>
- <a href="#sukoon"><span class="nav-dot" aria-hidden="true"></span>Sukoon</a>
- <a href="#promises"><span class="nav-dot" aria-hidden="true"></span>Wada</a>
+ <a href="#openWhen"><span class="nav-dot" aria-hidden="true"></span>Envelopes</a>
  <a href="#letter"><span class="nav-dot" aria-hidden="true"></span>Letter</a>
- <a href="#restart"><span class="nav-dot" aria-hidden="true"></span>Restart</a>
+ <a href="#restart"><span class="nav-dot" aria-hidden="true"></span>Ab Tu Bol</a>
 </nav>
 
 <footer>
- <span class="footer-name">for <span data-her-name>Harshu</span> ♡</span>
- A quiet letter. A sincere sorry. A little hope.<br>With care, <span data-your-name>Suraj</span>.
+ <span class="footer-name">for Harshu ♡</span>
+ Sirf tere liye, dil se.<br>— Tera Suraj.
 </footer>
 
 <!-- MODALS / DIALOGS -->
@@ -1557,90 +1370,80 @@ const CONFIG = {
   photos: [
     { 
       file: 'photos/photo1.jpg', 
-      caption: 'That precious smile ✌️♡',
-      note: 'Tumhari yeh khul kar muskurane wali aadat... duniya ki sabse pyari aur genuine cheez lagti hai.',
+      caption: 'Teri woh pyari smile ✌️♡',
+      note: 'Jab tu aise khul ke hasti hai na bina kisi formality ke, sach me sabse pyari lagti hai. Meri bewaqoofi ki wajah se ye muskaan gayab nahi honi chahiye thi.',
       position: 'center 32%'
     },
     { 
       file: 'photos/photo2.jpg', 
       caption: 'Hum dono, us din ♡',
-      note: 'Khula aasman, pedon ki thandi chhaon aur tumhara saath... ek bohot pyara aur sukoon bhara din.',
+      note: 'Khula aasman, pedon ki thandi chhaon aur hum dono... kitna sukoon tha na us din? Wahi din yaad karke dil dukh raha hai ki maine sab faltu me kharab kiya.',
       position: 'center 50%'
     },
     { 
       file: 'photos/photo3.jpg', 
       caption: 'Our cool vibes 😎✨',
-      note: 'Matching sunglasses pehan kar swag dikhana... kitni hasi aayi thi humein us din!',
+      note: 'Yaad hai ye sunglasses laga ke hum kitna hero ban rahe the! Kitna hase the hum dono us din!',
       position: 'center 56%'
     },
     { 
       file: 'photos/photo4.jpg', 
-      caption: 'Candid & peaceful 🌸',
-      note: 'Bina kisi dikhawe ke, tumhara bilkul innocent aur real andaaz.',
+      caption: 'Simple & Innocent 🌸',
+      note: 'Bina filter, bina kisi dikhawe ke... jaisi tu hai, bilkul simple aur real.',
       position: 'center 36%'
     },
     { 
       file: 'photos/photo5.jpg', 
-      caption: 'Little hearts on you ♡',
-      note: 'Yeh photo dekh kar hamesha chehre par halki si muskaan aur dil mein warmth aa jaati hai.',
+      caption: 'Meri favorite photo ♡',
+      note: 'Ye photo dekh kar sach me bohot yaad aati hai teri aur chehre par smile aa jaati hai.',
       position: 'center 50%'
     },
     { 
       file: 'photos/photo6.jpg', 
       caption: 'Your goofy side 😂❤️',
-      note: 'Tumhara yeh funny andaaz... chahe kitna bhi gussa ho, yeh dekh kar koi bhi muskura de!',
+      note: 'Kitni nautanki karti hai tu isme! Chahe kitna bhi gussa ho, ye photo dekh kar kisi ki bhi hasi chhoot jaye.',
       position: 'center 52%'
     },
   ],
 
   // 🔐 SECRET MESSAGE
-  secretMessage: `Dear Harshu,
+  secretMessage: `Harshu,
 
-Yeh ek aisi jagah hai jahan main bina kisi ladai ke, bina interrupt kiye aur bina koi expectation rakhe apni baat keh sakta hoon.
+Agar tu ye padh rahi hai na... toh bas itna jaan le ki main sach me bohot sharminda hoon.
 
-Main jaanta hoon ki ab tum mujhse baat nahi karna chahti aur shayad tumhari nazar mein meri koi jagah nahi rahi. Main tumhe kisi cheez ke liye force nahi kar raha. Mujhe sabse zyada afsos us pal ka hai jab main gusse mein aise shabd bol gaya jo tum deserve nahi karti thi. Main apni baaton ko kabhi justify nahi karunga.
+Pata hai, gusse me aake bol dena aasan hota hai, par jab akele baithta hoon na, toh har ek lafz chubhta hai. Maine gusse me socha hi nahi ki tu kitna bura feel karegi.
 
-Humare saath ke achchhe lamhe mere dil mein hamesha ek soft corner rakhenge. Main yeh nahi keh raha ki un yaadon ke liye tumhe kuch badalna chahiye. Bas un pyare dino ke liye sincerely thank you.
+Hum dono ne kitna accha time spend kiya hai sath me, kitni hasi mazaak ki hai... aur maine ek jhatke me wo sab kharab kar diya.
 
-Agar tumne aage badhne ka decision liya hai, toh main jaanta hoon woh tumhara haq hai. Meri taraf se sorry kehne ke liye tumhe mujhe reply karne ya second chance dene ki koi majboori nahi hai.
+Main tujhe kisi cheez ke liye force nahi kar raha Harshu. Tera gussa hona bilkul sahi hai. Par please itna yaad rakhna ki meri feelings tere liye hamesha 100% sachi rahi hain. Main sach me tujhe bohot miss kar raha hoon.
 
-Mujhe apni galti se seekhna hai aur ek better insaan banna hai — apne shabdon mein bhi aur apne behavior mein bhi.
+Take care Harshu. Sach me sorry. ♡
 
-Take care, Harshu. Dil se sorry. ♡
-
-— Suraj`,
+— Tera Suraj`,
 
   // 💌 "OPEN WHEN..." CAPSULES CONTENT
   openWhenLetters: {
-    mad: `Dear Harshu,
+    mad: `Harshu, agar mujh par bohot gussa aa raha hai, toh poora haq hai tera.
 
-Agar tum mujh par gussa ho, toh sach yeh hai ki tumhara gussa 100% sahi hai. Maine gusse mein jo kaha, uski koi safai nahi di jaa sakti.
+Aake do gaali de le mujhe, daant le jitna daantna hai. Par please baat band mat kar yaar.
 
-Main yeh nahi bolunga ki "chhod na yaar, bhool ja". Dil dukhne par bhulna aasan nahi hota. Bas itna kehna hai ki chahe tum mujhse baat na karo, meri taraf se tumhare liye hamesha respect aur care rahegi.
+Teri chup rehne se zyada takleef kisi cheez se nahi hoti. Main sununga sab kuch bina behes kiye. Dil se sorry.`,
 
-Take your time. Jab tak gussa shant na ho, koi jaldi nahi. I am really sorry.`,
+    tired: `Harshu, mujh par gussa apni jagah hai, par tu apna khayal rakhna.
 
-    tired: `Dear Harshu,
+Time pe khana kha lena aur zyada overthink mat karna kisi baat ko. Tu bohot precious hai mere liye.
 
-Agar aaj ka din bohot thaka dene wala raha ho, ya kisi cheez ne pareshan kiya ho — toh ek gehra saans lo. 
+Take care of yourself please. ♡`,
 
-Tum bohot strong ho, par har waqt sab kuch sambhalna zaroori nahi hota. Thoda paani piyo, rest karo, aur kisi cheez ki chinta mat karo. Tumhara sukoon sabse pehle hai.
+    sleep: `Purani baatein ya ladai soch ke dimag kharab mat karna Harshu.
 
-Sending you warmth. Kal ka din naya aur behtar hoga. ♡`,
+Phone side me rakh aur aaram se so ja. Jo hua wo meri stupid galti thi, tu tension mat le.
 
-    sleep: `Dear Harshu,
+Good night. So ja shanti se. 🌙`,
 
-Agar raat ke 2 baje neend nahi aa rahi aur dimag mein hazar baatein ghum rahi hain… toh bas itna yaad rakhna ki tum akeli nahi ho.
+    memories: `Yaad hai hum kitni chhoti-chhoti baaton par ghanto haste the?
 
-Aankhein band karo, phone ko thoda door rakho aur lambi saans lo. Jo baatein pareshan kar rahi hain, unhe subah ke liye chhod do. Sab kuch theek ho jayega.
-
-Good night and sleep peacefully. ♡`,
-
-    memories: `Dear Harshu,
-
-Yaad hai jab hum bina kisi fikr ke ghanto baat karte the? Chhoti-chhoti baaton par hasna, ek doosre ko chhedna… woh pal sach mein bohot khubsurat the.
-
-Chahe waqt kitna bhi badal jaye, un achchhe lamho ki chamak mere dil mein kabhi kam nahi hogi. Un pyari yaadon ke liye dil se shukriya. ♡`
+Wo din sach me bohot khoobsurat the Harshu... main sach me wo sab wapas chahta hoon. Wo time mere liye bohot keemti tha aur hamesha rahega. ♡`
   }
 };
 
@@ -2234,7 +2037,7 @@ function stopBreathingGuide() {
 const bookParagraphs = [...document.querySelectorAll('.letter-sheet > p')];
 const bookPages = [];
 for (let i = 0; i < bookParagraphs.length; i += 2) bookPages.push(bookParagraphs.slice(i, i + 2));
-const bookChapters = ['A sincere sorry', 'Words I wish were softer', 'Missing you, respecting you', 'Care, in my actions', 'With a softer heart'];
+const bookChapters = ['Galti meri thi', 'Sach ye hai', 'Missing you', 'No AI, sirf mera dil', 'Hamesha ke liye sorry'];
 let bookIndex = 0;
 
 function renderBook() {
@@ -2275,20 +2078,20 @@ $('#readSecret').addEventListener('click', triggerSecret);
 // ========================================================
 const replyChoices = {
   talk: {
-    text: 'Suraj, maine tumhari poori website aur saari baatein dekhi. Chalo, ek baar bina kisi ladai ke shaanti se baat karke dekhte hain. Pehle ek doosre ko sunenge. ☕',
-    hint: 'Ek shant, bina ladai wali conversation. Suraj dil se sirf tumhe sunega. ♡'
+    text: 'Suraj, maine sab padh liya... theek hai chal, ek baar phone ya baat karte hain normal bina kisi ladai ke. ☕',
+    hint: 'Ek normal, bina ladai wali baat. Suraj bas chup chaap sunega. ♡'
   },
   friends: {
-    text: 'Suraj, maine tumhara letter padha. Hum dheere-dheere baat shuru kar sakte hain bina kisi jaldi ya pressure ke. 🌸',
-    hint: 'Ek gentle shuruaat, jahan koi expectations nahi hain, sirf dosti aur understanding hai.'
+    text: 'Maine dekh liya sab... theek hai Suraj, dheere-dheere normal baat shuru karte hain pehle bina kisi pressure ke. 🌸',
+    hint: 'Dheere-dheere normal hone ki taraf ek step. ♡'
   },
   time: {
-    text: 'Suraj, maine tumhari koshish dekhi, par mujhe abhi thoda aur waqt chahiye. Main jaldi mein nahi hoon. ⏳',
-    hint: 'Suraj tumhari space ki dil se izzat karega aur jab tak tumhara mann ho tab tak intezaar karega. ♡'
+    text: 'Suraj, maine dekh liya jo tune likha... abhi thoda time de mujhe, thoda chill hone de. ⏳',
+    hint: 'Suraj chup chaap wait karega jab tak tera mann na ho. ♡'
   },
   listen: {
-    text: 'Suraj, main abhi bhi thoda gussa hoon, par maine tumhara sincere sorry aur saari memories dekhi. 🕊️',
-    hint: 'Tumhara gussa 100% justified hai Harshu. Thank you ki tumne yeh sab dekha.'
+    text: 'Bohot gussa aa raha tha mujhe tujh par... par theek hai, tera message padh liya maine. 🕊️',
+    hint: 'Tera gussa hona 100% banta hai Harshu. Thank you padhne ke liye. ♡'
   }
 };
 const draftKey = 'harshu-reply-draft-v2';
