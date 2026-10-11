@@ -1,0 +1,2682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7d4e7">
+<meta name="description" content="For Harshu: a sincere, heartfelt apology from Suraj, cherished memories, honest promises, and a gentle invitation to a fresh beginning — only if you want it too.">
+<title>For Harshu — A Quiet Letter ♡</title>
+<link rel="icon" href="assets/heart.svg" type="image/svg+xml">
+<link rel="preload" href="assets/rose-dawn.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root {
+  --ink: #432d46;
+  --muted: #6d576f;
+  --rose: #99385f;
+  --rose-deep: #833150;
+  --rose-soft: #f4b6d0;
+  --pink: #f5c6da;
+  --sky: #d2e9f7;
+  --lilac: #e8daf4;
+  --peach: #f9d8ce;
+  --canvas: #fff8fb;
+  --wash: #fce9f1;
+  --sky-wash: #eaf4fc;
+  --lavender-wash: #f1eafa;
+  --peach-wash: #fdf0e9;
+  --line: #76507126;
+  --paper: #fffdfb;
+  --card-bg: rgba(255, 253, 250, 0.88);
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --shadow-sm: 0 4px 16px rgba(90, 48, 80, 0.08);
+  --shadow-md: 0 14px 42px rgba(85, 45, 78, 0.12);
+  --shadow-lg: 0 24px 75px rgba(75, 35, 68, 0.18);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --hand: 'Caveat', 'Segoe Print', cursive;
+  --body: 'DM Sans', system-ui, sans-serif;
+  --letter-size: 1.0625rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 1rem/1.85 var(--body); overflow-wrap: break-word; transition: background 0.4s ease, color 0.4s ease; }
+button, input, textarea, select, summary { font: inherit; }
+button, a, summary, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button, a, summary { touch-action: manipulation; }
+button { color: inherit; cursor: pointer; border: 0; }
+button:disabled { opacity: .42; cursor: default; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #8e52a8; outline-offset: 5px; }
+::selection { background: #eab6d2; color: #432541; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3, h4 { font-weight: 500; }
+img { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
+
+/* Skip Link */
+.skip { position: fixed; top: 8px; left: 8px; z-index: 300; transform: translateY(-150%); padding: 10px 18px; background: white; border-radius: 12px; }
+.skip:focus { transform: none; }
+
+/* Progress bar */
+.read-progress { height: 3px; position: fixed; inset: 0 0 auto; z-index: 120; pointer-events: none; background: linear-gradient(90deg, #ed8db7, #95c9e9, #c2a7e6); transform: scaleX(0); transform-origin: left; }
+
+/* Top Fairy Lights */
+.top-edge { position: fixed; top: 4px; inset-inline: 0; height: 21px; display: flex; justify-content: space-around; pointer-events: none; z-index: 110; }
+.top-edge::before { content: ''; position: absolute; inset: -5px 0 6px; border-bottom: 1px solid #a774a52b; border-radius: 0 0 50% 50%; }
+.top-edge i { width: 5px; height: 8px; margin-top: 6px; background: #ffeecb; border-radius: 9px; box-shadow: 0 0 9px #eaa7c2; animation: glimmer 4s ease-in-out infinite; animation-delay: var(--delay); }
+.top-edge i:nth-child(3n) { background: #b8dfff; box-shadow: 0 0 9px #a5c9ef; }
+.top-edge i:nth-child(4n) { background: #f5b3d4; }
+.edge-off .top-edge { display: none; }
+
+/* Floating Hearts Layer: Soft, dreamy, translucent drift (z-index 7 floats above page without blocking clicks or reading) */
+.heart-layer { position: fixed; inset: 0; z-index: 7; contain: strict; overflow: hidden; pointer-events: none; }
+.drifting-heart { position: absolute; bottom: -45px; left: var(--left); font-size: var(--size); color: rgba(173, 90, 135, 0.38); animation: drift var(--duration) linear infinite; animation-delay: var(--delay); pointer-events: none; user-select: none; }
+.drifting-heart:nth-child(3n) { color: rgba(87, 145, 198, 0.38); }
+.drifting-heart:nth-child(4n) { color: rgba(180, 107, 154, 0.38); }
+.hearts-off .heart-layer { display: none; }
+
+/* Header & Controls */
+.site-header { position: fixed; top: 22px; left: 50%; transform: translateX(-50%); width: min(1260px, calc(100% - 36px)); z-index: 95; display: flex; align-items: center; justify-content: space-between; gap: 12px; pointer-events: none; }
+.brand, .controls { pointer-events: auto; }
+.brand { display: inline-flex; align-items: center; gap: 8px; font: 500 28px/1.05 var(--hand); color: #763558; padding: 7px 14px; border: 1px solid rgba(255,255,255,0.85); border-radius: 99px; background: rgba(255, 251, 246, 0.92); backdrop-filter: blur(8px); box-shadow: 0 4px 22px rgba(92, 54, 87, 0.1); }
+.brand > span:first-child { font: 27px/1 var(--serif); color: var(--rose); }
+
+.controls { display: flex; align-items: center; gap: 4px; padding: 4px; background: rgba(255, 253, 250, 0.94); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.9); border-radius: 99px; box-shadow: 0 5px 28px rgba(81, 49, 75, 0.12); }
+.control { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 42px; padding: 8px 12px; background: transparent; border-radius: 28px; font-size: 13px; white-space: nowrap; transition: background 0.2s; }
+.control:hover, .settings > summary:hover { background: #fce8f3; }
+.control[aria-pressed=true] { background: #f2e4f5; }
+.control-symbol { font-size: 20px; line-height: 1; color: var(--rose); }
+.control-state { font-size: 10px; font-weight: 600; color: #735478; text-transform: uppercase; }
+.music-on .music-symbol { animation: pulseHeart 1.8s ease-in-out infinite; }
+.rain-on .rain-symbol { animation: glimmer 1.5s ease-in-out infinite; }
+
+/* Settings Modal/Dropdown */
+.settings { position: relative; }
+.settings > summary { list-style: none; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; cursor: pointer; font-size: 21px; }
+.settings > summary::-webkit-details-marker { display: none; }
+.settings[open] > summary { background: #f4deee; }
+.settings-panel { position: absolute; right: 0; top: calc(100% + 14px); width: 310px; max-height: calc(100svh - 150px); overflow-y: auto; overscroll-behavior: contain; padding: 22px; background: rgba(255, 253, 250, 0.98); backdrop-filter: blur(12px); border: 1px solid #ebdbe8; border-radius: 24px; box-shadow: 0 20px 60px rgba(85, 48, 71, 0.22); }
+.settings-panel h2 { font: 500 28px/1.2 var(--serif); margin-bottom: 18px; color: var(--rose); }
+.settings-panel label { display: block; font-size: 13px; margin-bottom: 14px; }
+.settings-panel label > span { display: block; margin-bottom: 5px; color: #6f5573; font-weight: 500; }
+.settings-panel select { width: 100%; padding: 9px 12px; border-radius: 12px; border: 1px solid #dac6dc; background: #fff8fc; color: var(--ink); font-size: 13px; }
+.volume-row { display: flex; gap: 9px; align-items: center; margin-top: 4px; }
+.volume-row input { width: 100%; accent-color: var(--rose); }
+.volume-row output { min-width: 38px; font-size: 12px; color: var(--muted); }
+.settings-btn { width: 100%; min-height: 42px; background: #f0e6f5; border-radius: 12px; font-size: 13px; font-weight: 500; margin-top: 8px; transition: background .2s; }
+.settings-btn:hover { background: #e5d7ec; }
+.settings-panel small, .music-caption { display: block; font-size: 11px; line-height: 1.6; color: #79617c; margin-top: 10px; }
+
+/* Toast */
+.toast { position: fixed; top: 96px; left: 50%; transform: translateX(-50%); z-index: 150; width: max-content; max-width: calc(100% - 32px); background: #fffcfd; border: 1px solid #efd7e4; border-radius: 16px; box-shadow: 0 10px 40px rgba(67, 35, 67, 0.2); padding: 12px 22px; font-size: 14px; text-align: center; }
+
+/* Global Container */
+main, footer { position: relative; z-index: 2; }
+.container { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.section { padding: 100px 0; }
+.center { text-align: center; }
+.center .intro { margin-inline: auto; }
+.eyebrow { display: inline-flex; align-items: center; gap: 11px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: var(--rose); }
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.section-heading { font: 500 clamp(42px, 5.2vw, 70px)/1.08 var(--serif); letter-spacing: -.03em; margin: 16px 0 24px; color: var(--ink); }
+.section-heading em { font-weight: 400; color: var(--rose); font-style: italic; }
+.intro { font-size: 16px; line-height: 1.95; color: var(--muted); max-width: 580px; }
+.handwritten { font-family: var(--hand); }
+
+/* Buttons & Pills */
+.pill { min-height: 52px; border-radius: 99px; display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 13px 26px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+.pill:hover { transform: translateY(-3px); }
+.pill-primary { background: var(--rose); color: white; box-shadow: 0 8px 26px rgba(163, 56, 98, 0.28); }
+.pill-primary:hover { background: var(--rose-deep); }
+.pill-secondary { background: rgba(255, 253, 250, 0.9); border: 1px solid rgba(133, 98, 125, 0.35); color: var(--ink); }
+.pill-secondary:hover { background: #fff; }
+.button-heart { font: 22px/1 var(--serif); }
+
+/* Hero Section */
+.hero { position: relative; min-height: max(870px, 100svh); padding: 164px 0 96px; isolation: isolate; overflow: hidden; background: #f0e8f5; }
+.hero-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -3; transition: opacity 0.6s ease; }
+.hero::before { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #fffbf3b8, #fff6f858 55%, #e7edf525), linear-gradient(0deg, var(--canvas), transparent 22%); }
+.hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; align-items: center; }
+.hero-content { max-width: 660px; }
+.dedication { font: 500 28px/1.25 var(--hand); color: #874f72; transform: rotate(-2deg); margin-bottom: 26px; }
+.hero h1 { font: 500 clamp(78px, 8.5vw, 130px)/.88 var(--serif); letter-spacing: -.05em; margin: 24px 0 28px; color: var(--ink); }
+.hero h1 .sorry { display: block; margin-top: 10px; font-style: italic; font-weight: 400; color: var(--rose); letter-spacing: -.055em; }
+.hero-copy { max-width: 460px; margin: 0 0 26px; font-size: 17px; line-height: 1.9; color: #624b64; }
+.hero-copy strong { font-weight: 500; color: var(--rose); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-bottom { display: block; margin: 16px 0 28px; font-size: 12px; color: #7c627c; }
+
+.scene-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.scene-picker > span { flex-basis: 100%; font: 500 21px var(--hand); color: #855373; margin-bottom: 2px; }
+.scene-picker button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(153, 125, 151, 0.35); min-height: 38px; padding: 7px 13px; border-radius: 99px; background: rgba(255, 253, 247, 0.85); font-size: 12px; color: #674c6b; transition: all .2s; }
+.scene-picker button[aria-pressed=true] { background: #fffdf9; border-color: #a14b79; box-shadow: 0 3px 12px rgba(164, 72, 112, 0.18); font-weight: 500; }
+.scene-dot { width: 7px; height: 7px; border-radius: 50%; background: #d68bae; }
+.scene-picker button:nth-of-type(2) .scene-dot { background: #79abc9; }
+.scene-picker button:nth-of-type(3) .scene-dot { background: #a590c2; }
+
+/* Keepsake Envelope Preview in Hero */
+.cover-keepsake { position: relative; max-width: 370px; width: 100%; margin: 30px 0 0 auto; padding: 15px; background: #fffdf9; border: 1px solid #edd4e2; box-shadow: 0 25px 75px rgba(129, 87, 117, 0.18); transform: rotate(4deg); transition: transform .3s; }
+.cover-keepsake:hover { transform: rotate(1deg) translateY(-4px); }
+.cover-keepsake::before { content: ''; position: absolute; width: 100px; height: 26px; top: -13px; left: 35%; background: rgba(205, 226, 240, 0.75); transform: rotate(-4deg); border: 1px solid rgba(255, 255, 255, 0.5); }
+.cover-inner { padding: 35px 25px 28px; border: 1px solid #e3c4d6; background: linear-gradient(160deg, #fcf0f3, #eaf2fc 65%, #eee3f5); min-height: 380px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.cover-stamp { align-self: flex-end; width: 44px; height: 52px; display: grid; place-items: center; color: #a36685; border: 1px dashed #ba93a7; font: 30px var(--serif); transform: rotate(6deg); }
+.cover-label { font-size: 10px; text-transform: uppercase; letter-spacing: .22em; color: #7f5e7c; margin: 6px 0 14px; }
+.cover-name { font: 500 62px/1 var(--hand); color: #9c3f6a; transform: rotate(-5deg); margin-bottom: 22px; }
+.cover-words { font: 500 32px/1.15 var(--serif); color: #7a5476; }
+.cover-words em { color: #a85d81; font-style: italic; }
+.cover-from { font: 500 25px var(--hand); color: #875980; margin: auto 0 0; padding-top: 24px; }
+.cover-caption { position: absolute; bottom: -44px; right: 8px; transform: rotate(-7deg); font: 500 26px var(--hand); color: #855278; white-space: nowrap; }
+.hero-footnote { margin: 76px auto 0; text-align: center; font: 500 23px var(--hand); color: #896582; }
+
+/* Route Strip */
+.route-strip { background: var(--canvas); padding: 10px 0 48px; }
+.route-inner { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.route-inner > span { font: 500 24px var(--hand); color: var(--rose); }
+.route-inner a { display: inline-flex; gap: 8px; align-items: center; padding: 4px 8px; border-radius: 99px; transition: background .2s; }
+.route-inner a:hover { background: #fbebf3; color: var(--rose); }
+.route-inner a b { font-size: 10px; font-weight: 600; color: var(--rose); }
+
+/* ========================================================
+   SECTION: "TUMHARA GUSSA BILKUL SAHI HAI" (EMPATHY CARD)
+   ======================================================== */
+.validation-section { padding: 40px 0 70px; background: var(--canvas); }
+.validation-card { max-width: 900px; margin-inline: auto; padding: 46px 52px; background: linear-gradient(135deg, rgba(255, 252, 251, 0.94), rgba(255, 245, 252, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; border: 1px solid #ebd4e4; border-radius: 28px; box-shadow: var(--shadow-md); position: relative; isolation: isolate; overflow: hidden; }
+.validation-card::before { content: '♡'; position: absolute; top: 16px; right: 28px; font: italic 52px var(--serif); color: #e9c1d6; opacity: 0.5; }
+.validation-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: #fae7f1; border-radius: 99px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; color: var(--rose); margin-bottom: 20px; }
+.validation-heading { font: 500 clamp(34px, 4vw, 48px)/1.15 var(--serif); color: var(--rose); margin-bottom: 20px; }
+.validation-heading em { font-family: var(--hand); font-size: 1.15em; color: #872950; font-style: normal; }
+.validation-text { font-size: 16px; line-height: 2; color: #5f4861; margin-bottom: 24px; }
+.validation-text strong { color: var(--rose); font-weight: 600; }
+.validation-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; border-top: 1px solid #f0dbe7; padding-top: 22px; }
+.validation-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 99px; background: rgba(255,255,255,0.85); border: 1px solid #e8d0e0; font-size: 12px; color: #6f5472; }
+.validation-pill span { color: var(--rose); font-weight: bold; }
+
+/* Section: Truth / Apology */
+.truth { background: var(--canvas); padding-top: 50px; }
+.truth-layout { display: grid; grid-template-columns: .88fr 1.12fr; gap: 80px; align-items: center; }
+.truth-copy .handwritten { font-size: 30px; line-height: 1.25; color: var(--rose); transform: rotate(-3deg); margin: 28px 0 0; }
+.truth-paper { padding: 44px 48px; background: linear-gradient(135deg, rgba(255, 253, 250, 0.95), rgba(255, 248, 253, 0.93)), url('assets/rose-dawn.webp') center/cover no-repeat; border: 1px solid #e9cfde; position: relative; box-shadow: var(--shadow-md); transform: rotate(1.2deg); border-radius: 4px; }
+.truth-paper::before, .polaroid::before { content: ''; position: absolute; top: -13px; left: 36%; width: 90px; height: 26px; background: rgba(228, 216, 239, 0.75); transform: rotate(-5deg); border: 1px solid rgba(255, 255, 255, 0.4); }
+.truth-paper .dear { font: 500 36px var(--hand); color: var(--rose); margin-bottom: 18px; }
+.truth-paper p { color: #695066; font-size: 16px; line-height: 1.95; margin-bottom: 20px; }
+.truth-paper strong { color: #943960; font-weight: 600; }
+.truth-paper .paper-end { font: 500 32px var(--hand); color: var(--rose); margin-bottom: 0; }
+.chapter-number { position: absolute; bottom: 14px; right: 21px; font: italic 40px var(--serif); color: #c993b1; }
+
+/* Word Keepsake / Tabbed Thoughts */
+.word-keepsake { margin-top: 75px; background: linear-gradient(135deg, rgba(252, 233, 241, 0.93), rgba(255, 245, 251, 0.91)), url('assets/quiet-garden.webp') center/cover no-repeat; border: 1px solid var(--line); border-radius: 26px; padding: 36px 42px; display: grid; grid-template-columns: .7fr 1.3fr; gap: 20px 38px; align-items: center; }
+.word-keepsake h3 { font: 500 42px/1.05 var(--serif); color: var(--rose); margin: 0; grid-column: 1; }
+.word-tabs { display: flex; flex-direction: column; gap: 9px; grid-column: 1; grid-row: 2; }
+.word-tabs button { width: fit-content; min-height: 44px; padding: 10px 18px; border-radius: 99px; border: 1px solid rgba(172, 136, 165, 0.35); background: rgba(255, 250, 252, 0.85); font-size: 13px; color: var(--ink); transition: all .2s; }
+.word-tabs button[aria-selected=true] { color: white; background: var(--rose); border-color: var(--rose); box-shadow: 0 4px 14px rgba(163, 56, 98, 0.25); }
+.word-panel { grid-column: 2; grid-row: 1 / 3; padding-left: 33px; border-left: 1px solid var(--line); }
+.word-label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .18em; color: var(--rose); margin-bottom: 13px; font-weight: 600; }
+.word-panel blockquote { font: 500 31px/1.35 var(--hand); color: var(--rose); margin: 0 0 18px; }
+.word-panel p { font-size: 15px; line-height: 1.95; color: var(--muted); margin: 0; }
+.word-panel strong { color: var(--rose); font-weight: 600; }
+
+/* Quiet Scene Banner */
+.quiet-scene { padding: 0 24px; background: var(--canvas); }
+.scene-window { position: relative; max-width: 1300px; margin: auto; height: 440px; display: grid; place-items: center; border-radius: 80px 12px 80px 12px; overflow: hidden; isolation: isolate; background: #e4eaf3; }
+.scene-window > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 65%; z-index: -2; }
+.scene-window::before { content: ''; position: absolute; inset: 0; background: rgba(255, 249, 245, 0.4); z-index: -1; }
+.scene-quote { text-align: center; padding: 34px 48px; background: rgba(255, 253, 250, 0.92); backdrop-filter: blur(8px); border: 1px solid white; box-shadow: 0 18px 70px rgba(136, 84, 124, 0.12); border-radius: 50% 50% 12px 12px / 10% 10% 12px 12px; max-width: 630px; margin: 20px; }
+.scene-quote > span { display: block; color: #9c5275; font: 35px var(--serif); margin-bottom: 8px; }
+.scene-quote p { font: italic 500 clamp(28px, 3vw, 40px)/1.25 var(--serif); color: #674364; margin: 0 0 10px; }
+.scene-quote small { font: 500 25px var(--hand); color: #9a5c7d; }
+
+/* ========================================================
+   SECTION: "OPEN WHEN..." LETTER CAPSULES (4 ENVELOPES)
+   ======================================================== */
+.open-when-section { background: var(--lavender-wash); padding: 90px 0; border-block: 1px solid rgba(229, 219, 233, 0.6); }
+.open-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+.open-card { 
+  background: linear-gradient(145deg, rgba(255, 253, 251, 0.94), rgba(255, 245, 251, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; 
+  border: 1px solid #e4d2e1; 
+  border-radius: 22px; 
+  padding: 28px 22px; 
+  text-align: center; 
+  cursor: pointer; 
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s; 
+  box-shadow: var(--shadow-sm); 
+  position: relative; 
+  overflow: hidden;
+}
+.open-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 16px 36px rgba(163, 56, 98, 0.14); border-color: var(--rose-soft); }
+.open-card-icon { font-size: 38px; line-height: 1; margin-bottom: 14px; display: block; transition: transform .3s; }
+.open-card:hover .open-card-icon { transform: scale(1.15); }
+.open-card h3 { font: 500 24px/1.2 var(--hand); color: var(--rose); margin-bottom: 8px; }
+.open-card p { font-size: 13px; line-height: 1.6; color: var(--muted); margin: 0 0 16px; }
+.open-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 99px; background: #fae7f2; color: var(--rose); }
+
+/* ========================================================
+   SECTION: "CHHOTI-CHHOTI BAATEIN" (MEMORY JAR / NOTES)
+   ======================================================== */
+.moments-section { background: var(--canvas); padding: 90px 0 60px; }
+.sticky-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 45px; }
+.sticky-note { 
+  background: linear-gradient(140deg, rgba(255, 253, 247, 0.95), rgba(255, 248, 250, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; 
+  border: 1px solid #eddcd1; 
+  border-radius: 12px; 
+  padding: 26px 22px; 
+  box-shadow: 0 10px 24px rgba(110, 75, 95, 0.08); 
+  transform: rotate(var(--rot)); 
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s; 
+  position: relative; 
+  overflow: hidden;
+}
+.sticky-note:hover { transform: rotate(0deg) translateY(-6px) scale(1.02); box-shadow: 0 18px 40px rgba(110, 75, 95, 0.15); z-index: 3; }
+.sticky-note::before { content: ''; position: absolute; top: -10px; left: 35%; width: 55px; height: 18px; background: rgba(235, 218, 230, 0.7); border: 1px solid rgba(255,255,255,0.6); transform: rotate(-2deg); }
+.sticky-note:nth-child(2) { background: linear-gradient(140deg, rgba(253, 250, 245, 0.95), rgba(246, 250, 254, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; --rot: -2deg; }
+.sticky-note:nth-child(3) { background: linear-gradient(140deg, rgba(249, 251, 253, 0.95), rgba(250, 244, 250, 0.92)), url('assets/quiet-garden.webp') center/cover no-repeat; border-color: #d8e5f2; --rot: 2.5deg; }
+.sticky-note:nth-child(4) { background: linear-gradient(140deg, rgba(253, 247, 251, 0.95), rgba(255, 250, 246, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; border-color: #edd5e7; --rot: -1.5deg; }
+.sticky-note h4 { font: 500 26px/1.1 var(--hand); color: var(--rose); margin-bottom: 12px; }
+.sticky-note p { font-size: 14px; line-height: 1.8; color: #695267; margin: 0; }
+
+/* Section: Memories (Polaroid Gallery) */
+.memories { background: var(--canvas); padding-top: 50px; }
+.album-header { display: grid; grid-template-columns: 1fr .6fr; gap: 40px; align-items: end; text-align: left; }
+.album-header .intro { margin: 0 0 20px; max-width: 360px; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 46px 36px; margin-top: 55px; padding: 0 12px; }
+.polaroid { 
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  width: 100%; 
+  border: 1px solid #ebdbe8; 
+  border-radius: 8px; 
+  background: linear-gradient(150deg, #ffffff, #fffcfb); 
+  padding: 14px 14px 22px; 
+  color: #7f5b77; 
+  text-align: center; 
+  box-shadow: 0 14px 34px rgba(112, 88, 135, 0.12); 
+  transform: rotate(var(--tilt)); 
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1); 
+  cursor: pointer;
+}
+.polaroid:hover, .polaroid:focus-visible { transform: rotate(0deg) translateY(-10px) scale(1.025); box-shadow: 0 24px 50px rgba(112, 88, 135, 0.22); z-index: 5; }
+.polaroid::before { content: ''; position: absolute; top: -13px; left: 36%; width: 80px; height: 26px; background: rgba(238, 214, 233, 0.8); transform: rotate(-3deg); border: 1px solid rgba(255, 255, 255, 0.6); z-index: 2; }
+.polaroid:nth-child(2n)::before { background: rgba(200, 227, 242, 0.8); transform: rotate(2deg); }
+.image-area { 
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: 4 / 5.2; /* Spacious, tall portrait aspect ratio so faces are never cut off */
+  overflow: hidden; 
+  background: #f1e5ee; 
+  border-radius: 4px; 
+}
+.image-area img { 
+  position: absolute; 
+  inset: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center 50%; 
+  opacity: 0; 
+  transition: transform .35s ease, filter .3s ease; 
+}
+.polaroid:hover .image-area img { transform: scale(1.04); }
+.polaroid.loaded img { opacity: 1; }
+.photo-empty { position: absolute; inset: 0; display: grid; place-content: center; gap: 6px; background: linear-gradient(145deg, #fce2e9, #e6e2f5 60%, #dceef8); color: #875c80; }
+.polaroid:nth-child(3n+2) .photo-empty { background: linear-gradient(140deg, #d6eafa, #e4ddf5 70%, #f8dce9); color: #647e9a; }
+.polaroid:nth-child(3n) .photo-empty { background: linear-gradient(145deg, #ffe5d7, #f3d8e6 60%, #e6def9); }
+.memory-symbol { font: 52px/1 var(--serif); margin-bottom: 6px; }
+.memory-word { font: 500 27px/1.1 var(--hand); }
+.photo-empty small { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; color: #78627b; }
+.polaroid.loaded .photo-empty { display: none; }
+.caption { display: block; font: 500 29px/1.2 var(--hand); margin-top: 14px; }
+.polaroid-tap-hint { display: inline-block; font-size: 11px; color: #9c678a; margin-top: 4px; opacity: 0.8; font-family: var(--body); }
+.polaroid:hover .polaroid-tap-hint { opacity: 1; color: var(--rose); }
+.album-note { font: 500 27px var(--hand); color: #886280; text-align: center; margin: 40px 0 0; transform: rotate(-2deg); }
+
+/* ========================================================
+   SECTION: "MERA WADA" / PROMISES I WILL KEEP
+   ======================================================== */
+.wishes { background: var(--lavender-wash); border-block: 1px solid #e5dbe985; }
+.promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 45px; }
+.promise-card { 
+  background: linear-gradient(145deg, rgba(255, 253, 252, 0.95), rgba(255, 246, 252, 0.92)), url('assets/quiet-garden.webp') center/cover no-repeat; 
+  border: 1px solid #e7d3e2; 
+  border-radius: 22px; 
+  padding: 34px 26px; 
+  text-align: left; 
+  box-shadow: var(--shadow-sm); 
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s; 
+  position: relative; 
+  overflow: hidden;
+}
+.promise-card:hover { transform: translateY(-7px) scale(1.02); box-shadow: var(--shadow-md); border-color: var(--rose-soft); }
+.promise-card::before { content: ''; position: absolute; top: -10px; left: 35%; width: 55px; height: 18px; background: rgba(228, 206, 225, 0.75); border: 1px solid rgba(255,255,255,0.6); transform: rotate(-1.5deg); }
+.promise-badge-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: #fbebf4; color: var(--rose); margin-bottom: 12px; }
+.promise-icon { font-size: 34px; color: var(--rose); margin-bottom: 12px; display: block; line-height: 1; }
+.promise-num { font-size: 10px; letter-spacing: .15em; font-weight: 600; text-transform: uppercase; color: #886788; display: block; margin-bottom: 6px; }
+.promise-card h3 { font: 500 28px/1.2 var(--hand); color: var(--rose); margin-bottom: 10px; }
+.promise-card p { font-size: 14px; line-height: 1.85; color: #6a536b; margin: 0; }
+
+/* ========================================================
+   SECTION: VIRTUAL WARM HUG & SUKOON WIDGET
+   ======================================================== */
+.hug-section { background: var(--canvas); padding: 85px 0 95px; text-align: center; }
+.hug-widget { 
+  max-width: 620px; 
+  margin: 0 auto; 
+  padding: 46px 36px; 
+  background: linear-gradient(145deg, rgba(255, 253, 250, 0.95), rgba(255, 246, 252, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; 
+  border: 1px solid #edd4e4; 
+  border-radius: 32px; 
+  box-shadow: var(--shadow-md); 
+  position: relative; 
+  overflow: hidden;
+}
+.hug-title { font: 500 clamp(32px, 4vw, 46px)/1.15 var(--serif); color: var(--rose); margin: 12px 0 10px; }
+.hug-subtitle { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
+
+.hug-cute-sticker { margin-bottom: 14px; font-size: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; animation: gentleWobble 2.8s ease-in-out infinite; }
+@keyframes gentleWobble { 0%, 100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.08) rotate(3deg); } }
+.hug-stage { position: relative; width: 150px; height: 150px; margin: 0 auto 20px; display: grid; place-items: center; }
+.hug-pulse-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px dashed #e8c6da; pointer-events: none; animation: spinRing 20s linear infinite; }
+.hug-pulse-ring.ring-2 { inset: -14px; border: 1.5px solid rgba(244, 182, 208, 0.4); animation: pulseHeart 3s ease-in-out infinite; }
+.hug-button { width: 116px; height: 116px; border-radius: 50%; background: linear-gradient(135deg, #f7bcd4, #ef91bb); border: 4px solid #fff; box-shadow: 0 12px 35px rgba(163, 56, 98, 0.28); display: grid; place-items: center; cursor: pointer; user-select: none; transition: transform .18s, box-shadow .18s, background .25s; z-index: 2; }
+.hug-button:hover { transform: scale(1.04); box-shadow: 0 16px 40px rgba(163, 56, 98, 0.35); }
+.hug-button:active, .hug-button.holding { transform: scale(0.92); box-shadow: 0 6px 18px rgba(163, 56, 98, 0.2); }
+.hug-button.hug-complete { background: linear-gradient(135deg, #973d65, #b84f7e); }
+.hug-icon { font-size: 48px; color: #fff; line-height: 1; transition: transform .2s; }
+.hug-button.holding .hug-icon { transform: scale(1.15); }
+
+.hug-progress-wrap { max-width: 280px; margin: 0 auto 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.hug-progress-bar { width: 100%; height: 7px; background: #f2e2ed; border-radius: 99px; overflow: hidden; }
+.hug-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #e47ea8, var(--rose)); transition: width 0.08s linear; }
+.hug-hint-pill { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: #876483; }
+
+.hug-message-box { min-height: 54px; display: flex; align-items: center; justify-content: center; }
+.hug-message { font: 500 24px/1.35 var(--hand); color: var(--rose); margin: 0; transition: color .2s; }
+
+.hug-result-card { 
+  margin-top: 24px; 
+  padding: 26px 28px; 
+  background: linear-gradient(140deg, rgba(255, 248, 252, 0.95), rgba(255, 243, 249, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; 
+  border: 1px solid #ebd2e2; 
+  border-radius: 20px; 
+  text-align: center; 
+  animation: soft-arrival .5s ease both; 
+  overflow: hidden;
+}
+.hug-result-card .hug-sparkle { font-size: 28px; display: block; margin-bottom: 8px; }
+.hug-result-card h4 { font: 500 30px/1.2 var(--hand); color: var(--rose); margin-bottom: 10px; }
+.hug-result-card p { font-size: 14px; line-height: 1.85; color: #624b64; margin: 0 0 16px; }
+.hug-again-btn { font-size: 12px; font-weight: 500; padding: 8px 18px; border-radius: 99px; background: #fae7f2; color: var(--rose); border: 1px solid #e7cddf; cursor: pointer; transition: background .2s; }
+.hug-again-btn:hover { background: #f2d2e6; }
+
+/* Breathing Space Guide */
+.breathing-space { margin-top: 32px; border-top: 1px dashed #e8d0e1; padding-top: 22px; }
+.breathe-toggle-btn { background: transparent; font-size: 13px; font-weight: 500; color: #7f5c7c; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; border: 1px solid #d9c4d6; cursor: pointer; transition: all .2s; }
+.breathe-toggle-btn:hover { background: #fbf0f7; color: var(--rose); border-color: var(--rose); }
+.breathe-guide-box { margin-top: 22px; padding: 24px; background: #fcf6fa; border-radius: 22px; border: 1px solid #ebdbe7; animation: soft-arrival .4s ease both; }
+.breathe-circle { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 16px; background: radial-gradient(circle, #f7c7dc, #eec0d7); display: grid; place-items: center; box-shadow: 0 0 24px rgba(247, 199, 220, 0.7); animation: breatheAnim 16s ease-in-out infinite; }
+.breathe-state-text { font: 500 26px var(--hand); color: #783758; }
+.breathe-guide-note { font-size: 13px; color: #735975; margin: 0 0 14px; }
+.breathe-close-btn { font-size: 12px; padding: 5px 14px; border-radius: 99px; background: #fff; border: 1px solid #d5c0d3; color: #694e6b; cursor: pointer; }
+
+@keyframes breatheAnim {
+  0%, 100% { transform: scale(0.85); box-shadow: 0 0 12px rgba(247, 199, 220, 0.4); }
+  25% { transform: scale(1.2); box-shadow: 0 0 35px rgba(247, 199, 220, 0.9); }
+  50% { transform: scale(1.2); box-shadow: 0 0 35px rgba(247, 199, 220, 0.9); }
+  75% { transform: scale(0.85); box-shadow: 0 0 12px rgba(247, 199, 220, 0.4); }
+}
+
+/* Section 04: The Main Apology Letter & Diary */
+.letter-section { background: var(--sky-wash); position: relative; }
+.letter-intro { display: grid; grid-template-columns: 1fr .7fr; gap: 50px; align-items: center; text-align: left; margin-bottom: 46px; }
+.letter-intro .section-heading { margin-bottom: 18px; }
+.book-invite { border: 1px solid #b6cfe6; background: rgba(249, 252, 255, 0.85); border-radius: 100px 100px 18px 18px; padding: 38px 22px 26px; text-align: center; max-width: 270px; margin-inline: auto; }
+.book-invite > span { display: block; font: 42px/1 var(--serif); color: #a96a91; margin-bottom: 14px; }
+.book-invite small { display: block; font: 500 22px/1.2 var(--hand); color: #7e6b8d; margin-top: 14px; }
+.book-open { border: 1px solid #baa3c6; background: #fffafd; border-radius: 99px; padding: 11px 18px; min-height: 48px; font-size: 13px; color: #7e4b76; font-weight: 500; transition: background .2s; }
+.book-open:hover { background: #f3e6f3; }
+.reader-tools { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin: 0 0 30px; }
+.reader-tools button { border: 1px solid #c0cbdf; background: rgba(255, 255, 255, 0.85); border-radius: 99px; padding: 10px 17px; min-height: 44px; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; }
+.reader-tools button[aria-pressed=true] { background: #e3dff2; border-color: #bba6d3; }
+.letter-shell { position: relative; max-width: 800px; padding: 10px; margin: auto; background: #edd8e4; border: 1px solid #ddbdce; border-radius: 4px; box-shadow: var(--shadow-lg); transform: rotate(-.4deg); }
+.letter-shell::before { content: ''; position: absolute; top: -15px; left: 39%; width: 130px; height: 30px; background: rgba(226, 213, 239, 0.8); transform: rotate(3deg); z-index: 3; }
+.letter-sheet { 
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.96), rgba(255, 248, 252, 0.93)), url('assets/rose-dawn.webp') center/cover no-repeat; 
+  border: 1px solid #e5d7db; 
+  padding: 56px 62px 52px; 
+  position: relative; 
+  text-align: left; 
+}
+.letter-stamp { position: absolute; top: 32px; right: 28px; font: italic 44px/1 var(--serif); color: #be7f9d; transform: rotate(13deg); }
+.letter-date { display: block; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #886c81; max-width: 84%; margin-bottom: 30px; }
+.letter-sheet h3 { font: 500 46px/1.1 var(--hand); color: #9b466f; margin-bottom: 28px; }
+.letter-sheet > p { font-size: var(--letter-size); line-height: 2.06; letter-spacing: .005em; color: #60495e; margin-bottom: 24px; }
+.letter-sheet strong { color: #943e63; font-weight: 600; }
+.signature { text-align: right; font: 500 34px/1.2 var(--hand); color: #a3517b; margin-top: 36px; }
+.signature small { display: block; font: 12px/1.7 var(--body); color: #80627b; margin-top: 8px; }
+.quiet-reading .heart-layer, .quiet-reading .top-edge { display: none; }
+.quiet-reading .letter-shell { transform: none; }
+.quiet-reading .letter-section { background: #f6f3f8; }
+.quiet-reading .letter-sheet > p { line-height: 2.2; }
+
+/* Section 05: Wax-Seal Secret Envelope */
+.secret { background: var(--canvas); }
+.secret-layout { display: grid; grid-template-columns: 1fr .75fr; gap: 75px; align-items: center; }
+.secret-copy .intro { max-width: 410px; }
+.secret-heading { font: 500 clamp(44px, 5vw, 68px)/1.05 var(--serif); letter-spacing: -.035em; margin: 16px 0 24px; }
+.secret-heading em { color: var(--rose); font-style: italic; }
+.envelope-stage { text-align: center; position: relative; isolation: isolate; padding: 24px 0; }
+.envelope-stage::before { content: ''; position: absolute; inset: 0 -20px; border: 1px solid #e3d4e4; border-radius: 50%; background: var(--wash); z-index: -1; transform: rotate(-13deg); }
+.envelope { display: block; width: 310px; max-width: 94%; height: 200px; position: relative; margin: 22px auto 30px; background: #eed0df; border: 1px solid #be8ba9; border-radius: 6px; box-shadow: 0 18px 40px rgba(133, 76, 118, 0.18); isolation: isolate; transform: rotate(-4deg); transition: transform .3s; }
+.envelope:hover { transform: rotate(-1deg) translateY(-5px); }
+.envelope .folds { position: absolute; inset: 0; background: linear-gradient(33deg, #f5dfeb 49.8%, transparent 50%) left top/50% 100% no-repeat, linear-gradient(-33deg, #f9e6ef 49.8%, transparent 50%) right top/50% 100% no-repeat; }
+.envelope .flap { position: absolute; top: -1px; left: -1px; right: -1px; height: 114px; background: #ffeaf4; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform .45s ease; }
+.envelope .seal { position: absolute; top: 84px; left: calc(50% - 24px); width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: #a45983; color: #fff0f5; border: 3px solid #b56c91; box-shadow: 0 3px 8px rgba(137, 84, 113, 0.25); font: 30px/1 var(--serif); transition: opacity .2s, transform .2s; }
+.envelope .address { position: absolute; bottom: 16px; inset-inline: 0; font: 500 24px var(--hand); color: #8b4c73; }
+.envelope.opening .flap { transform: rotateX(170deg); }
+.envelope.opening .seal { opacity: 0; transform: scale(1.4); }
+.envelope-caption { font: 500 25px var(--hand); color: #916386; margin-bottom: 10px; }
+.secret-link { min-height: 44px; padding: 5px 0; background: transparent; border-bottom: 1px solid #ac809b; font-size: 13px; color: #834f71; }
+.secret-small { display: block; margin-top: 18px; font-size: 12px; color: #795e78; }
+
+/* Ending Thank You Heart */
+.ending { background: var(--canvas); padding: 0 24px 85px; text-align: center; }
+.ending-heart { width: 64px; height: 64px; display: grid; place-items: center; margin: 0 auto 24px; border: 1px solid #dba3be; border-radius: 50%; background: #fbe5ef; font: 40px/1 var(--serif); color: var(--rose); box-shadow: 0 0 0 8px rgba(244, 220, 233, 0.35); transition: transform .2s; }
+.ending-heart:hover { transform: scale(1.1); }
+.ending h2 { font: 500 clamp(36px, 4.2vw, 54px)/1.1 var(--serif); letter-spacing: -.03em; margin-bottom: 16px; }
+.ending h2 em { color: var(--rose); font-style: italic; }
+.ending > p { font-size: 15px; line-height: 1.9; color: var(--muted); max-width: 520px; margin: 0 auto; }
+.ending .ending-note { font: 500 26px/1.25 var(--hand); color: var(--rose); margin: 20px auto 0; }
+.last-sign { font: 500 26px var(--hand); color: #985c80; margin-top: 22px; }
+
+/* ========================================================
+   SECTION 06: EK PYAARI SHURUAAT (RESTART & REPLY)
+   ======================================================== */
+.restart { position: relative; isolation: isolate; padding: 110px 0 120px; overflow: hidden; background: #efe5f0; }
+.restart-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -3; }
+.restart::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(249, 240, 246, 0.92), rgba(255, 248, 243, 0.78) 53%, rgba(249, 239, 247, 0.45)); z-index: -2; }
+.restart-header { text-align: center; max-width: 730px; margin: 0 auto 40px; padding: 0 10px; }
+.restart-header .section-heading { font-size: clamp(46px, 5.8vw, 78px); }
+.restart-header .intro { margin-inline: auto; color: #644c66; }
+.restart-hand { font: 500 29px/1.3 var(--hand); color: #92466d; transform: rotate(-2deg); margin-bottom: 20px; }
+.restart-steps { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin: 28px auto 0; }
+.restart-steps span { min-height: 36px; padding: 6px 14px; background: rgba(255, 253, 244, 0.9); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 99px; color: #755e7a; font-size: 12px; }
+
+/* Suraj Confession Card */
+.suraj-confession-card {
+  max-width: 860px;
+  margin: 0 auto 38px;
+  padding: 38px 42px;
+  background: linear-gradient(135deg, rgba(255, 252, 248, 0.96), rgba(255, 244, 250, 0.94)), url('assets/rose-dawn.webp') center/cover no-repeat;
+  border: 1.5px solid #ebd0e2;
+  border-radius: 28px;
+  box-shadow: 0 16px 42px rgba(136, 68, 104, 0.12);
+  position: relative;
+  text-align: center;
+}
+.suraj-confession-card::before {
+  content: '♡';
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  font: italic 40px var(--serif);
+  color: #d896b7;
+  opacity: 0.45;
+}
+.confession-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 15px;
+  border-radius: 99px;
+  background: #fae4f1;
+  color: var(--rose);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.confession-title {
+  font: 500 clamp(28px, 3.5vw, 38px)/1.2 var(--hand);
+  color: var(--rose);
+  margin-bottom: 14px;
+}
+.confession-quote {
+  font-size: 16px;
+  line-height: 2.1;
+  color: #5d435f;
+  margin: 0 0 20px;
+}
+.confession-quote strong {
+  color: #903a61;
+  font-weight: 600;
+}
+.confession-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed #e6cdda;
+  padding-top: 16px;
+  font-size: 13px;
+  color: #795d78;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.confession-foot strong {
+  font: 500 25px var(--hand);
+  color: var(--rose);
+}
+
+/* Reply Card */
+.reply-card { 
+  max-width: 860px; 
+  margin-inline: auto; 
+  padding: 42px; 
+  border: 1px solid #e7d2e4; 
+  border-radius: 32px; 
+  background: linear-gradient(135deg, rgba(255, 253, 250, 0.96), rgba(255, 247, 252, 0.93)), url('assets/quiet-garden.webp') center/cover no-repeat; 
+  backdrop-filter: blur(10px); 
+  box-shadow: var(--shadow-lg); 
+  position: relative; 
+  overflow: hidden;
+}
+.reply-heading { display: flex; align-items: center; gap: 15px; margin-bottom: 28px; }
+.reply-heading > span { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e0bed5; background: #fae9f3; color: #9d547b; display: grid; place-items: center; font: 28px var(--serif); flex-shrink: 0; }
+.reply-heading h3 { font: 500 36px/1.1 var(--serif); margin-bottom: 4px; color: var(--rose); }
+.reply-heading p { margin: 0; font-size: 13px; color: #79617c; }
+.reply-card fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.reply-card legend { font-size: 15px; font-weight: 600; margin-bottom: 16px; padding: 0; color: #573e5a; }
+.reply-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.reply-option { 
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  cursor: pointer; 
+  border: 1.5px solid #dcc9dc; 
+  border-radius: 18px; 
+  padding: 18px 18px 16px; 
+  min-height: 110px; 
+  background: rgba(255, 250, 254, 0.85); 
+  transition: all .25s ease; 
+}
+.reply-option:hover {
+  transform: translateY(-3px);
+  border-color: var(--rose-soft);
+  box-shadow: 0 8px 22px rgba(163, 56, 98, 0.1);
+}
+.reply-option:nth-child(2) { background: rgba(247, 251, 255, 0.85); }
+.reply-option:nth-child(3) { background: rgba(252, 248, 255, 0.85); }
+.reply-option:nth-child(4) { background: rgba(255, 250, 245, 0.85); }
+.reply-option:has(input:checked) { border-color: #975275; background: #fbf0f7; box-shadow: 0 6px 18px rgba(151, 82, 117, 0.2), inset 0 0 0 1.5px #975275; }
+.reply-option:focus-within { outline: 3px solid #7559a8; outline-offset: 4px; }
+.reply-option input { appearance: auto; margin: 0 0 8px; width: 17px; height: 17px; accent-color: #945375; }
+.reply-option strong { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 5px; color: var(--ink); }
+.reply-option small { font-size: 12px; line-height: 1.6; color: #6e5873; }
+.reply-hint { font-size: 13px; color: #7c5d79; margin: 18px 0 24px; min-height: 22px; }
+.message-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14px; margin-bottom: 8px; color: #5f4861; font-weight: 500; }
+.message-label span { font-size: 11px; color: #806b81; font-weight: normal; }
+.reply-card textarea { width: 100%; display: block; border: 1.5px solid #d9c5d8; border-radius: 16px; background: #fffcfd; color: var(--ink); padding: 18px; font-size: 15px; line-height: 1.8; resize: vertical; min-height: 126px; transition: border-color .2s; }
+.reply-card textarea:focus { border-color: var(--rose); outline: 0; box-shadow: 0 0 0 3px rgba(163, 56, 98, 0.15); }
+.reply-card textarea::placeholder { color: #8b748c; }
+.reply-privacy { padding: 14px 18px; margin: 16px 0 22px; background: rgba(240, 246, 252, 0.85); border: 1px solid #d5e2eb; border-radius: 14px; font-size: 12px; line-height: 1.75; color: #50657c; }
+
+/* Reply Actions with WhatsApp */
+.reply-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.btn-whatsapp-hero {
+  width: 100%;
+  max-width: 440px;
+  min-height: 54px;
+  padding: 13px 26px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.32);
+  transition: all .25s ease;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-whatsapp-hero:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+.btn-whatsapp-hero.disabled {
+  opacity: .45;
+  pointer-events: none;
+  box-shadow: none;
+}
+.reply-actions-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.reply-actions-row button {
+  min-height: 42px;
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #d3bfd2;
+  background: #fdf5fa;
+  color: #744c71;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+  cursor: pointer;
+}
+.reply-actions-row button:not(:disabled):hover {
+  border-color: #9c6e96;
+  background: #f3e2ef;
+}
+.reply-actions-row .clear-reply { background: transparent; border-color: transparent; color: #725b74; }
+.reply-status { color: #715770; font-size: 12px; line-height: 1.7; margin: 14px 0 0; min-height: 20px; text-align: center; }
+.reply-preview { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e4d6e1; }
+.reply-preview h4 { font-size: 12px; font-weight: 500; margin: 0 0 10px; color: #80627c; }
+.reply-preview #replyText { font-size: 13px; min-height: 140px; background: #fcf7fa; border-radius: 12px; }
+.restart-final { text-align: center; font: 500 27px/1.4 var(--hand); color: #865478; margin: 34px 15px 0; }
+
+/* ========================================================
+   MOOD CHECK-IN WIDGET ("Kaisa feel ho raha hai?")
+   ======================================================== */
+.mood-checkin-wrap { margin-top: 36px; }
+.mood-checkin-card { background: rgba(255, 253, 251, 0.95); border: 1px solid #e7d1e3; border-radius: 26px; padding: 32px 28px; text-align: center; box-shadow: var(--shadow-sm); }
+.mood-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: #8c577b; background: #fae6f2; padding: 6px 14px; border-radius: 99px; margin-bottom: 12px; }
+.mood-title { font: 500 28px/1.2 var(--hand); color: var(--rose); margin: 0 0 20px; }
+.mood-title em { font-style: normal; color: #684b6c; font-size: 22px; }
+.mood-btn-group { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.mood-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 99px; background: #fff8fb; border: 1.5px solid #e4cfe0; color: #694f6c; font-size: 13px; font-weight: 500; transition: all 0.25s ease; cursor: pointer; }
+.mood-btn:hover { background: #fdf0f7; border-color: var(--rose-soft); transform: translateY(-2px); }
+.mood-btn.active { background: #f2dbe9; border-color: var(--rose); color: #863560; font-weight: 600; box-shadow: 0 4px 14px rgba(153, 56, 95, 0.15); }
+.mood-btn .m-emoji { font-size: 18px; line-height: 1; }
+.mood-feedback-box { margin-top: 22px; padding: 22px 26px; background: #fdf7fa; border-radius: 18px; border: 1px dashed #e2c2da; animation: soft-arrival 0.35s ease both; text-align: left; }
+.mood-feedback-content h4 { font: 500 25px/1.2 var(--hand); color: var(--rose); margin: 0 0 8px; }
+.mood-feedback-content p { font-size: 14px; line-height: 1.85; color: #5c435f; margin: 0; }
+
+/* ========================================================
+   AAJ KA SUKOON NOTE / GENTLE FORTUNE COOKIE
+   ======================================================== */
+.sukoon-cookie-wrap { margin-top: 45px; text-align: center; }
+.sukoon-cookie-card { 
+  max-width: 640px; 
+  margin: 0 auto; 
+  background: linear-gradient(145deg, rgba(255, 252, 249, 0.95), rgba(255, 245, 250, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; 
+  border: 1px solid #edd5e5; 
+  border-radius: 28px; 
+  padding: 34px 30px; 
+  box-shadow: var(--shadow-sm); 
+  overflow: hidden;
+}
+.cookie-header { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 18px; }
+.cookie-icon { font-size: 38px; line-height: 1; animation: pulseHeart 2.5s ease-in-out infinite; }
+.cookie-header h3 { font: 500 32px/1.1 var(--serif); color: var(--rose); margin: 0 0 4px; }
+.cookie-header p { font-size: 13px; color: var(--muted); margin: 0; }
+.cookie-note-box { min-height: 72px; padding: 20px 24px; background: rgba(255, 255, 255, 0.92); border-radius: 16px; border: 1px solid #ebd8e7; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 2px 6px rgba(0,0,0,0.02); margin-bottom: 20px; transition: transform 0.25s; }
+.cookie-note-box p { font: 500 24px/1.4 var(--hand); color: #873d63; margin: 0; text-align: center; }
+.cookie-draw-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 99px; background: linear-gradient(135deg, #f5bcd3, #e591b9); color: white; font-size: 13px; font-weight: 600; box-shadow: 0 6px 18px rgba(163, 56, 98, 0.22); border: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.cookie-draw-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 24px rgba(163, 56, 98, 0.3); }
+
+/* Cursor Sparkle Trail */
+.cursor-sparkle { position: fixed; pointer-events: none; z-index: 998; font-size: 15px; line-height: 1; user-select: none; animation: cursorFloat 0.75s ease-out forwards; }
+@keyframes cursorFloat { from { opacity: 0.9; transform: translate(-50%, -50%) scale(1); } to { opacity: 0; transform: translate(calc(-50% + var(--drift-x)), calc(-50% + var(--drift-y))) scale(0.3); } }
+
+/* Confetti Shower */
+.confetti-piece { position: fixed; z-index: 999; pointer-events: none; width: 8px; height: 8px; border-radius: 2px; animation: confettiPop 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes confettiPop {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) + 70px)) scale(0.6) rotate(var(--rot)); }
+}
+
+/* Chapter Dock Navigation */
+.chapter-dock { position: fixed; bottom: max(14px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 90; display: flex; gap: 2px; padding: 4px 6px; background: rgba(255, 250, 253, 0.94); backdrop-filter: blur(10px); border: 1px solid #e1cfdf; border-radius: 99px; box-shadow: 0 8px 30px rgba(99, 69, 111, 0.14); }
+.chapter-dock a { display: flex; align-items: center; gap: 6px; padding: 8px 14px; min-height: 40px; border-radius: 99px; color: #795c78; font-size: 12px; white-space: nowrap; transition: background .2s; }
+.chapter-dock .active { background: #eadbea; color: #813f68; font-weight: 500; }
+.chapter-dock a:hover { background: #f1e8f3; }
+.nav-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+
+/* Footer */
+footer { text-align: center; background: var(--canvas); padding: 35px 24px 110px; font-size: 11px; line-height: 1.8; color: #775c79; }
+footer span.footer-name { font: 500 28px var(--hand); display: block; color: var(--rose); margin-bottom: 6px; }
+
+/* Dialogs */
+.letter-dialog { 
+  width: min(680px, calc(100% - 28px)); 
+  max-height: 84svh; 
+  overflow-y: auto; 
+  overscroll-behavior: contain; 
+  padding: 0; 
+  border: 1px solid #e0c6db; 
+  border-radius: 24px; 
+  color: var(--ink); 
+  background: linear-gradient(135deg, rgba(255, 253, 250, 0.96), rgba(255, 246, 252, 0.94)), url('assets/pink-sky.webp') center/cover no-repeat; 
+  box-shadow: 0 24px 100px rgba(62, 38, 66, 0.3); 
+}
+.letter-dialog[open] { animation: dialogPop 0.32s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.letter-dialog::backdrop { background: rgba(85, 57, 81, 0.55); backdrop-filter: blur(8px); }
+.letter-dialog[open]::backdrop { animation: dialogFade 0.25s ease both; }
+.dialog-bar { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; padding: 14px 22px; background: rgba(255, 253, 249, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid #ead9e5; z-index: 2; gap: 12px; }
+.dialog-bar > span { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: #895f7b; font-weight: 600; }
+.dialog-close { width: 42px; height: 42px; display: grid; place-items: center; background: #f6e2ef; border-radius: 50%; font-size: 26px; line-height: 1; flex-shrink: 0; }
+.dialog-content { padding: 32px 38px 36px; }
+.dialog-content h2 { font: 500 42px/1.1 var(--serif); color: #9b5278; margin-bottom: 22px; }
+.secret-body { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 16px; line-height: 2; color: #5f4861; }
+.dialog-sign { font: 500 29px var(--hand); color: #9d537c; margin-top: 24px; }
+.dialog-open { overflow: hidden; }
+
+/* Photo Dialog */
+.photo-dialog .dialog-content { padding: 22px; }
+.photo-preview { touch-action: pan-y; text-align: center; }
+.photo-preview img { 
+  max-height: 72svh; 
+  width: auto; 
+  max-width: 100%; 
+  object-fit: contain; 
+  border-radius: 12px; 
+  box-shadow: 0 14px 40px rgba(99, 69, 111, 0.18); 
+}
+.photo-preview .missing { background: linear-gradient(135deg, #eadff4, #f7ddea); border-radius: 12px; padding: 60px 25px; text-align: center; font: 500 28px/1.4 var(--hand); color: #8c5f83; }
+.photo-dialog h2 { text-align: center; font: 500 31px var(--hand); margin: 16px 0 0; }
+.photo-controls, .book-controls { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 24px 18px; }
+.photo-controls button, .book-controls button { border: 1px solid #c6a9c1; background: #fff8fb; color: #78536f; border-radius: 25px; min-width: 84px; min-height: 42px; padding: 8px 16px; font-size: 13px; }
+.photo-controls > span, .book-controls > span { font-size: 12px; color: #805f7b; }
+
+/* Book Diary Dialog */
+.book-dialog { 
+  width: min(730px, calc(100% - 26px)); 
+  background: linear-gradient(135deg, rgba(245, 230, 238, 0.96), rgba(250, 236, 246, 0.94)), url('assets/rose-dawn.webp') center/cover no-repeat; 
+}
+.book-sheet { 
+  padding: 40px 46px 34px; 
+  margin: 12px; 
+  min-height: 390px; 
+  border: 1px solid #e8d6e1; 
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.96), rgba(255, 245, 252, 0.93)), url('assets/quiet-garden.webp') center/cover no-repeat; 
+  border-radius: 6px; 
+}
+.book-kicker { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .14em; color: #8c657f; margin-bottom: 14px; font-weight: 600; }
+.book-sheet h2 { font: 500 42px/1.1 var(--hand); color: #97466e; margin-bottom: 22px; }
+.book-page-text { font-size: var(--letter-size); line-height: 2; color: #60495e; }
+.book-page-text p { margin-bottom: 18px; }
+.book-page-text strong { color: #923f66; font-weight: 600; }
+.book-sign { text-align: right; font: 500 25px var(--hand); color: #97597d; margin-top: 24px; }
+.book-controls { position: sticky; bottom: 0; background: rgba(246, 230, 238, 0.96); border-top: 1px solid #e3cedd; }
+.book-progress { height: 3px; margin: 0 28px; background: #e0cada; }
+.book-progress > span { display: block; height: 100%; background: #ac739b; transition: width .3s; }
+
+/* Open When Dialog */
+.open-when-dialog .dialog-content { 
+  padding: 34px 38px 30px; 
+  background: linear-gradient(135deg, rgba(255, 253, 250, 0.95), rgba(255, 246, 252, 0.93)), url('assets/rose-dawn.webp') center/cover no-repeat; 
+}
+.open-when-dialog h2 { font: 500 38px/1.1 var(--hand); color: var(--rose); margin-bottom: 18px; }
+.open-when-text { font-size: 16px; line-height: 2; color: #5c475e; white-space: pre-wrap; }
+
+/* Burst Hearts */
+.burst { position: fixed; z-index: 160; pointer-events: none; font-size: var(--size); color: var(--color); animation: heart-burst 1.3s ease-out forwards; line-height: 1; }
+.tap-heart { position: fixed; pointer-events: none; z-index: 999; user-select: none; font-size: 19px; line-height: 1; animation: tapHeartFly 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* Animations & Transitions */
+.reveal { opacity: 1; }
+.can-reveal .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+.can-reveal .reveal.visible { opacity: 1; transform: none; }
+.hero-content > *, .cover-keepsake { animation: soft-arrival .75s ease both; }
+.cover-keepsake { animation-name: cover-arrival; animation-delay: .15s; }
+
+/* Color Mood Themes */
+.mood-blue { --rose: #456b9c; --rose-deep: #35577f; --rose-soft: #b8d4f6; --ink: #37425d; --muted: #596c80; --canvas: #f5f9ff; --wash: #e7f0fc; --sky-wash: #e3effb; --lavender-wash: #ebedfa; }
+.mood-lilac { --rose: #805399; --rose-deep: #624078; --rose-soft: #dec3ef; --ink: #4e395c; --muted: #725d7f; --canvas: #fcf8ff; --wash: #f1e7f8; --sky-wash: #eceafb; --lavender-wash: #eee3f7; }
+.mood-peach { --rose: #a25049; --rose-deep: #813f38; --rose-soft: #f7bbb4; --ink: #593b42; --muted: #7d6068; --canvas: #fffaf5; --wash: #fcece3; --sky-wash: #eef4f5; --lavender-wash: #f4e9f0; }
+.mood-blue .hero::before, .mood-lilac .hero::before, .mood-peach .hero::before { background: linear-gradient(90deg, #fffdf5bc, #ffffff4f 55%, transparent), linear-gradient(0deg, var(--canvas), transparent 22%); }
+
+@keyframes dialogPop { from { opacity: 0; transform: translateY(18px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes dialogFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tapHeartFly {
+  0% { opacity: 0.9; transform: translate(-50%, -50%) scale(0.6) rotate(0deg); }
+  50% { opacity: 0.8; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) * 0.6)) scale(1.15) rotate(var(--rot)); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx) * 1.3), calc(-50% + var(--dy))) scale(0.9) rotate(var(--rot)); }
+}
+@keyframes glimmer { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes drift { from { transform: translate3d(0,0,0) rotate(-13deg); opacity: 0; } 8%,85% { opacity: 0.42; } to { transform: translate3d(var(--drift, 35px),-110vh,0) rotate(18deg); opacity: 0; } }
+@keyframes heart-burst { from { transform: translate(-50%,-50%) scale(.5); opacity: .9; } to { transform: translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.15); opacity: 0; } }
+@keyframes soft-arrival { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cover-arrival { from { opacity: 0; transform: rotate(4deg) translateY(12px); } to { opacity: 1; transform: rotate(4deg); } }
+@keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spinReel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes pulseHeart { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+@keyframes wavePulse { from { height: 20%; } to { height: 95%; } }
+
+/* Media Queries */
+@media (max-width: 1080px) {
+  .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 36px; }
+  .open-grid, .sticky-grid, .promise-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery { gap: 36px 24px; }
+  .truth-layout { gap: 40px; }
+  .reply-options { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .container { width: calc(100% - 36px); }
+  .site-header { width: calc(100% - 24px); gap: 8px; }
+  .brand { font-size: 24px; padding: 7px 11px; }
+  .section { padding: 75px 0; }
+  .hero { padding: 140px 0 70px; min-height: 800px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .hero-content { margin-inline: auto; }
+  .hero-copy { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
+  .scene-picker { justify-content: center; }
+  .cover-keepsake { margin: 20px auto 0; }
+  .truth-layout { grid-template-columns: 1fr; gap: 40px; }
+  .truth-copy { text-align: center; }
+  .word-keepsake { display: block; text-align: center; padding: 28px 24px; }
+  .word-tabs { flex-direction: row; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+  .word-panel { border-left: 0; padding-left: 0; }
+  .album-header { grid-template-columns: 1fr; text-align: center; gap: 18px; }
+  .album-header .intro { margin-inline: auto; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+  .letter-intro { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+  .secret-layout { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+  .secret-copy .intro { margin-inline: auto; }
+  .validation-card { padding: 34px 26px; }
+  .letter-sheet { padding: 44px 32px; }
+  .reply-card { padding: 28px 20px; border-radius: 24px; }
+  .reply-options { grid-template-columns: 1fr; }
+  .reply-actions { justify-content: center; }
+  .reply-actions .clear-reply { margin-left: 0; }
+}
+
+@media (max-width: 500px) {
+  .site-header { top: 16px; }
+  .brand { font-size: 21px; padding: 6px 10px; }
+  .controls { padding: 2px; }
+  .control { min-height: 38px; padding: 6px 8px; font-size: 11px; }
+  .control-state { display: none; }
+  .hero h1 { font-size: clamp(66px, 18vw, 92px); }
+  .open-grid, .sticky-grid, .promise-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; gap: 36px; }
+  .chapter-dock { max-width: calc(100% - 16px); }
+  .chapter-dock a { font-size: 11px; padding: 7px 10px; }
+}
+</style>
+</head>
+<body data-scene="dawn">
+<a class="skip" href="#letter">Skip to the letter</a>
+<div class="read-progress" id="progress" aria-hidden="true"></div>
+<div class="top-edge" id="lightString" aria-hidden="true"></div>
+<div class="heart-layer" id="hearts" aria-hidden="true"></div>
+
+<!-- Top Site Header & Navigation Controls -->
+<header class="site-header">
+ <a class="brand" href="#beginning" aria-label="Back to top"><span aria-hidden="true">♡</span><span>for <span data-her-name>Harshu</span></span></a>
+ <div class="controls" role="group" aria-label="Atmosphere controls">
+  <button class="control music-control" id="musicToggle" type="button" aria-pressed="true" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">ON</span></button>
+  <button class="control rain-control" id="rainToggle" type="button" aria-pressed="false" aria-label="Turn gentle rain ambience on"><span class="control-symbol rain-symbol" aria-hidden="true">🌧️</span><span>Rain</span><span class="control-state" id="rainState">OFF</span></button>
+  <button class="control" id="petalsToggle" type="button" aria-pressed="true" aria-label="Turn floating hearts off"><span class="control-symbol" aria-hidden="true">♡</span><span>Hearts</span><span class="control-state" id="petalsState">ON</span></button>
+  <button class="control" id="lightsToggle" type="button" aria-pressed="true" aria-label="Toggle top lights"><span class="control-symbol" aria-hidden="true">✧</span><span class="control-state" id="lightsState">ON</span></button>
+  
+  <details class="settings" id="settings"><summary aria-label="Settings" title="Atmosphere & Music Settings">☷</summary>
+   <div class="settings-panel">
+    <h2>Atmosphere & Sukoon</h2>
+    <label for="skyMood"><span>Color Palette</span>
+      <select id="skyMood">
+        <option value="pink">Rose Pink · Tender & Soft</option>
+        <option value="blue">Sky Blue · Peaceful & Calm</option>
+        <option value="lilac">Soft Lavender · Gentle Heart</option>
+        <option value="peach">Warm Peach · Cozy Sunset</option>
+      </select>
+    </label>
+    <label for="song"><span>Background Song</span>
+      <select id="song">
+        <option value="soundtrack.mp3" selected>Choo Lo · The Local Train (Full Emotional)</option>
+        <option value="assets/choo-lo-clip.mp3">Choo Lo · Chorus Clip ("Khade hain aaj bhi wahin")</option>
+        <option value="assets/pink-sky.mp3">Pink Sky · Gentle Piano Instrumental</option>
+      </select>
+    </label>
+    <label for="volume"><span>Music Volume</span>
+      <div class="volume-row"><input type="range" id="volume" min="0" max="100" value="45"><output id="volumeValue" for="volume">45%</output></div>
+    </label>
+    <label for="rainVolume"><span>Rain Ambience Volume</span>
+      <div class="volume-row"><input type="range" id="rainVolume" min="0" max="100" value="35"><output id="rainVolumeValue" for="rainVolume">35%</output></div>
+    </label>
+    <span class="music-caption" id="nowPlaying">A gentle melody, whenever you want.</span>
+    <button type="button" class="settings-btn" id="motionToggle" aria-pressed="false">Pause animations</button>
+    <small>Take your time. No rush, no expectations. ♡</small>
+   </div>
+  </details>
+ </div>
+</header>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<audio id="soundtrack" loop preload="auto" src="soundtrack.mp3"></audio>
+
+<main>
+<!-- HERO SECTION -->
+<section class="hero" id="beginning" aria-labelledby="coverTitle">
+ <img class="hero-scene" id="heroScene" src="assets/rose-dawn.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async">
+ <div class="container hero-grid">
+  <div class="hero-content">
+   <p class="dedication">a little sky, a softer heart.<br>a letter from <span data-your-name>Suraj</span> ♡</p>
+   <h1 id="coverTitle"><span data-her-name>Harshu</span>,<span class="sorry">dil se sorry.</span></h1>
+   <p class="hero-copy">Tumhari yaad aati hai. Aur us din ke shabdon ka sach mein bahut afsos hai. <strong>Is baar, koi justification nahi — sirf dil se maafi aur tumhari respect.</strong></p>
+   <div class="hero-actions">
+     <a href="#letter" class="pill pill-primary">Meri dil ki baat <span class="button-heart" aria-hidden="true">♡</span></a>
+     <a href="#validation" class="pill pill-secondary">Pehle yeh padho <span aria-hidden="true">↘</span></a>
+   </div>
+   <small class="hero-bottom">Jab tumhara mann ho. Jitna tumhara mann ho.</small>
+   <div class="scene-picker" role="group" aria-label="Choose the opening scene">
+    <span aria-hidden="true">a little change of sky…</span>
+    <button type="button" data-scene="dawn" aria-pressed="true"><i class="scene-dot" aria-hidden="true"></i>Rose morning</button>
+    <button type="button" data-scene="clouds" aria-pressed="false"><i class="scene-dot" aria-hidden="true"></i>Blue clouds</button>
+    <button type="button" data-scene="garden" aria-pressed="false"><i class="scene-dot" aria-hidden="true"></i>Quiet garden</button>
+   </div>
+  </div>
+  <div class="cover-keepsake" aria-hidden="true">
+    <div class="cover-inner">
+      <span class="cover-stamp">♡</span>
+      <span class="cover-label">a letter, with care</span>
+      <span class="cover-name" data-her-name>Harshu</span>
+      <span class="cover-words">Some words deserve<br><em>a softer place.</em></span>
+      <span class="cover-from">— <span data-your-name>Suraj</span></span>
+    </div>
+    <span class="cover-caption">a sincere sorry, just for you.</span>
+  </div>
+ </div>
+ <p class="hero-footnote">no rush. just honesty and sukoon. ♡</p>
+</section>
+
+<!-- Route Strip -->
+<div class="route-strip">
+  <div class="container route-inner">
+    <span>One quiet little journey</span>
+    <a href="#validation"><b>01</b> Tumhara Gussa</a>
+    <a href="#openWhen"><b>02</b> Open When</a>
+    <a href="#memories"><b>03</b> Yaadein</a>
+    <a href="#sukoon"><b>04</b> Sukoon</a>
+    <a href="#promises"><b>05</b> Mera Wada</a>
+    <a href="#letter"><b>06</b> Letter</a>
+    <a href="#restart"><b>07</b> Restart</a>
+  </div>
+</div>
+
+<!-- ========================================================
+     01 · "TUMHARA GUSSA BILKUL SAHI HAI" (EMPATHY CARD)
+     ======================================================== -->
+<section class="validation-section" id="validation">
+  <div class="container">
+    <div class="validation-card reveal">
+      <span class="validation-badge">01 · Sabse Pehle Yeh Baat</span>
+      <h2 class="validation-heading">Tumhara gussa aur doori,<br><em>100% justified hai.</em></h2>
+      <p class="validation-text">
+        Main yahan yeh kehne nahi aaya ki <em>“tum gussa mat ho”</em> ya <em>“meri baat sun lo”</em>. Main bohot achchi tarah jaanta hoon ki <strong>tumhari nazar mein shayad ab meri koi jagah nahi bachi, aur tum mujhe ab kuch bhi nahi manti.</strong> Aur sach kahun toh tumhari is narazgi ki wajah bhi main hi hoon.
+      </p>
+      <p class="validation-text">
+        Jab kisi par bharosa hota hai aur wahi insaan gusse mein aakar aise shabd bol de jo dil dukhayein, toh door ho jaana aur baat na karna bilkul natural hai. Maine jo kaha uski koi justification nahi hai. Isliye agar tum mujhse baat nahi karna chahti, toh <strong>tumhara haq hai. Main tumhari us doori aur us khamoshi ki poori izzat karta hoon.</strong>
+      </p>
+      <div class="validation-pills">
+        <div class="validation-pill"><span>✓</span> Tumhara faisla aur gussa bilkul sahi hai</div>
+        <div class="validation-pill"><span>✓</span> Meri taraf se koi safai ya bahana nahi</div>
+        <div class="validation-pill"><span>✓</span> Tumhare space ki 100% respect</div>
+      </div>
+    </div>
+
+    <!-- Mood Check-in Widget -->
+    <div class="mood-checkin-wrap reveal">
+      <div class="mood-checkin-card">
+        <span class="mood-badge">🧸 Ek chhota sa check-in</span>
+        <h3 class="mood-title">Harshu, abhi kaisa feel ho raha hai? <em>(Koi pressure nahi)</em></h3>
+        <div class="mood-btn-group" role="group" aria-label="How are you feeling right now">
+          <button type="button" class="mood-btn" data-mood="angry"><span class="m-emoji">😠</span><span>Gussa aa raha hai</span></button>
+          <button type="button" class="mood-btn" data-mood="hurt"><span class="m-emoji">🥺</span><span>Dil dukha hai</span></button>
+          <button type="button" class="mood-btn" data-mood="tired"><span class="m-emoji">🌧️</span><span>Thak chuki hoon</span></button>
+          <button type="button" class="mood-btn" data-mood="space"><span class="m-emoji">🕊️</span><span>Bas shaanti chahiye</span></button>
+        </div>
+        <div class="mood-feedback-box" id="moodFeedbackBox" hidden>
+          <div class="mood-feedback-content" id="moodFeedbackContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · TRUTH / APOLOGY -->
+<section class="section truth" id="truth" aria-labelledby="truthTitle">
+  <div class="container truth-layout">
+   <div class="truth-copy reveal">
+     <span class="eyebrow">02 · Meri Galti, Meri Zimmedari</span>
+     <h2 class="section-heading" id="truthTitle">Gusse ke shabdon ka,<br><em>dil se afsos.</em></h2>
+     <p class="intro">Main us pal ko waapis toh nahi laa sakta, par jo maine kaha uski poori zimmedari leta hoon. Tumhare saath hamesha zyada patience, zyada izzat aur narmi honi chahiye thi.</p>
+     <p class="handwritten">Sorry for the harsh words.<br>Sorry for the hurt.</p>
+   </div>
+   <article class="truth-paper reveal">
+     <p class="dear"><span data-her-name>Harshu</span>, sach mein…</p>
+     <p>Gusse mein aakar maine keh diya tha ki <em>“Jao, mujhe bhi nahi rehna”</em>. Woh bolna aasaan tha, par andar se sach yeh tha ki main tumhe khone se darr raha tha.</p>
+     <p>Lekin darr ka matlab yeh nahi ki main tumse rude baat karun. <strong>Dard mera tha, par maine dukh tumhe diya.</strong> Aur is baat ka pachtawa mujhe har roz hota hai.</p>
+     <p class="paper-end">I am sorry. Dil se.</p>
+     <span class="chapter-number" aria-hidden="true">♡</span>
+   </article>
+  </div>
+
+  <div class="container">
+    <div class="word-keepsake reveal">
+      <h3>Kaash main<br>narmi se kehta…</h3>
+      <div class="word-tabs" role="tablist" aria-label="Three honest thoughts">
+        <button type="button" role="tab" id="wordsTab0" data-word="0" aria-selected="true" aria-controls="wordsPanel0">Gusse ke shabd</button>
+        <button type="button" role="tab" id="wordsTab1" data-word="1" aria-selected="false" aria-controls="wordsPanel1" tabindex="-1">Baar-baar koshish</button>
+        <button type="button" role="tab" id="wordsTab2" data-word="2" aria-selected="false" aria-controls="wordsPanel2" tabindex="-1">Tumhara faisla</button>
+      </div>
+      <div class="word-panel" role="tabpanel" id="wordsPanel0" aria-labelledby="wordsTab0">
+        <span class="word-label">What I should have said</span>
+        <blockquote>“Mujhe bura lag raha hai.<br>Par main tumse narmi se baat karna chahta hoon.”</blockquote>
+        <p>Gusse mein bola gaya ek lafz bhi dil par gehra chot chhod jaata hai. Maine bina soche bola, aur uska bhojh tumhare dil par pada. <strong>Mujhe uska tahe-dil se afsos hai.</strong></p>
+      </div>
+      <div class="word-panel" role="tabpanel" id="wordsPanel1" aria-labelledby="wordsTab1" hidden>
+        <span class="word-label">What I am beginning to understand</span>
+        <blockquote>“Tumhe miss karna meri feeling hai.<br>Uska jawab dena tumhari majboori nahi.”</blockquote>
+        <p>Main dar gaya tha ki tum chali jaogi, isliye baar-baar message karta raha. Lekin meri bechaini tumhe overwhelm kar rahi thi. Mujhe samajhna chahiye tha ki kabhi-kabhi shaanti aur waqt dena hi asli care hoti hai.</p>
+      </div>
+      <div class="word-panel" role="tabpanel" id="wordsPanel2" aria-labelledby="wordsTab2" hidden>
+        <span class="word-label">What I want to respect</span>
+        <blockquote>“Tum jo feel karti ho,<br>main use bina kisi argument ke sununga.”</blockquote>
+        <p>Yeh maafi koi agreement nahi hai ki tumhe mujhse baat karni hi padegi. Tumhara dil, tumhara faisla aur tumhari khushi sabse upar hai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quiet Scene -->
+<section class="quiet-scene" aria-label="A quieter moment">
+  <div class="scene-window">
+    <img src="assets/quiet-garden.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
+    <div class="scene-quote reveal">
+      <span aria-hidden="true">♡</span>
+      <p>“Kaash mere shabd bhi<br>meri feelings jitne narm hote.”</p>
+      <small>is baar, sirf narmi aur sukoon.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     03 · "OPEN WHEN..." VIRTUAL LETTER CAPSULES
+     ======================================================== -->
+<section class="open-when-section" id="openWhen">
+  <div class="container center">
+    <span class="eyebrow reveal">03 · Virtual Letter Capsules</span>
+    <h2 class="section-heading reveal">Open when you need<br><em>a little comfort.</em></h2>
+    <p class="intro reveal">Yeh 4 chhote envelopes hain. Inhe tab kholna jab tumhara mann ho — koi jaldi nahi hai.</p>
+    
+    <div class="open-grid">
+      <div class="open-card reveal" data-open="mad">
+        <span class="open-card-icon">💌</span>
+        <h3>When you're mad at me</h3>
+        <p>Jab mera naam dekh kar bhi gussa aaye aur lage ki mujhe sunna hi nahi…</p>
+        <span class="open-badge">Tap to read</span>
+      </div>
+      <div class="open-card reveal" data-open="tired">
+        <span class="open-card-icon">🌧️</span>
+        <h3>When you had a tiring day</h3>
+        <p>Jab duniya thaka de aur sab kuch heavy lag raha ho…</p>
+        <span class="open-badge">Tap to read</span>
+      </div>
+      <div class="open-card reveal" data-open="sleep">
+        <span class="open-card-icon">🌙</span>
+        <h3>When you can't sleep at 2 AM</h3>
+        <p>Jab dimag mein bohot saare thoughts chal rahe hon aur neend na aaye…</p>
+        <span class="open-badge">Tap to read</span>
+      </div>
+      <div class="open-card reveal" data-open="memories">
+        <span class="open-card-icon">☕</span>
+        <h3>When you miss old days</h3>
+        <p>Jab purani kisi baat par achanak chehre par halki si muskaan aa jaye…</p>
+        <span class="open-badge">Tap to read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     04 · CHHOTI-CHHOTI BAATEIN (MEMORY JAR / STICKY NOTES)
+     ======================================================== -->
+<section class="moments-section" id="moments">
+  <div class="container center">
+    <span class="eyebrow reveal">04 · Sukoon Bhari Yaadein</span>
+    <h2 class="section-heading reveal">Woh chhoti baatein jo<br><em>hamesha yaad rehti hain.</em></h2>
+    <p class="intro reveal">Yeh un lamho ke baare mein hai jo bina kisi shor ke mere dil mein bas gaye.</p>
+    
+    <div class="sticky-grid">
+      <div class="sticky-note reveal">
+        <h4>Tumhari Pyaari Hasi</h4>
+        <p>Jab tum bina kisi hesitation ke khul kar hasti ho, woh duniya ki sabse genuine aur sukoon dene wali cheez lagti hai.</p>
+      </div>
+      <div class="sticky-note reveal">
+        <h4>Chhoti Care</h4>
+        <p>Kaise tum chhoti-chhoti baaton ka dhyan rakhti ho jo doosre log notice bhi nahi karte. Tumhara dil bohot saaf hai.</p>
+      </div>
+      <div class="sticky-note reveal">
+        <h4>Bina Rukawat Ki Baatein</h4>
+        <p>Woh waqt jab ghanto nikal jaate the aur pata bhi nahi chalta tha. Jahan koi formality nahi thi, bas honesty thi.</p>
+      </div>
+      <div class="sticky-note reveal">
+        <h4>Tumhara Real Nature</h4>
+        <p>Bina kisi fake dikhawe ke — jo ho, waisi hi rehna. Yeh quality bohot rare hai, Harshu.</p>
+      </div>
+    </div>
+
+    <!-- Aaj Ka Sukoon Note (Interactive Fortune Generator) -->
+    <div class="sukoon-cookie-wrap reveal">
+      <div class="sukoon-cookie-card">
+        <div class="cookie-header">
+          <span class="cookie-icon">🥠</span>
+          <div>
+            <h3>Aaj Ka Sukoon Note ✨</h3>
+            <p>Jab bhi thoda low ya tired feel ho, tap karke ek gentle thought draw kar sakti ho.</p>
+          </div>
+        </div>
+        <div class="cookie-note-box" id="cookieNoteBox">
+          <p id="cookieNoteText">“Chahe aaj ka din kaisa bhi raha ho, tum bohot precious ho. Thoda sa paani piyo aur relax karo. 🌸”</p>
+        </div>
+        <button type="button" class="cookie-draw-btn" id="cookieDrawBtn"><span>✨ Ek naya sukoon note draw karein</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · MEMORIES (POLAROID GALLERY) -->
+<section class="section memories" id="memories" aria-labelledby="memoriesTitle">
+  <div class="container">
+   <div class="album-header">
+     <div class="reveal">
+       <span class="eyebrow">05 · Dil Ke Paas</span>
+       <h2 class="section-heading" id="memoriesTitle">Yaadon ki ek gallery.<br><em>A soft corner.</em></h2>
+     </div>
+     <p class="intro reveal">Kuch pal yaad aate hain toh dil narm ho jaata hai. Yahan 6 memories ki jagah rakhi hai.</p>
+   </div>
+   <div class="gallery" id="gallery" aria-label="Six spaces for memories"></div>
+   <p class="album-note reveal">some moments stay, very quietly. ♡</p>
+  </div>
+</section>
+
+<!-- ========================================================
+     06 · "MERA WADA" / CONCRETE CHANGES
+     ======================================================== -->
+<section class="section wishes center" id="promises" aria-labelledby="promisesTitle">
+  <div class="container">
+    <span class="eyebrow reveal">06 · Words Se Aage</span>
+    <h2 class="section-heading reveal" id="promisesTitle">Sorry ke saath saath,<br><em>mera ek pakka wada.</em></h2>
+    <p class="intro reveal">Sirf kehne se kuch theek nahi hota. Mujhe apne behave aur apne tareeke mein yeh badlaav laane hain.</p>
+    
+    <div class="promise-grid">
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">⏸️</span>
+        <span class="promise-num">Wada 01</span>
+        <h3>5-Second Pause</h3>
+        <p>Gusse ya hurt hone par turant react nahi karna. 5 second ruk kar sochna taaki meri aawaz kabhi dard na bane.</p>
+      </div>
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">👂</span>
+        <span class="promise-num">Wada 02</span>
+        <h3>Pehle Sunna</h3>
+        <p>Apni safai dene ya argument jeetne ke bajaye, pehle tumhari baat poori sunna — bina interrupt kiye.</p>
+      </div>
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">🛡️</span>
+        <span class="promise-num">Wada 03</span>
+        <h3>Space Ki Izzat</h3>
+        <p>Agar tumhe shaanti ya waqt chahiye, toh bina baar-baar pareshan kiye us boundary ki poori respect karna.</p>
+      </div>
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">🌸</span>
+        <span class="promise-num">Wada 04</span>
+        <h3>Hamesha Narmi</h3>
+        <p>Chahe situation kitni bhi mushkil ho, shabdon mein hamesha tehzeeb, narmi aur care rakhna.</p>
+      </div>
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">🚫</span>
+        <span class="promise-num">Wada 05</span>
+        <h3>No Guilt or Pressure</h3>
+        <p>Apne darr ya bechaini ki wajah se kabhi tumhe guilt-trip ya reply karne ka pressure nahi daalunga.</p>
+      </div>
+      <div class="promise-card reveal">
+        <span class="promise-badge-pill">✓ Pakka Wada</span>
+        <span class="promise-icon">🤍</span>
+        <span class="promise-num">Wada 06</span>
+        <h3>Tumhari Choice Sabse Pehle</h3>
+        <p>Tum jo bhi faisla lo — chahe baat karna, dosti ya doori — uski dil se hamesha poori izzat rahegi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     07 · THODA SUKOON / VIRTUAL WARM HUG & CALM SPACE
+     ======================================================== -->
+<section class="hug-section" id="sukoon">
+  <div class="container">
+    <div class="hug-widget reveal">
+      <span class="eyebrow" style="margin-bottom:12px">Thoda Sukoon · Just for You</span>
+      <h3 class="hug-title">Harshu, agar kabhi dil thak jaaye…</h3>
+      <p class="hug-subtitle">Bina kisi sawaal ke, bina kisi ladai ya shikayat ke. Sirf thoda sukoon aur ek pyara, gentle hug.</p>
+      
+      <div class="hug-cute-sticker" aria-hidden="true">
+        <span class="sticker-bear">🧸</span>
+        <span class="sticker-heart">💖</span>
+        <span class="sticker-sparkle">🌸</span>
+      </div>
+
+      <div class="hug-stage">
+        <div class="hug-pulse-ring ring-1" aria-hidden="true"></div>
+        <div class="hug-pulse-ring ring-2" aria-hidden="true"></div>
+        <button class="hug-button" id="hugBtn" type="button" aria-label="Hold button for 3 seconds for a warm hug">
+          <span class="hug-icon" id="hugIcon">♡</span>
+        </button>
+      </div>
+
+      <div class="hug-progress-wrap">
+        <div class="hug-progress-bar"><div class="hug-progress-fill" id="hugFill"></div></div>
+        <span class="hug-hint-pill" id="hugHintBadge">Press & hold for 3 seconds</span>
+      </div>
+
+      <div class="hug-message-box" id="hugMessageBox">
+        <p class="hug-message" id="hugMessage" aria-live="polite">Dheere se button ko press karke hold karein…</p>
+      </div>
+
+      <div class="hug-result-card" id="hugResultCard" hidden>
+        <span class="hug-sparkle">🌸</span>
+        <h4>Breathe out, Harshu…</h4>
+        <p>Ek warm, gentle virtual hug sirf tumhare liye. Tumhara sukoon, tumhari muskaan aur tumhari mental peace sabse zaroori hai. Sab theek ho jayega, dheere-dheere. Apne aap ko sambhaalo aur apna khayal rakho. ♡</p>
+        <button type="button" class="hug-again-btn" id="hugAgainBtn">Take another hug ♡</button>
+      </div>
+
+      <!-- Optional Calm 1-Minute Breathing Space -->
+      <div class="breathing-space" id="breathingSpace">
+        <button type="button" class="breathe-toggle-btn" id="breatheToggleBtn">
+          <span>🌿</span> Need a 1-Minute Calm Breathing Space?
+        </button>
+        <div class="breathe-guide-box" id="breatheGuideBox" hidden>
+          <div class="breathe-circle" id="breatheCircle">
+            <span class="breathe-state-text" id="breatheStateText">Inhale</span>
+          </div>
+          <p class="breathe-guide-note" id="breatheGuideNote">Saans andar lo... relax your shoulders (4s)</p>
+          <button type="button" class="breathe-close-btn" id="breatheCloseBtn">Done / Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · THE MAIN APOLOGY LETTER & DIARY -->
+<section class="section letter-section" id="letter" aria-labelledby="letterTitle">
+  <div class="container">
+   <div class="letter-intro">
+     <div class="reveal">
+       <span class="eyebrow">08 · Mere Dil Se, Tum Tak</span>
+       <h2 class="section-heading" id="letterTitle">Kuch baatein,<br><em>dil se likhi hui.</em></h2>
+       <p class="intro">Jo kehna pehle chahiye tha.<br>Woh aaj, zyada honesty, narmi aur care ke saath.</p>
+     </div>
+     <div class="book-invite reveal">
+       <span aria-hidden="true">♡</span>
+       <button type="button" class="book-open" id="openBook">Open my little diary</button>
+       <small>one page at a time.<br>at your own pace.</small>
+     </div>
+   </div>
+   
+   <div class="reader-tools">
+     <button type="button" id="readingMode" aria-pressed="false"><span aria-hidden="true">☾</span>Quiet reading</button>
+     <button type="button" id="textSize" aria-pressed="false"><span aria-hidden="true">Aa</span>Larger text</button>
+   </div>
+   
+   <div class="letter-shell reveal">
+     <article class="letter-sheet">
+       <span class="letter-stamp" aria-hidden="true">♡</span>
+       <span class="letter-date">For you, with honesty & care</span>
+       <h3>Dear <span data-her-name>Harshu</span>,</h3>
+       <p>Main jaanta hoon ki shayad ab meri baaton ya mere hone ki koi value nahi bachi tumhare liye. Shayad tum mujhe ab kuch bhi nahi manti, aur tumhare dil mein mere liye sab khatam ho chuka hai. Lekin main yeh sab tumhe kisi tarah convince karne ya manane ke pressure se nahi keh raha. <strong>Main bas isliye yeh likh raha hoon kyunki jo maine gusse mein kaha, woh meri sabse badi galti thi — aur mujhe uska sach mein dil se afsos hai.</strong></p>
+       <p>Jab humare beech sab bigad raha tha, main apne darr aur apne dard ko sambhal nahi paaya. Maine keh diya, “Jao, mujhe bhi nahi rehna.” Sach yeh hai ki main tumhe khona nahi chahta tha. Lekin us darr ka matlab yeh nahi tha ki main tumse us tarah rude behave karun. Jo dard mera tha, uska dukh maine tumhe diya.</p>
+       <p>Aaj sochta hoon toh lagta hai, mujhe apni baat jeetne ki jagah us pal ko sambhalna chahiye tha. Thoda rukna chahiye tha. Tumhe sunna chahiye tha. Jo baat narmi se kahi jaa sakti thi, maine use gusse mein keh kar sab tod diya.</p>
+       <p>Tumhari yaad aati hai. Tumhare saath ki chhoti si baatein bhi mere liye chhoti nahi thi. Main un yaadon ko pyaar se rakhna chahta hoon. <strong>Un achchhe palon ke liye thank you.</strong> Unka apna ek soft corner rahega.</p>
+       <p>Jab doori badhi aur jawab aane band ho gaye, main darr ke maare baar-baar koshish karta raha. Ab mujhe samajh aaya ki <strong>meri urgency tumhari zimmedari nahi ban sakti.</strong> Agar tum mujhe pehle jaisa nahi maanti, toh woh tumhara haq hai. Main tumhari marzi ko respect karta hoon.</p>
+       <p>Main sirf apni galti kehna nahi, usse seekhna bhi chahta hoon. Apne shabdon mein zyada tehzeeb, gusse ke beech ek pause, aur kisi ki baat sunne ki patience. Main bas ek better insaan banne ki koshish kar raha hoon.</p>
+       <p>Agar kabhi tum khud baat karna chaho, main bina kisi argument ke sununga. Aur aaj agar tum bas yeh letter padhkar band karna chaho, woh bhi theek hai. Tumhari khushi aur tumhara sukoon mere liye sabse zaroori hai.</p>
+       <p><strong>I'm sorry, <span data-her-name>Harshu</span>.</strong> Jo kehna pehle chahiye tha, woh aaj dil se keh raha hoon. Tumhe turant reply karne, mujhe maaf karne, ya kuch decide karne ki koi majboori nahi hai.</p>
+       <div class="signature">With a softer heart,<br><span data-your-name>Suraj</span> ♡<small>And a sincere sorry.</small></div>
+     </article>
+   </div>
+   <p class="letter-after reveal">a little paper. a lot of feeling.</p>
+  </div>
+</section>
+
+<!-- 11 · WAX-SEAL SECRET ENVELOPE -->
+<section class="section secret" id="secret" aria-labelledby="secretTitle">
+  <div class="container secret-layout">
+   <div class="secret-copy reveal">
+     <span class="eyebrow">09 · Sirf Tumhare Liye</span>
+     <h2 class="secret-heading" id="secretTitle">Ek chhota envelope.<br><em>Thoda aur dil.</em></h2>
+     <p class="intro">Kuch baatein is chhote se envelope mein rakhi hain. Jab tumhara mann ho, tab tap karke kholna.</p>
+     <span class="secret-small">Your pace. Your choice. Always.</span>
+   </div>
+   <div class="envelope-stage reveal">
+     <button class="envelope" type="button" id="envelopeButton" aria-label="Open the secret message">
+       <span class="folds" aria-hidden="true"></span>
+       <span class="flap" aria-hidden="true"></span>
+       <span class="seal" aria-hidden="true">♡</span>
+       <span class="address" aria-hidden="true">for <span data-her-name>Harshu</span>, with care.</span>
+     </button>
+     <p class="envelope-caption">a little note, sealed with feeling.</p>
+     <button class="secret-link" type="button" id="readSecret">Open the letter</button>
+   </div>
+  </div>
+</section>
+
+<!-- Ending Heart Thank You -->
+<section class="ending" id="ending" aria-labelledby="thanksTitle">
+  <button class="ending-heart" id="heartButton" type="button" aria-label="Release a few gentle hearts">♡</button>
+  <h2 id="thanksTitle">Padhne ke liye,<br><em>thank you.</em></h2>
+  <p><span data-her-name>Harshu</span>, meri maafi tumhare jawab par depend nahi karti. Jo kaha uska afsos hai, aur jo hurt hua uski zimmedari meri hai.</p>
+  <p class="ending-note">Ek dil se sorry.<br>Bas tumhare liye.</p>
+  <div class="last-sign">— <span data-your-name>Suraj</span> ♡</div>
+</section>
+
+<!-- ========================================================
+     10 · EK PYAARI SHURUAAT (RESTART & REPLY SECTION)
+     ======================================================== -->
+<section class="restart" id="restart" aria-labelledby="restartTitle">
+ <img class="restart-scene" src="assets/quiet-garden.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
+ <div class="container">
+  <div class="restart-header reveal">
+    <span class="eyebrow">A Little Hope · Sirf Tumhare Liye ♡</span>
+    <h2 class="section-heading" id="restartTitle">Harshu, ek baar phir…<br><em>ek pyaari shuruaat?</em></h2>
+    <p class="restart-hand">Sirf agar tum bhi chaho, <span data-her-name>Harshu</span>…</p>
+    <p class="intro">Main jaanta hoon ki shayad ab meri baaton ya mere hone par tumhara vishwas toot chuka ho. Par sach yeh hai ki main tumhe khona nahi chahta. Maine jo gusse mein galat bola, uska har ek pal mujhe andar se guilt deta hai. Tum meri zindagi ka sabse khoobsurat hissa rahi ho, aur main bina kisi ladai ke bas ek baar sab theek karna chahta hoon.</p>
+    <p class="intro">Pehla kadam koi bada wada ya pressure nahi hai — sirf ek shant si, bina ladai wali conversation. Jahan hum dono ek doosre ko sun sakein, samajh sakein, aur dheere se sab theek kar sakein. Agar tumhe waqt chahiye, main intezaar karunga. Aur agar tum restart nahi chahti, toh main tumhare faisle ki bhi hamesha dil se poori izzat karunga.</p>
+    <div class="restart-steps" aria-label="A gentler beginning">
+      <span>🌸 Pehle ek doosre ko bina gusse ke sunna</span>
+      <span>☕ Puraani ladai bhool kar samajhna</span>
+      <span>💖 Dono ki marzi se dheere se aage badhna</span>
+    </div>
+  </div>
+  
+  <!-- Suraj's Heartfelt Confession Card -->
+  <div class="suraj-confession-card reveal">
+    <span class="confession-badge">Ek Aakhri Baat · Dil Se</span>
+    <h3 class="confession-title">“Harshu, tum meri aadat nahi… mera sukoon ho.”</h3>
+    <p class="confession-quote">“Log kehte hain jo toot gaya woh jud nahi sakta, par mujhe vishwas hai ki humare beech ka rishta itna kamzor nahi tha. Main badal raha hoon, apne gusse par kabu karna seekh raha hoon — sirf isliye taaki tumhare chehre ki pyari muskaan kabhi meri wajah se na chhine. <strong>Agar tumne mujhe ek aakhri mauka diya, toh main tumhe kabhi regret nahi hone dunga.</strong>”</p>
+    <div class="confession-foot">
+      <span>Tum mere liye bohot precious ho. Hamesha.</span>
+      <strong>— Hamesha tumhara, Suraj ♡</strong>
+    </div>
+  </div>
+
+  <form class="reply-card" id="replyForm" aria-labelledby="replyTitle">
+   <div class="reply-heading">
+     <span aria-hidden="true">💌</span>
+     <div>
+       <h3 id="replyTitle">Ab, tumhare words…</h3>
+       <p>Jo tum sach mein feel karti ho. Chahe gussa ho ya narmi, bina kisi darr ke keh sakti ho.</p>
+     </div>
+   </div>
+   <fieldset>
+     <legend>Abhi tum kya kehna chahti ho, Harshu?</legend>
+     <div class="reply-options">
+      <label class="reply-option">
+        <input type="radio" name="replyChoice" value="talk">
+        <strong>Chalo, ek baar baat karte hain ☕</strong>
+        <small>Bina kisi ladai ke, shaanti se ek doosre ko sunte hain.</small>
+      </label>
+      <label class="reply-option">
+        <input type="radio" name="replyChoice" value="friends">
+        <strong>Dheere-dheere baat karte hain 🌸</strong>
+        <small>Bina kisi pressure ke, ek gentle fresh start.</small>
+      </label>
+      <label class="reply-option">
+        <input type="radio" name="replyChoice" value="time">
+        <strong>Thoda waqt chahiye, Suraj ⏳</strong>
+        <small>Abhi koi jaldi nahi, main intezaar karunga jab tak tum chaho.</small>
+      </label>
+      <label class="reply-option">
+        <input type="radio" name="replyChoice" value="listen">
+        <strong>Gussa hoon par baat sun li 🕊️</strong>
+        <small>Tumhara gussa bilkul sahi hai, par thank you ki tumne yeh padha.</small>
+      </label>
+     </div>
+   </fieldset>
+   <p class="reply-hint" id="replyHint" aria-live="polite">Upar kisi bhi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡</p>
+   
+   <label class="message-label" for="replyMessage">Apne words mein kuch kehna chaho… <span>(optional)</span></label>
+   <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi tumhare dil mein ho — chahe gussa, shikayat ya koi baat — bina kisi hesitation ke yahan likh sakti ho. Main har ek lafz dil se sununga… ♡" autocomplete="off"></textarea>
+   
+   <p class="reply-privacy" id="replyPrivacy">Yeh reply automatically kisi ko nahi jaata. Neeche button par tap karke tum khud Suraj ko WhatsApp par bhej sakti ho ya message copy kar sakti ho.</p>
+   
+   <div class="reply-actions">
+     <a class="btn-whatsapp-hero disabled" id="whatsappReply" href="#" target="_blank" rel="noopener">
+       <span>💬</span> Suraj ko WhatsApp par bhej do
+     </a>
+     <div class="reply-actions-row">
+       <button type="button" id="copyReply" disabled>Copy reply message 📋</button>
+       <button type="button" class="clear-reply" id="clearReply">Clear text ↺</button>
+     </div>
+   </div>
+   
+   <p class="reply-status" id="replyStatus" role="status" aria-live="polite"></p>
+   
+   <div class="reply-preview" id="replyPreview" hidden>
+     <h4><label for="replyText">Tumhara reply message — exactly as it will be sent</label></h4>
+     <textarea id="replyText" rows="5" readonly spellcheck="false"></textarea>
+   </div>
+  </form>
+  
+  <p class="restart-final">Umeed hai. Jaldi nahi.<br>Tumhari marzi, hamesha. ♡</p>
+ </div>
+</section>
+</main>
+
+<!-- Chapter Dock Navigation Bar -->
+<nav class="chapter-dock" aria-label="Letter chapters">
+ <a href="#beginning" class="active" aria-current="location"><span class="nav-dot" aria-hidden="true"></span>Start</a>
+ <a href="#validation"><span class="nav-dot" aria-hidden="true"></span>Gussa</a>
+ <a href="#openWhen"><span class="nav-dot" aria-hidden="true"></span>Envelopes</a>
+ <a href="#memories"><span class="nav-dot" aria-hidden="true"></span>Yaadein</a>
+ <a href="#sukoon"><span class="nav-dot" aria-hidden="true"></span>Sukoon</a>
+ <a href="#promises"><span class="nav-dot" aria-hidden="true"></span>Wada</a>
+ <a href="#letter"><span class="nav-dot" aria-hidden="true"></span>Letter</a>
+ <a href="#restart"><span class="nav-dot" aria-hidden="true"></span>Restart</a>
+</nav>
+
+<footer>
+ <span class="footer-name">for <span data-her-name>Harshu</span> ♡</span>
+ A quiet letter. A sincere sorry. A little hope.<br>With care, <span data-your-name>Suraj</span>.
+</footer>
+
+<!-- MODALS / DIALOGS -->
+<!-- 1. Secret Message Dialog -->
+<dialog class="letter-dialog" id="secretOverlay" aria-labelledby="secretDialogTitle">
+ <div class="dialog-bar"><span>Only for <span data-her-name>Harshu</span> ♡</span><button class="dialog-close" type="button" data-close aria-label="Close">×</button></div>
+ <div class="dialog-content">
+  <h2 id="secretDialogTitle">The quietest part<br>of my heart.</h2>
+  <div class="secret-body" id="secretBody"></div>
+  <div class="dialog-sign">With care, <span data-your-name>Suraj</span> ♡</div>
+ </div>
+</dialog>
+
+<!-- 2. Photo Memory Dialog -->
+<dialog class="letter-dialog photo-dialog" id="photoOverlay" aria-labelledby="photoTitle">
+ <div class="dialog-bar"><span>A little memory</span><button class="dialog-close" type="button" data-close aria-label="Close">×</button></div>
+ <div class="dialog-content">
+  <div class="photo-preview" id="photoPreview"></div>
+  <h2 id="photoTitle">A little memory</h2>
+  <p id="photoNote" style="font-size:22px;color:var(--rose);font-family:var(--hand);text-align:center;margin:8px 0 0;line-height:1.4"></p>
+ </div>
+ <div class="photo-controls">
+  <button type="button" id="photoPrev" aria-label="Previous">Previous</button>
+  <span id="photoCounter" role="status" aria-live="polite">1 of 6</span>
+  <button type="button" id="photoNext" aria-label="Next">Next</button>
+ </div>
+</dialog>
+
+<!-- 3. Book Diary Dialog -->
+<dialog class="letter-dialog book-dialog" id="bookOverlay" aria-labelledby="bookTitle">
+ <div class="dialog-bar"><span>A little diary, for <span data-her-name>Harshu</span> ♡</span><button class="dialog-close" type="button" data-close aria-label="Close">×</button></div>
+ <article class="book-sheet">
+  <span class="book-kicker" id="bookChapter">A sincere sorry</span>
+  <h2 id="bookTitle">Dear <span data-her-name>Harshu</span>,</h2>
+  <div class="book-page-text" id="bookBody"></div>
+  <div class="book-sign">— <span data-your-name>Suraj</span> ♡</div>
+ </article>
+ <div class="book-progress" aria-hidden="true"><span id="bookProgress"></span></div>
+ <div class="book-controls">
+  <button type="button" id="bookPrev" aria-label="Previous page">Previous</button>
+  <span id="bookCounter" role="status" aria-live="polite">Page 1 of 5</span>
+  <button type="button" id="bookNext" aria-label="Next page">Next</button>
+ </div>
+</dialog>
+
+<!-- 4. Open When Dialog -->
+<dialog class="letter-dialog open-when-dialog" id="openWhenOverlay" aria-labelledby="openWhenTitle">
+ <div class="dialog-bar"><span>Virtual Letter Capsule ♡</span><button class="dialog-close" type="button" data-close aria-label="Close">×</button></div>
+ <div class="dialog-content">
+  <h2 id="openWhenTitle">A message for you</h2>
+  <div class="open-when-text" id="openWhenBody"></div>
+  <div class="dialog-sign">— Always here, <span data-your-name>Suraj</span> ♡</div>
+ </div>
+</dialog>
+
+<script>
+// ========================================================
+// ⚙️ CONFIGURATION — SURAJ & HARSHU
+// ========================================================
+const CONFIG = {
+  herName: 'Harshu',
+  yourName: 'Suraj',
+  whatsappNumber: '', // Optional: Suraj's 10-digit number with country code, e.g. '919876543210'
+  photos: [
+    { 
+      file: 'photos/photo1.jpg', 
+      caption: 'That precious smile ✌️♡',
+      note: 'Tumhari yeh khul kar muskurane wali aadat... duniya ki sabse pyari aur genuine cheez lagti hai.',
+      position: 'center 32%'
+    },
+    { 
+      file: 'photos/photo2.jpg', 
+      caption: 'Hum dono, us din ♡',
+      note: 'Khula aasman, pedon ki thandi chhaon aur tumhara saath... ek bohot pyara aur sukoon bhara din.',
+      position: 'center 50%'
+    },
+    { 
+      file: 'photos/photo3.jpg', 
+      caption: 'Our cool vibes 😎✨',
+      note: 'Matching sunglasses pehan kar swag dikhana... kitni hasi aayi thi humein us din!',
+      position: 'center 56%'
+    },
+    { 
+      file: 'photos/photo4.jpg', 
+      caption: 'Candid & peaceful 🌸',
+      note: 'Bina kisi dikhawe ke, tumhara bilkul innocent aur real andaaz.',
+      position: 'center 36%'
+    },
+    { 
+      file: 'photos/photo5.jpg', 
+      caption: 'Little hearts on you ♡',
+      note: 'Yeh photo dekh kar hamesha chehre par halki si muskaan aur dil mein warmth aa jaati hai.',
+      position: 'center 50%'
+    },
+    { 
+      file: 'photos/photo6.jpg', 
+      caption: 'Your goofy side 😂❤️',
+      note: 'Tumhara yeh funny andaaz... chahe kitna bhi gussa ho, yeh dekh kar koi bhi muskura de!',
+      position: 'center 52%'
+    },
+  ],
+
+  // 🔐 SECRET MESSAGE
+  secretMessage: `Dear Harshu,
+
+Yeh ek aisi jagah hai jahan main bina kisi ladai ke, bina interrupt kiye aur bina koi expectation rakhe apni baat keh sakta hoon.
+
+Main jaanta hoon ki ab tum mujhse baat nahi karna chahti aur shayad tumhari nazar mein meri koi jagah nahi rahi. Main tumhe kisi cheez ke liye force nahi kar raha. Mujhe sabse zyada afsos us pal ka hai jab main gusse mein aise shabd bol gaya jo tum deserve nahi karti thi. Main apni baaton ko kabhi justify nahi karunga.
+
+Humare saath ke achchhe lamhe mere dil mein hamesha ek soft corner rakhenge. Main yeh nahi keh raha ki un yaadon ke liye tumhe kuch badalna chahiye. Bas un pyare dino ke liye sincerely thank you.
+
+Agar tumne aage badhne ka decision liya hai, toh main jaanta hoon woh tumhara haq hai. Meri taraf se sorry kehne ke liye tumhe mujhe reply karne ya second chance dene ki koi majboori nahi hai.
+
+Mujhe apni galti se seekhna hai aur ek better insaan banna hai — apne shabdon mein bhi aur apne behavior mein bhi.
+
+Take care, Harshu. Dil se sorry. ♡
+
+— Suraj`,
+
+  // 💌 "OPEN WHEN..." CAPSULES CONTENT
+  openWhenLetters: {
+    mad: `Dear Harshu,
+
+Agar tum mujh par gussa ho, toh sach yeh hai ki tumhara gussa 100% sahi hai. Maine gusse mein jo kaha, uski koi safai nahi di jaa sakti.
+
+Main yeh nahi bolunga ki "chhod na yaar, bhool ja". Dil dukhne par bhulna aasan nahi hota. Bas itna kehna hai ki chahe tum mujhse baat na karo, meri taraf se tumhare liye hamesha respect aur care rahegi.
+
+Take your time. Jab tak gussa shant na ho, koi jaldi nahi. I am really sorry.`,
+
+    tired: `Dear Harshu,
+
+Agar aaj ka din bohot thaka dene wala raha ho, ya kisi cheez ne pareshan kiya ho — toh ek gehra saans lo. 
+
+Tum bohot strong ho, par har waqt sab kuch sambhalna zaroori nahi hota. Thoda paani piyo, rest karo, aur kisi cheez ki chinta mat karo. Tumhara sukoon sabse pehle hai.
+
+Sending you warmth. Kal ka din naya aur behtar hoga. ♡`,
+
+    sleep: `Dear Harshu,
+
+Agar raat ke 2 baje neend nahi aa rahi aur dimag mein hazar baatein ghum rahi hain… toh bas itna yaad rakhna ki tum akeli nahi ho.
+
+Aankhein band karo, phone ko thoda door rakho aur lambi saans lo. Jo baatein pareshan kar rahi hain, unhe subah ke liye chhod do. Sab kuch theek ho jayega.
+
+Good night and sleep peacefully. ♡`,
+
+    memories: `Dear Harshu,
+
+Yaad hai jab hum bina kisi fikr ke ghanto baat karte the? Chhoti-chhoti baaton par hasna, ek doosre ko chhedna… woh pal sach mein bohot khubsurat the.
+
+Chahe waqt kitna bhi badal jaye, un achchhe lamho ki chamak mere dil mein kabhi kam nahi hogi. Un pyari yaadon ke liye dil se shukriya. ♡`
+  }
+};
+
+const $ = s => document.querySelector(s);
+const body = document.body;
+
+// Personalize Name attributes
+document.querySelectorAll('[data-her-name]').forEach(el => el.textContent = CONFIG.herName);
+document.querySelectorAll('[data-your-name]').forEach(el => el.textContent = CONFIG.yourName);
+document.title = `For ${CONFIG.herName} — A Quiet Letter ♡`;
+$('#secretBody').textContent = CONFIG.secretMessage;
+
+// ========================================================
+// ATMOSPHERE PREFERENCES (PALETTE, SCENE, PARTICLES)
+// ========================================================
+const preferenceKey = 'harshu-letter-v2-prefs';
+let preferences = {};
+try { preferences = JSON.parse(localStorage.getItem(preferenceKey) || '{}'); } catch {}
+function savePref(k, v) { preferences[k] = v; try { localStorage.setItem(preferenceKey, JSON.stringify(preferences)); } catch {} }
+
+function applyMood(mood) {
+  const valid = ['pink','blue','lilac','peach'].includes(mood) ? mood : 'pink';
+  body.classList.remove('mood-blue','mood-lilac','mood-peach');
+  if (valid !== 'pink') body.classList.add('mood-' + valid);
+  $('#skyMood').value = valid;
+  savePref('mood', valid);
+}
+applyMood(preferences.mood);
+$('#skyMood').addEventListener('change', e => applyMood(e.target.value));
+
+const sceneAssets = { dawn: 'assets/rose-dawn.webp', clouds: 'assets/pink-sky.webp', garden: 'assets/quiet-garden.webp' };
+function applyScene(sc) {
+  const scene = Object.hasOwn(sceneAssets, sc) ? sc : 'dawn';
+  if ($('#heroScene').getAttribute('src') !== sceneAssets[scene]) $('#heroScene').src = sceneAssets[scene];
+  body.dataset.scene = scene;
+  document.querySelectorAll('[data-scene]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scene === scene)));
+  savePref('scene', scene);
+}
+applyScene(preferences.scene);
+document.querySelectorAll('[data-scene]').forEach(b => b.addEventListener('click', () => applyScene(b.dataset.scene)));
+
+// ========================================================
+// FLOATING TRANSLUCENT HEARTS ENGINE
+// ========================================================
+const heartsContainer = $('#hearts');
+function setupFloatingHearts() {
+  heartsContainer.replaceChildren();
+  const count = window.innerWidth < 600 ? 8 : 14;
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'drifting-heart';
+    heart.textContent = '♡';
+    heart.style.setProperty('--left', (3 + (i * 29) % 94) + '%');
+    heart.style.setProperty('--size', (16 + (i % 3) * 6) + 'px');
+    heart.style.setProperty('--duration', (20 + (i % 4) * 5) + 's');
+    heart.style.setProperty('--delay', (-i * 3.8) + 's');
+    heart.style.setProperty('--drift', (i % 2 === 0 ? 38 : -35) + 'px');
+    heartsContainer.appendChild(heart);
+  }
+}
+setupFloatingHearts();
+
+const heartsButton = $('#petalsToggle');
+const heartsState = $('#petalsState');
+function reflectHearts(enabled) {
+  heartsButton.setAttribute('aria-pressed', String(enabled));
+  heartsState.textContent = enabled ? 'ON' : 'OFF';
+  heartsButton.setAttribute('aria-label', `Turn floating hearts ${enabled ? 'off' : 'on'}`);
+  body.classList.toggle('hearts-off', !enabled);
+}
+reflectHearts(preferences.hearts !== false);
+heartsButton.addEventListener('click', () => {
+  const enabled = heartsButton.getAttribute('aria-pressed') !== 'true';
+  reflectHearts(enabled);
+  savePref('hearts', enabled);
+});
+
+// Top Fairy Lights
+for (let i = 0; i < 22; i++) {
+  const l = document.createElement('i');
+  l.style.setProperty('--delay', (-i * .3) + 's');
+  $('#lightString').appendChild(l);
+}
+$('#lightsToggle').addEventListener('click', () => {
+  const cur = $('#lightsToggle').getAttribute('aria-pressed') === 'true';
+  $('#lightsToggle').setAttribute('aria-pressed', String(!cur));
+  $('#lightsState').textContent = !cur ? 'ON' : 'OFF';
+  body.classList.toggle('edge-off', cur);
+  savePref('lights', !cur);
+});
+
+// Toast Notice Helper
+let noticeTimer;
+function notice(msg) {
+  const el = $('#toast');
+  clearTimeout(noticeTimer);
+  el.textContent = msg;
+  el.hidden = false;
+  noticeTimer = setTimeout(() => el.hidden = true, 4500);
+}
+
+// ========================================================
+// 🌧️ WEB AUDIO AMBIENT RAIN GENERATOR (OFFLINE & SYNTHESIZED)
+// ========================================================
+let audioCtx = null, rainGain = null, rainActive = false;
+function initRainAudio() {
+  if (audioCtx) return;
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  audioCtx = new AudioContext();
+  
+  // Create pink noise buffer for realistic rain
+  const bufferSize = audioCtx.sampleRate * 2;
+  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+  const output = noiseBuffer.getChannelData(0);
+  let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+  for (let i = 0; i < bufferSize; i++) {
+    const white = Math.random() * 2 - 1;
+    b0 = 0.99886 * b0 + white * 0.0555179;
+    b1 = 0.99332 * b1 + white * 0.0750759;
+    b2 = 0.96900 * b2 + white * 0.1538520;
+    b3 = 0.86650 * b3 + white * 0.3104856;
+    b4 = 0.55000 * b4 + white * 0.5329522;
+    b5 = -0.7616 * b5 - white * 0.0168980;
+    output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.05;
+    b6 = white * 0.115926;
+  }
+  
+  const whiteNoise = audioCtx.createBufferSource();
+  whiteNoise.buffer = noiseBuffer;
+  whiteNoise.loop = true;
+  
+  const filter = audioCtx.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 1200;
+  
+  rainGain = audioCtx.createGain();
+  rainGain.gain.value = 0;
+  
+  whiteNoise.connect(filter);
+  filter.connect(rainGain);
+  rainGain.connect(audioCtx.destination);
+  whiteNoise.start(0);
+}
+
+const rainBtn = $('#rainToggle');
+rainBtn.addEventListener('click', async () => {
+  try {
+    initRainAudio();
+    if (audioCtx.state === 'suspended') await audioCtx.resume();
+    rainActive = !rainActive;
+    rainBtn.setAttribute('aria-pressed', String(rainActive));
+    $('#rainState').textContent = rainActive ? 'ON' : 'OFF';
+    body.classList.toggle('rain-on', rainActive);
+    const target = Number($('#rainVolume').value) / 100 * 0.35;
+    rainGain.gain.setTargetAtTime(rainActive ? target : 0, audioCtx.currentTime, 0.4);
+  } catch (e) {
+    notice('Rain ambience enable nahi hua browser permission ki wajah se.');
+  }
+});
+$('#rainVolume').addEventListener('input', e => {
+  const val = Number(e.target.value);
+  $('#rainVolumeValue').textContent = val + '%';
+  if (rainGain && rainActive) rainGain.gain.setTargetAtTime((val / 100) * 0.35, audioCtx.currentTime, 0.1);
+});
+
+// ========================================================
+// ♫ BACKGROUND SOUNDTRACK CONTROLLER (AUTOPLAY & RESUME)
+// ========================================================
+const audio = $('#soundtrack');
+const musicBtn = $('#musicToggle');
+const musicTimeKey = 'harshu-music-time-pos';
+let musicActive = true; // Enabled by default on open
+let musicReq = 0;
+let fadeTimer;
+let currentVol = Number.isFinite(preferences.volume) ? preferences.volume : 0.45;
+
+$('#volume').value = Math.round(currentVol * 100);
+$('#volumeValue').textContent = Math.round(currentVol * 100) + '%';
+
+function getInitialOffset(songSrc) {
+  if (songSrc && songSrc.includes('choo-lo-clip')) return 0;
+  return 40.0; // 0:40 sec where the iconic emotional vocals begin
+}
+
+function getSavedPosition(songSrc) {
+  const minOffset = getInitialOffset(songSrc);
+  try {
+    const saved = parseFloat(localStorage.getItem(musicTimeKey));
+    if (Number.isFinite(saved) && saved >= minOffset && (!audio.duration || saved < audio.duration - 4)) {
+      return saved;
+    }
+  } catch {}
+  return minOffset;
+}
+
+function applyStartOffset(songSrc) {
+  const targetTime = getSavedPosition(songSrc);
+  try {
+    if (Math.abs(audio.currentTime - targetTime) > 0.5) {
+      audio.currentTime = targetTime;
+    }
+  } catch {}
+}
+
+function fadeAudio(target, pause = false) {
+  cancelAnimationFrame(fadeTimer);
+  const start = performance.now(), from = audio.volume;
+  const step = now => {
+    const p = Math.min(1, (now - start) / 500);
+    audio.volume = from + (target - from) * p;
+    if (p < 1) fadeTimer = requestAnimationFrame(step);
+    else if (pause) audio.pause();
+  };
+  fadeTimer = requestAnimationFrame(step);
+}
+
+function updateMusicUI(isPlaying) {
+  musicBtn.setAttribute('aria-pressed', String(isPlaying));
+  $('#musicState').textContent = isPlaying ? 'ON' : 'OFF';
+  body.classList.toggle('music-on', isPlaying);
+  const songName = audio.src.includes('choo-lo-clip') 
+    ? 'Playing · Choo Lo (Chorus Clip)' 
+    : audio.src.includes('soundtrack') 
+    ? 'Playing · Choo Lo (The Local Train)' 
+    : 'Playing · Pink Sky Piano';
+  $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, whenever you want.';
+}
+
+async function playMusic() {
+  const req = ++musicReq;
+  try {
+    if (audio.currentTime < getInitialOffset(audio.src)) {
+      applyStartOffset(audio.src);
+    }
+    audio.volume = currentVol;
+    await audio.play();
+    if (req !== musicReq) return;
+    musicActive = true;
+    updateMusicUI(true);
+  } catch (e) {
+    // If play is blocked by autoplay policy, keep UI ON and wait for first interaction
+    musicActive = true;
+    updateMusicUI(true);
+    armAutoplayFallback();
+  }
+}
+
+function pauseMusic() {
+  musicReq++;
+  musicActive = false;
+  updateMusicUI(false);
+  fadeAudio(0, true);
+}
+
+musicBtn.addEventListener('click', () => {
+  if (!musicActive || audio.paused) {
+    musicActive = true;
+    playMusic();
+  } else {
+    pauseMusic();
+  }
+});
+
+$('#volume').addEventListener('input', e => {
+  currentVol = Number(e.target.value) / 100;
+  $('#volumeValue').textContent = Math.round(currentVol * 100) + '%';
+  savePref('volume', currentVol);
+  if (musicActive) audio.volume = currentVol;
+});
+
+const knownSongs = ['soundtrack.mp3', 'assets/choo-lo-clip.mp3', 'assets/pink-sky.mp3'];
+const initialSong = knownSongs.includes(preferences.song) ? preferences.song : 'soundtrack.mp3';
+audio.src = initialSong;
+$('#song').value = initialSong;
+
+$('#song').addEventListener('change', e => {
+  audio.src = e.target.value;
+  savePref('song', e.target.value);
+  try { localStorage.removeItem(musicTimeKey); } catch {}
+  applyStartOffset(audio.src);
+  if (musicActive) playMusic();
+  else updateMusicUI(false);
+});
+
+// Periodic save of playback position (so tab reloads/reopens continue from exact time)
+let lastSaveTime = 0;
+audio.addEventListener('timeupdate', () => {
+  const now = Date.now();
+  if (now - lastSaveTime > 1200 && audio.currentTime >= getInitialOffset(audio.src)) {
+    lastSaveTime = now;
+    try { localStorage.setItem(musicTimeKey, audio.currentTime.toFixed(1)); } catch {}
+  }
+});
+
+// When song loops/ends, restart from 0:40 (where vocals begin)
+audio.addEventListener('ended', () => {
+  audio.currentTime = getInitialOffset(audio.src);
+  audio.play();
+});
+
+// Seek to saved position / 0:40 when metadata is loaded or ready
+audio.addEventListener('loadedmetadata', () => {
+  applyStartOffset(audio.src);
+});
+audio.addEventListener('canplay', () => {
+  if (audio.currentTime < getInitialOffset(audio.src)) {
+    applyStartOffset(audio.src);
+  }
+}, { once: true });
+
+// Autoplay on Website Open
+let fallbackArmed = false;
+function armAutoplayFallback() {
+  if (fallbackArmed) return;
+  fallbackArmed = true;
+  const startOnInteraction = async () => {
+    if (musicActive) {
+      try {
+        if (audio.currentTime < getInitialOffset(audio.src)) applyStartOffset(audio.src);
+        audio.volume = currentVol;
+        await audio.play();
+        updateMusicUI(true);
+      } catch {}
+    }
+    removeFallbackListeners();
+  };
+  function removeFallbackListeners() {
+    window.removeEventListener('pointerdown', startOnInteraction, true);
+    window.removeEventListener('touchstart', startOnInteraction, true);
+    window.removeEventListener('click', startOnInteraction, true);
+    window.removeEventListener('scroll', startOnInteraction, true);
+    window.removeEventListener('keydown', startOnInteraction, true);
+  }
+  window.addEventListener('pointerdown', startOnInteraction, { once: true, capture: true });
+  window.addEventListener('touchstart', startOnInteraction, { once: true, capture: true });
+  window.addEventListener('click', startOnInteraction, { once: true, capture: true });
+  window.addEventListener('scroll', startOnInteraction, { once: true, capture: true });
+  window.addEventListener('keydown', startOnInteraction, { once: true, capture: true });
+}
+
+// Start immediately on load
+if (audio.readyState >= 1) {
+  applyStartOffset(audio.src);
+}
+playMusic();
+
+// ========================================================
+// 03 · "OPEN WHEN..." ENVELOPE MODALS
+// ========================================================
+const openWhenModal = $('#openWhenOverlay');
+const openWhenTitles = {
+  mad: 'When you are mad at me 💌',
+  tired: 'When you had a tiring day 🌧️',
+  sleep: 'When you cannot sleep at 2 AM 🌙',
+  memories: 'When you miss the old times ☕'
+};
+document.querySelectorAll('.open-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const type = card.dataset.open;
+    $('#openWhenTitle').textContent = openWhenTitles[type] || 'A quiet thought';
+    $('#openWhenBody').textContent = CONFIG.openWhenLetters[type] || '';
+    burstHearts(card);
+    openDialog(openWhenModal);
+  });
+});
+
+// ========================================================
+// 05 · MEMORIES POLAROID GALLERY
+// ========================================================
+const memoryWords = ['a little smile','a soft moment','the good days','a tiny memory','a little sunshine','close to my heart'];
+let currentPhoto = 0;
+let photoLoaded = CONFIG.photos.map(() => false);
+function renderGallery() {
+  const gal = $('#gallery');
+  gal.replaceChildren();
+  photoLoaded = CONFIG.photos.map(() => false);
+  
+  CONFIG.photos.forEach((item, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'polaroid reveal';
+    btn.type = 'button';
+    btn.style.setProperty('--tilt', [-2.5, 2, -1.5, 2, -2, 2.5][index % 6] + 'deg');
+    btn.setAttribute('aria-label', `Memory: ${item.caption}`);
+    
+    const area = document.createElement('div');
+    area.className = 'image-area';
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.alt = item.caption;
+    img.src = item.file;
+    if (item.position) {
+      img.style.objectPosition = item.position;
+    }
+    
+    const empty = document.createElement('div');
+    empty.className = 'photo-empty';
+    empty.innerHTML = `<span class="memory-symbol">${index % 2 === 0 ? '♡' : '✧'}</span><span class="memory-word">${memoryWords[index % 6]}</span><small>memory 0${index + 1}</small>`;
+    
+    const cap = document.createElement('span');
+    cap.className = 'caption';
+    cap.textContent = item.caption;
+
+    const hint = document.createElement('span');
+    hint.className = 'polaroid-tap-hint';
+    hint.textContent = 'Tap to open memory ♡';
+    
+    area.append(empty, img);
+    btn.append(area, cap, hint);
+    gal.appendChild(btn);
+    
+    img.addEventListener('load', () => { photoLoaded[index] = true; btn.classList.add('loaded'); });
+    img.addEventListener('error', () => { img.hidden = true; });
+    btn.addEventListener('click', () => { currentPhoto = index; renderPhotoModal(); burstHearts(btn); openDialog($('#photoOverlay')); });
+  });
+}
+renderGallery();
+
+function renderPhotoModal() {
+  const item = CONFIG.photos[currentPhoto];
+  const prev = $('#photoPreview');
+  prev.replaceChildren();
+  if (item && item.file) {
+    const im = document.createElement('img');
+    im.src = item.file;
+    im.alt = item.caption;
+    im.onerror = () => {
+      prev.replaceChildren();
+      const mis = document.createElement('div');
+      mis.className = 'missing';
+      mis.textContent = 'Yeh jagah ek pyaari yaad ke liye sambhaal ke rakhi hai. ♡';
+      prev.appendChild(mis);
+    };
+    prev.appendChild(im);
+  } else {
+    const mis = document.createElement('div');
+    mis.className = 'missing';
+    mis.textContent = 'Yeh jagah ek pyaari yaad ke liye sambhaal ke rakhi hai. ♡';
+    prev.appendChild(mis);
+  }
+  $('#photoTitle').textContent = item.caption;
+  const pNote = $('#photoNote');
+  if (pNote) pNote.textContent = item.note || '';
+  $('#photoCounter').textContent = `${currentPhoto + 1} of ${CONFIG.photos.length}`;
+}
+$('#photoPrev').addEventListener('click', () => { currentPhoto = (currentPhoto - 1 + CONFIG.photos.length) % CONFIG.photos.length; renderPhotoModal(); });
+$('#photoNext').addEventListener('click', () => { currentPhoto = (currentPhoto + 1) % CONFIG.photos.length; renderPhotoModal(); });
+
+// ========================================================
+// ========================================================
+// 07 · ENHANCED VIRTUAL WARM HUG & CALM BREATHING SPACE
+// ========================================================
+const hugBtn = $('#hugBtn');
+const hugIcon = $('#hugIcon');
+const hugFill = $('#hugFill');
+const hugMsg = $('#hugMessage');
+const hugResultCard = $('#hugResultCard');
+const hugAgainBtn = $('#hugAgainBtn');
+const hugHintBadge = $('#hugHintBadge');
+let hugHoldTimer = null, hugStart = 0, hugCompleted = false;
+
+function startHug() {
+  if (hugCompleted) return;
+  hugBtn.classList.add('holding');
+  hugStart = performance.now();
+  
+  function frame(now) {
+    const elapsed = now - hugStart;
+    const prog = Math.min(100, (elapsed / 2800) * 100);
+    hugFill.style.width = prog + '%';
+    
+    if (elapsed < 900) {
+      hugMsg.textContent = 'Dheere se saans andar lo... Inhale softly 🌸';
+      if (hugHintBadge) hugHintBadge.textContent = 'Hold chalu rakho… 1/3';
+    } else if (elapsed < 1900) {
+      hugMsg.textContent = 'Saari bechaini aur gussa chhod do... Hold gently 🕊️';
+      if (hugHintBadge) hugHintBadge.textContent = 'Thoda sa aur… 2/3';
+    } else if (prog < 100) {
+      hugMsg.textContent = 'Almost there... Feeling a gentle warmth ✨';
+      if (hugHintBadge) hugHintBadge.textContent = 'Ready… 3/3';
+    } else {
+      hugCompleted = true;
+      hugBtn.classList.remove('holding');
+      hugBtn.classList.add('hug-complete');
+      if (hugIcon) hugIcon.textContent = '🫂';
+      hugMsg.textContent = 'Sending you a big warm hug... ♡';
+      if (hugHintBadge) hugHintBadge.textContent = 'Completed ♡';
+      
+      try { navigator.vibrate?.([50, 80, 50]); } catch {}
+      burstHearts(hugBtn);
+      burstConfetti(window.innerWidth / 2, window.innerHeight * 0.5);
+      playChime('bell');
+      
+      setTimeout(() => {
+        if (hugResultCard) hugResultCard.hidden = false;
+        burstHearts(hugBtn);
+      }, 350);
+      return;
+    }
+    
+    hugHoldTimer = requestAnimationFrame(frame);
+  }
+  hugHoldTimer = requestAnimationFrame(frame);
+}
+
+function cancelHug() {
+  if (hugCompleted) return;
+  cancelAnimationFrame(hugHoldTimer);
+  hugBtn.classList.remove('holding');
+  if (parseFloat(hugFill.style.width) < 100) {
+    hugFill.style.width = '0%';
+    hugMsg.textContent = 'Dheere se button ko press karke hold karein…';
+    if (hugHintBadge) hugHintBadge.textContent = 'Press & hold for 3 seconds';
+  }
+}
+
+if (hugBtn) {
+  hugBtn.addEventListener('pointerdown', startHug);
+  hugBtn.addEventListener('pointerup', cancelHug);
+  hugBtn.addEventListener('pointerleave', cancelHug);
+}
+
+if (hugAgainBtn) {
+  hugAgainBtn.addEventListener('click', () => {
+    hugCompleted = false;
+    hugBtn.classList.remove('hug-complete');
+    if (hugIcon) hugIcon.textContent = '♡';
+    hugFill.style.width = '0%';
+    hugMsg.textContent = 'Dheere se button ko press karke hold karein…';
+    if (hugHintBadge) hugHintBadge.textContent = 'Press & hold for 3 seconds';
+    if (hugResultCard) hugResultCard.hidden = true;
+  });
+}
+
+// 1-Minute Calm Box Breathing Space
+const breatheToggleBtn = $('#breatheToggleBtn');
+const breatheGuideBox = $('#breatheGuideBox');
+const breatheCloseBtn = $('#breatheCloseBtn');
+const breatheCircle = $('#breatheCircle');
+const breatheStateText = $('#breatheStateText');
+const breatheGuideNote = $('#breatheGuideNote');
+let breatheInterval = null;
+
+if (breatheToggleBtn && breatheGuideBox) {
+  breatheToggleBtn.addEventListener('click', () => {
+    const isHidden = breatheGuideBox.hidden;
+    breatheGuideBox.hidden = !isHidden;
+    if (!breatheGuideBox.hidden) {
+      startBreathingGuide();
+    } else {
+      stopBreathingGuide();
+    }
+  });
+}
+
+if (breatheCloseBtn) {
+  breatheCloseBtn.addEventListener('click', () => {
+    if (breatheGuideBox) breatheGuideBox.hidden = true;
+    stopBreathingGuide();
+  });
+}
+
+function startBreathingGuide() {
+  stopBreathingGuide();
+  const phases = [
+    { text: 'Inhale 🌸', note: 'Dheere se saans andar lo... relax your shoulders (4s)' },
+    { text: 'Hold 🕊️', note: 'Saans ko shaanti se roko... feel the stillness (4s)' },
+    { text: 'Exhale 🌿', note: 'Saari thakaan aur bojh bahar chhod do... (4s)' },
+    { text: 'Rest 💫', note: 'Bas shaant raho... relax (4s)' }
+  ];
+  let currentPhase = 0;
+  function runPhase() {
+    if (!breatheStateText || !breatheGuideNote) return;
+    const p = phases[currentPhase];
+    breatheStateText.textContent = p.text;
+    breatheGuideNote.textContent = p.note;
+    currentPhase = (currentPhase + 1) % phases.length;
+  }
+  runPhase();
+  breatheInterval = setInterval(runPhase, 4000);
+}
+
+function stopBreathingGuide() {
+  clearInterval(breatheInterval);
+  breatheInterval = null;
+}
+
+// ========================================================
+// 10 · APOLOGY LETTER & 5-PAGE DIARY
+// ========================================================
+const bookParagraphs = [...document.querySelectorAll('.letter-sheet > p')];
+const bookPages = [];
+for (let i = 0; i < bookParagraphs.length; i += 2) bookPages.push(bookParagraphs.slice(i, i + 2));
+const bookChapters = ['A sincere sorry', 'Words I wish were softer', 'Missing you, respecting you', 'Care, in my actions', 'With a softer heart'];
+let bookIndex = 0;
+
+function renderBook() {
+  $('#bookBody').replaceChildren(...bookPages[bookIndex].map(p => p.cloneNode(true)));
+  $('#bookChapter').textContent = bookChapters[bookIndex] || 'A quiet feeling';
+  $('#bookCounter').textContent = `Page ${bookIndex + 1} of ${bookPages.length}`;
+  $('#bookProgress').style.width = ((bookIndex + 1) / bookPages.length * 100) + '%';
+  $('#bookPrev').disabled = bookIndex === 0;
+  $('#bookNext').disabled = bookIndex === bookPages.length - 1;
+}
+$('#openBook').addEventListener('click', () => { bookIndex = 0; renderBook(); openDialog($('#bookOverlay')); });
+$('#bookPrev').addEventListener('click', () => { if (bookIndex > 0) { bookIndex--; renderBook(); } });
+$('#bookNext').addEventListener('click', () => { if (bookIndex < bookPages.length - 1) { bookIndex++; renderBook(); } });
+
+// Quiet Reading & Text Size Toggles
+$('#readingMode').addEventListener('click', e => {
+  const on = body.classList.toggle('quiet-reading');
+  e.currentTarget.setAttribute('aria-pressed', String(on));
+});
+$('#textSize').addEventListener('click', e => {
+  const larger = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', String(larger));
+  document.documentElement.style.setProperty('--letter-size', larger ? '1.2rem' : '1.0625rem');
+});
+
+// 11 · WAX SEAL SECRET ENVELOPE
+let envTimer;
+function triggerSecret() {
+  $('#envelopeButton').classList.add('opening');
+  clearTimeout(envTimer);
+  envTimer = setTimeout(() => openDialog($('#secretOverlay')), 400);
+}
+$('#envelopeButton').addEventListener('click', triggerSecret);
+$('#readSecret').addEventListener('click', triggerSecret);
+
+// ========================================================
+// 12 · RESTART & REPLY ACTIONS (WHATSAPP, COPY, SHARE)
+// ========================================================
+const replyChoices = {
+  talk: {
+    text: 'Suraj, maine tumhari poori website aur saari baatein dekhi. Chalo, ek baar bina kisi ladai ke shaanti se baat karke dekhte hain. Pehle ek doosre ko sunenge. ☕',
+    hint: 'Ek shant, bina ladai wali conversation. Suraj dil se sirf tumhe sunega. ♡'
+  },
+  friends: {
+    text: 'Suraj, maine tumhara letter padha. Hum dheere-dheere baat shuru kar sakte hain bina kisi jaldi ya pressure ke. 🌸',
+    hint: 'Ek gentle shuruaat, jahan koi expectations nahi hain, sirf dosti aur understanding hai.'
+  },
+  time: {
+    text: 'Suraj, maine tumhari koshish dekhi, par mujhe abhi thoda aur waqt chahiye. Main jaldi mein nahi hoon. ⏳',
+    hint: 'Suraj tumhari space ki dil se izzat karega aur jab tak tumhara mann ho tab tak intezaar karega. ♡'
+  },
+  listen: {
+    text: 'Suraj, main abhi bhi thoda gussa hoon, par maine tumhara sincere sorry aur saari memories dekhi. 🕊️',
+    hint: 'Tumhara gussa 100% justified hai Harshu. Thank you ki tumne yeh sab dekha.'
+  }
+};
+const draftKey = 'harshu-reply-draft-v2';
+let selectedChoice = '';
+const replyMsg = $('#replyMessage');
+const replyStatus = $('#replyStatus');
+
+function generateReplyText() {
+  const personal = replyMsg.value.trim();
+  const choiceText = replyChoices[selectedChoice]?.text || '';
+  if (!personal && !choiceText) return '';
+  return `Hi ${CONFIG.yourName},\n\n${[choiceText, personal].filter(Boolean).join('\n\n')}\n\n— ${CONFIG.herName}`;
+}
+
+function updateReplyUI() {
+  const text = generateReplyText();
+  const hintEl = $('#replyHint');
+  if (hintEl) hintEl.textContent = replyChoices[selectedChoice]?.hint || 'Upar kisi bhi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡';
+  const textEl = $('#replyText');
+  if (textEl) textEl.value = text;
+  const prevEl = $('#replyPreview');
+  if (prevEl) prevEl.hidden = !text;
+  
+  const hasText = Boolean(text);
+  const copyBtn = $('#copyReply');
+  if (copyBtn) copyBtn.disabled = !hasText;
+  
+  const waBtn = $('#whatsappReply');
+  if (waBtn) {
+    if (hasText) {
+      waBtn.classList.remove('disabled');
+      const waUrl = CONFIG.whatsappNumber 
+        ? `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`
+        : `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+      waBtn.href = waUrl;
+    } else {
+      waBtn.classList.add('disabled');
+      waBtn.href = '#';
+    }
+  }
+}
+
+document.querySelectorAll('input[name="replyChoice"]').forEach(r => {
+  r.addEventListener('change', () => {
+    if (r.checked) { selectedChoice = r.value; updateReplyUI(); saveDraft(); }
+  });
+});
+replyMsg.addEventListener('input', () => { updateReplyUI(); saveDraft(); });
+
+function saveDraft() {
+  try {
+    localStorage.setItem(draftKey, JSON.stringify({ choice: selectedChoice, msg: replyMsg.value }));
+  } catch {}
+}
+
+// Restore draft
+try {
+  const d = JSON.parse(localStorage.getItem(draftKey) || 'null');
+  if (d) {
+    selectedChoice = d.choice || '';
+    replyMsg.value = d.msg || '';
+    const r = document.querySelector(`input[name="replyChoice"][value="${selectedChoice}"]`);
+    if (r) r.checked = true;
+    updateReplyUI();
+  }
+} catch {}
+
+const copyBtnEl = $('#copyReply');
+if (copyBtnEl) {
+  copyBtnEl.addEventListener('click', async () => {
+    const t = generateReplyText();
+    if (!t) return;
+    try {
+      await navigator.clipboard.writeText(t);
+      replyStatus.textContent = '✓ Reply message copy ho gaya! Ab paste karke send kar sakti ho. 🌸';
+      burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
+      playChime('bell');
+      setTimeout(() => { replyStatus.textContent = ''; }, 4000);
+    } catch {
+      replyStatus.textContent = 'Please neeche se reply manually copy kar lo.';
+    }
+  });
+}
+
+const waBtnEl = $('#whatsappReply');
+if (waBtnEl) {
+  waBtnEl.addEventListener('click', () => {
+    burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
+    playChime('bell');
+  });
+}
+
+const clearBtnEl = $('#clearReply');
+if (clearBtnEl) {
+  clearBtnEl.addEventListener('click', () => {
+    selectedChoice = '';
+    replyMsg.value = '';
+    document.querySelectorAll('input[name="replyChoice"]').forEach(r => r.checked = false);
+    try { localStorage.removeItem(draftKey); } catch {}
+    updateReplyUI();
+    replyStatus.textContent = 'Text clear ho gaya.';
+    setTimeout(() => { replyStatus.textContent = ''; }, 2500);
+  });
+}
+$('#replyForm').addEventListener('submit', e => e.preventDefault());
+
+// ========================================================
+// 🔔 GENTLE WEB AUDIO CHIME & CELESTIAL SOUND EFFECTS
+// ========================================================
+function playChime(type = 'bell') {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    if (!audioCtx) audioCtx = new AudioContext();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const now = audioCtx.currentTime;
+    
+    if (type === 'bell' || type === 'chime') {
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+      notes.forEach((freq, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+        gain.gain.setValueAtTime(0.045, now + idx * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.7);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + idx * 0.08);
+        osc.stop(now + idx * 0.08 + 0.75);
+      });
+    } else if (type === 'pop') {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, now); // D5
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.1);
+      gain.gain.setValueAtTime(0.06, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.15);
+    }
+  } catch {}
+}
+
+// ========================================================
+// 🎊 CONFETTI & CELEBRATION PARTICLES
+// ========================================================
+function burstConfetti(x, y) {
+  const colors = ['#f4a6c8', '#a4d4f6', '#d6b7f3', '#fcd5c3', '#ffcad4', '#bde0fe'];
+  for (let i = 0; i < 32; i++) {
+    const el = document.createElement('span');
+    el.className = 'confetti-piece';
+    el.style.left = (x || window.innerWidth / 2) + 'px';
+    el.style.top = (y || window.innerHeight / 2) + 'px';
+    el.style.backgroundColor = colors[i % colors.length];
+    el.style.setProperty('--dx', (Math.cos(i / 32 * Math.PI * 2) * (70 + Math.random() * 110)) + 'px');
+    el.style.setProperty('--dy', (Math.sin(i / 32 * Math.PI * 2) * (60 + Math.random() * 90) - 80) + 'px');
+    el.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+    body.appendChild(el);
+    setTimeout(() => el.remove(), 1600);
+  }
+}
+
+// Sparkle Cursor Fairy Dust
+let lastSparkle = 0;
+window.addEventListener('pointermove', e => {
+  const now = performance.now();
+  if (now - lastSparkle < 75) return;
+  lastSparkle = now;
+  const sp = document.createElement('span');
+  sp.className = 'cursor-sparkle';
+  sp.textContent = ['✧', '♡', '⋆', '🌸'][Math.floor(Math.random() * 4)];
+  sp.style.left = e.clientX + 'px';
+  sp.style.top = e.clientY + 'px';
+  sp.style.setProperty('--drift-x', (Math.random() * 20 - 10) + 'px');
+  sp.style.setProperty('--drift-y', (-14 - Math.random() * 18) + 'px');
+  sp.style.color = ['#c86b98', '#7eb4db', '#b892cb', '#df8b77'][Math.floor(Math.random() * 4)];
+  body.appendChild(sp);
+  setTimeout(() => sp.remove(), 750);
+}, { passive: true });
+
+// ========================================================
+// 🧸 MOOD CHECK-IN HANDLER
+// ========================================================
+const moodResponses = {
+  angry: {
+    title: 'Tumhara gussa 100% sahi hai 🌸',
+    text: 'Gussa hona tumhara poora haq hai, Harshu. Maine jo gusse mein galat bola, uska mere paas koi justification nahi hai. Main yahan safai dene nahi aaya. Take all the time you need, gussa nikaalna ya baat na karna bilkul natural hai.'
+  },
+  hurt: {
+    title: 'I am really so sorry Harshu 🤍',
+    text: 'Mera intention kabhi tumhe dukh dena nahi tha, par mere shabdon ne tumhe dukh diya. Is baat ka afsos mujhe hamesha rahega. Kaash main us waqt ruk jaata. Please apna khayal rakhna.'
+  },
+  tired: {
+    title: 'Pehle shaanti se rest karo Harshu 🌿',
+    text: 'Agar aaj ka din ya yeh sab bohot tiring lag raha hai, toh phone side rakh do. Paani piyo aur aaram karo. Is website ka reply karna ya padhna bhi zaroori nahi hai. Tumhari mental peace sabse pehle hai.'
+  },
+  space: {
+    title: 'Poori izzat tumhari space ki 🕊️',
+    text: 'Agar tumhe shaanti aur doori chahiye, toh main bina baar-baar message kiye us boundary ki 100% respect karunga. Meri taraf se koi pressure nahi aayega. Tumhara sukoon sabse upar hai.'
+  }
+};
+
+document.querySelectorAll('.mood-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const moodKey = btn.dataset.mood;
+    const resp = moodResponses[moodKey];
+    if (resp) {
+      playChime('pop');
+      const box = $('#moodFeedbackBox');
+      const content = $('#moodFeedbackContent');
+      content.innerHTML = `<h4>${resp.title}</h4><p>${resp.text}</p>`;
+      box.hidden = false;
+    }
+  });
+});
+
+// ========================================================
+// 🥠 AAJ KA SUKOON NOTE GENERATOR
+// ========================================================
+const sukoonNotesList = [
+  '“Chahe aaj ka din kaisa bhi raha ho, tum bohot precious ho. Thoda sa paani piyo aur relax karo. 🌸”',
+  '“Har cheez ko aaj hi theek karna zaroori nahi hai. Take your own sweet time. Tumhara sukoon sabse pehle hai. ☕”',
+  '“Tumhari muskaan duniya ki sabse pyari cheez hai. Kabhi kisi ki wajah se use mat khona. ✨”',
+  '“Agar aaj thakan lag rahi hai, toh bas itna yaad rakhna ki kal ek bilkul naya din hoga. Good vibes to you! 🕊️”',
+  '“Tum bohot strong ho, lekin har waqt sab kuch sambhalna zaroori nahi. Kabhi-kabhi bas shaant baithna bhi enough hota hai. 🌿”',
+  '“Gussa aur narazgi natural hai. Apne feelings ko dabaana mat. Tum jo feel karti ho, valid hai. 🤍”',
+  '“Dheere se saans lo... drop your shoulders. Sab theek ho jayega, Harshu. 🌸”',
+  '“Tumhara dil bohot saaf hai. Hamesha waisi hi rehna, jaise tum ho. 💖”',
+  '“Kisi bhi baat ka pressure mat lena. No expectations, only care for you. 🧸”',
+  '“Ek pyari si coffee ya chai piyo aur apni favorite cheez dekho. Tumhara sukoon deserve karti ho. ☕”',
+  '“Waqt har zakhm ko dheere-dheere bhar deta hai. Apne aap par gentle raho. 🌷”',
+  '“Sending you pure peace and positive energy, Harshu. Hamesha muskuraati raho. 💫”'
+];
+let currentNoteIndex = 0;
+const cookieBtn = $('#cookieDrawBtn');
+const cookieText = $('#cookieNoteText');
+const cookieBox = $('#cookieNoteBox');
+
+if (cookieBtn && cookieText) {
+  cookieBtn.addEventListener('click', () => {
+    let nextIndex;
+    do {
+      nextIndex = Math.floor(Math.random() * sukoonNotesList.length);
+    } while (nextIndex === currentNoteIndex && sukoonNotesList.length > 1);
+    currentNoteIndex = nextIndex;
+    playChime('bell');
+    cookieBox.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      cookieText.textContent = sukoonNotesList[currentNoteIndex];
+      cookieBox.style.transform = 'scale(1)';
+      burstHearts(cookieBtn);
+    }, 150);
+  });
+}
+
+// General Dialog Helper
+let lastFocus = null;
+function openDialog(dlg) {
+  lastFocus = document.activeElement;
+  dlg.showModal();
+  body.classList.add('dialog-open');
+  playChime('bell');
+}
+function closeDialog(dlg) {
+  dlg.close();
+}
+document.querySelectorAll('dialog').forEach(dlg => {
+  dlg.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => closeDialog(dlg)));
+  dlg.addEventListener('click', e => { if (e.target === dlg) closeDialog(dlg); });
+  dlg.addEventListener('close', () => {
+    body.classList.remove('dialog-open');
+    $('#envelopeButton').classList.remove('opening');
+    if (lastFocus) lastFocus.focus();
+  });
+});
+
+// Burst Hearts Function
+function burstHearts(target) {
+  const r = target.getBoundingClientRect();
+  for (let i = 0; i < 12; i++) {
+    const h = document.createElement('span');
+    h.className = 'burst';
+    h.textContent = '♡';
+    h.style.left = (r.left + r.width / 2) + 'px';
+    h.style.top = (r.top + r.height / 2) + 'px';
+    h.style.setProperty('--size', (18 + (i % 3) * 6) + 'px');
+    h.style.setProperty('--x', (Math.cos(i / 12 * Math.PI * 2) * (70 + (i % 3) * 20)) + 'px');
+    h.style.setProperty('--y', (Math.sin(i / 12 * Math.PI * 2) * 65 - 50) + 'px');
+    h.style.setProperty('--color', ['#b85282','#75a9ca','#ab86bb'][i % 3]);
+    body.appendChild(h);
+    setTimeout(() => h.remove(), 1400);
+  }
+}
+$('#heartButton').addEventListener('click', e => burstHearts(e.currentTarget));
+
+// Tap Micro-burst of Hearts
+document.addEventListener('pointerdown', e => {
+  if (e.target.closest('button, a, input, select, textarea, label, [role="button"], dialog')) return;
+  const colors = ['#b85282', '#75a9ca', '#c0799f', '#966085'];
+  for (let i = 0; i < 2; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'tap-heart';
+    heart.textContent = '♡';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+    heart.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+    heart.style.setProperty('--dy', (-30 - Math.random() * 35) + 'px');
+    heart.style.setProperty('--rot', (Math.random() * 40 - 20) + 'deg');
+    body.appendChild(heart);
+    setTimeout(() => heart.remove(), 900);
+  }
+});
+
+// Keyboard Navigation for Overlays
+document.addEventListener('keydown', e => {
+  const photoModal = $('#photoOverlay');
+  const bookModal = $('#bookOverlay');
+  if (photoModal && photoModal.open) {
+    if (e.key === 'ArrowLeft') { currentPhoto = (currentPhoto - 1 + CONFIG.photos.length) % CONFIG.photos.length; renderPhotoModal(); }
+    else if (e.key === 'ArrowRight') { currentPhoto = (currentPhoto + 1) % CONFIG.photos.length; renderPhotoModal(); }
+  } else if (bookModal && bookModal.open) {
+    if (e.key === 'ArrowLeft' && bookIndex > 0) { bookIndex--; renderBook(); }
+    else if (e.key === 'ArrowRight' && bookIndex < bookPages.length - 1) { bookIndex++; renderBook(); }
+  }
+});
+
+// Touch Swipe for Photo Preview
+let touchStartX = 0, touchStartY = 0;
+const photoPreviewEl = $('#photoPreview');
+if (photoPreviewEl) {
+  photoPreviewEl.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  photoPreviewEl.addEventListener('touchend', e => {
+    const diffX = e.changedTouches[0].screenX - touchStartX;
+    const diffY = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        currentPhoto = (currentPhoto - 1 + CONFIG.photos.length) % CONFIG.photos.length;
+      } else {
+        currentPhoto = (currentPhoto + 1) % CONFIG.photos.length;
+      }
+      renderPhotoModal();
+    }
+  }, { passive: true });
+}
+
+// Truth Word Tabs
+document.querySelectorAll('[data-word]').forEach((tab, idx) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-word]').forEach((t, i) => {
+      t.setAttribute('aria-selected', String(i === idx));
+      document.getElementById('wordsPanel' + i).hidden = (i !== idx);
+    });
+  });
+});
+
+// Scroll Progress & Nav Highlight
+const navLinks = [...document.querySelectorAll('.chapter-dock a')];
+const navTargets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  $('#progress').style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
+  let activeIdx = 0;
+  navTargets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < window.innerHeight * 0.45) activeIdx = i; });
+  navLinks.forEach((a, i) => {
+    a.classList.toggle('active', i === activeIdx);
+    if (i === activeIdx) a.setAttribute('aria-current', 'location');
+    else a.removeAttribute('aria-current');
+  });
+}, { passive: true });
+
+// Reveal on Scroll
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  body.classList.add('can-reveal');
+}
+</script>
+</body>
+</html>

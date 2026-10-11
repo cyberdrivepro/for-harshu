@@ -1,0 +1,25 @@
+ORIGINAL SCENES — A SOFTER BEGINNING
+Created with the built-in image generation tool. Final web assets:
+assets/rose-dawn.webp
+assets/quiet-garden.webp
+Original images were 1536 x 1024, visually inspected, and optimized for the website. They are decorative scenes; no personal memories or real people are depicted.
+
+ROSE DAWN PROMPT
+Use case: stylized-concept
+Asset type: original landscape background illustration for a romantic apology letter website
+Primary request: a premium painterly dreamy rose-dawn sky. Large beautiful layers of rose pink, dusty blush, pale lavender and powder blue clouds sweep around the sides and stack along the bottom edge, framing a luminous sky-blue opening with warm peach dawn light. Include only two or three very subtle small romantic translucent glass or fine paper hearts nestled at the bottom corners.
+Style/medium: exquisite softly painted atmospheric illustration, delicate natural cloud texture, refined editorial art, luminous color with carefully layered brushwork, tender and elegant rather than cartoonish.
+Composition/framing: wide landscape 1536x1024. The central and upper 65 percent must be bright quiet uncluttered negative space suitable for dark plum hero text. Keep lush detail, saturated soft color, and all decorative hearts concentrated at the far sides and bottom corners. Shape cloud layers organically, not as a flat simplistic gradient. Background must also crop attractively to a narrow portrait view.
+Lighting/mood: soft rosy sunrise daylight with warm peach light and calm, hopeful, affectionate atmosphere.
+Color palette: cohesive soft rose, blush pink, sky blue, lilac and pale peach, with enough clear light center for readable text.
+Constraints: exactly one original illustration. No people, no couples, no text, no lettering, no UI, no watermark. No dark or busy center. Opaque image.
+
+QUIET GARDEN PROMPT
+Use case: stylized-concept
+Asset type: original landscape background illustration for a romantic apology letter website
+Primary request: a premium painterly peaceful pastel garden beside still blue water under lilac and peach dusk. Blush flowers and soft lavender foliage frame the far left and right edges. A few delicate warm hanging lights appear at the outer upper edges. The calm water reflects soft blue sky and peach dusk light. Hopeful apology atmosphere, quiet and tender.
+Style/medium: exquisite softly painted atmospheric illustration, refined editorial art with subtle natural brush texture and luminous color, romantic and elegant rather than cartoonish.
+Composition/framing: wide landscape 1536x1024. Keep the center pale, open and uncluttered for text panels: an expanse of light blue water and pale blue-lilac sky with a very soft horizon. Concentrate lush garden detail and lights at far outer edges and lower corners. No large objects, floral stems or dangling lights crossing the central 60 percent. Maintain a cohesive palette with the rose-dawn sky background, and compose to crop beautifully in portrait as well.
+Lighting/mood: pale lilac-peach early dusk, gentle warm points of light, peaceful still reflections, calm hopeful feeling.
+Color palette: blush pink, powder sky blue, lilac, pale peach, with restrained soft sage leaves.
+Constraints: exactly one original illustration. No people, no couples, no text, no lettering, no UI, no watermark. No dense center and no dark center. Opaque image.

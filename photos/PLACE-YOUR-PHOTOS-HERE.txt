@@ -1,0 +1,2 @@
+Add six photos named photo1.jpg through photo6.jpg here.
+They automatically appear as polaroid memories.
