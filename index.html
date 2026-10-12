@@ -147,47 +147,6 @@ main, footer { position: relative; z-index: 2; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-bottom { display: block; margin: 16px 0 28px; font-size: 12px; color: #7c627c; }
 
-.real-note-banner {
-  margin: 0 0 28px;
-  padding: 22px 24px;
-  background: rgba(255, 245, 240, 0.96);
-  border: 1.5px dashed #f29ca3;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(230, 90, 115, 0.1);
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  backdrop-filter: blur(8px);
-}
-.real-note-banner .real-pin {
-  font-size: 28px;
-  line-height: 1;
-  flex-shrink: 0;
-  transform: rotate(-10deg);
-}
-.real-note-banner strong {
-  display: block;
-  font-size: 16px;
-  color: #a82346;
-  margin-bottom: 8px;
-  font-family: var(--sans);
-  font-weight: 600;
-}
-.real-note-banner p {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.75;
-  color: #613b48;
-}
-.real-note-banner em {
-  color: #8c1d3a;
-  font-weight: 600;
-  font-style: normal;
-  background: #fde2e6;
-  padding: 1px 6px;
-  border-radius: 4px;
-}
-
 .scene-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 .scene-picker > span { flex-basis: 100%; font: 500 21px var(--hand); color: #855373; margin-bottom: 2px; }
 .scene-picker button { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(153, 125, 151, 0.35); min-height: 38px; padding: 7px 13px; border-radius: 99px; background: rgba(255, 253, 247, 0.85); font-size: 12px; color: #674c6b; transition: all .2s; }
@@ -405,30 +364,6 @@ main, footer { position: relative; z-index: 2; }
   background: #fff;
 }
 
-/* ========================================================
-   SECTION: "CHHOTI-CHHOTI BAATEIN" (MEMORY JAR / NOTES)
-   ======================================================== */
-.moments-section { background: var(--canvas); padding: 90px 0 60px; }
-.sticky-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 45px; }
-.sticky-note { 
-  background: linear-gradient(140deg, rgba(255, 253, 247, 0.95), rgba(255, 248, 250, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; 
-  border: 1px solid #eddcd1; 
-  border-radius: 12px; 
-  padding: 26px 22px; 
-  box-shadow: 0 10px 24px rgba(110, 75, 95, 0.08); 
-  transform: rotate(var(--rot)); 
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s; 
-  position: relative; 
-  overflow: hidden;
-}
-.sticky-note:hover { transform: rotate(0deg) translateY(-6px) scale(1.02); box-shadow: 0 18px 40px rgba(110, 75, 95, 0.15); z-index: 3; }
-.sticky-note::before { content: ''; position: absolute; top: -10px; left: 35%; width: 55px; height: 18px; background: rgba(235, 218, 230, 0.7); border: 1px solid rgba(255,255,255,0.6); transform: rotate(-2deg); }
-.sticky-note:nth-child(2) { background: linear-gradient(140deg, rgba(253, 250, 245, 0.95), rgba(246, 250, 254, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; --rot: -2deg; }
-.sticky-note:nth-child(3) { background: linear-gradient(140deg, rgba(249, 251, 253, 0.95), rgba(250, 244, 250, 0.92)), url('assets/quiet-garden.webp') center/cover no-repeat; border-color: #d8e5f2; --rot: 2.5deg; }
-.sticky-note:nth-child(4) { background: linear-gradient(140deg, rgba(253, 247, 251, 0.95), rgba(255, 250, 246, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; border-color: #edd5e7; --rot: -1.5deg; }
-.sticky-note h4 { font: 500 26px/1.1 var(--hand); color: var(--rose); margin-bottom: 12px; }
-.sticky-note p { font-size: 14px; line-height: 1.8; color: #695267; margin: 0; }
-
 /* Section: Memories (Polaroid Gallery) */
 .memories { background: var(--canvas); padding-top: 50px; }
 .album-header { display: grid; grid-template-columns: 1fr .6fr; gap: 40px; align-items: end; text-align: left; }
@@ -484,101 +419,6 @@ main, footer { position: relative; z-index: 2; }
 .polaroid-tap-hint { display: inline-block; font-size: 11px; color: #9c678a; margin-top: 4px; opacity: 0.8; font-family: var(--body); }
 .polaroid:hover .polaroid-tap-hint { opacity: 1; color: var(--rose); }
 .album-note { font: 500 27px var(--hand); color: #886280; text-align: center; margin: 40px 0 0; transform: rotate(-2deg); }
-
-/* ========================================================
-   SECTION: "MERA WADA" / PROMISES I WILL KEEP
-   ======================================================== */
-.wishes { background: var(--lavender-wash); border-block: 1px solid #e5dbe985; }
-.promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 45px; }
-.promise-card { 
-  background: linear-gradient(145deg, rgba(255, 253, 252, 0.95), rgba(255, 246, 252, 0.92)), url('assets/quiet-garden.webp') center/cover no-repeat; 
-  border: 1px solid #e7d3e2; 
-  border-radius: 22px; 
-  padding: 34px 26px; 
-  text-align: left; 
-  box-shadow: var(--shadow-sm); 
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s; 
-  position: relative; 
-  overflow: hidden;
-}
-.promise-card:hover { transform: translateY(-7px) scale(1.02); box-shadow: var(--shadow-md); border-color: var(--rose-soft); }
-.promise-card::before { content: ''; position: absolute; top: -10px; left: 35%; width: 55px; height: 18px; background: rgba(228, 206, 225, 0.75); border: 1px solid rgba(255,255,255,0.6); transform: rotate(-1.5deg); }
-.promise-badge-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: #fbebf4; color: var(--rose); margin-bottom: 12px; }
-.promise-icon { font-size: 34px; color: var(--rose); margin-bottom: 12px; display: block; line-height: 1; }
-.promise-num { font-size: 10px; letter-spacing: .15em; font-weight: 600; text-transform: uppercase; color: #886788; display: block; margin-bottom: 6px; }
-.promise-card h3 { font: 500 28px/1.2 var(--hand); color: var(--rose); margin-bottom: 10px; }
-.promise-card p { font-size: 14px; line-height: 1.85; color: #6a536b; margin: 0; }
-
-/* ========================================================
-   SECTION: VIRTUAL WARM HUG & SUKOON WIDGET
-   ======================================================== */
-.hug-section { background: var(--canvas); padding: 85px 0 95px; text-align: center; }
-.hug-widget { 
-  max-width: 620px; 
-  margin: 0 auto; 
-  padding: 46px 36px; 
-  background: linear-gradient(145deg, rgba(255, 253, 250, 0.95), rgba(255, 246, 252, 0.92)), url('assets/rose-dawn.webp') center/cover no-repeat; 
-  border: 1px solid #edd4e4; 
-  border-radius: 32px; 
-  box-shadow: var(--shadow-md); 
-  position: relative; 
-  overflow: hidden;
-}
-.hug-title { font: 500 clamp(32px, 4vw, 46px)/1.15 var(--serif); color: var(--rose); margin: 12px 0 10px; }
-.hug-subtitle { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
-
-.hug-cute-sticker { margin-bottom: 14px; font-size: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; animation: gentleWobble 2.8s ease-in-out infinite; }
-@keyframes gentleWobble { 0%, 100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.08) rotate(3deg); } }
-.hug-stage { position: relative; width: 150px; height: 150px; margin: 0 auto 20px; display: grid; place-items: center; }
-.hug-pulse-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px dashed #e8c6da; pointer-events: none; animation: spinRing 20s linear infinite; }
-.hug-pulse-ring.ring-2 { inset: -14px; border: 1.5px solid rgba(244, 182, 208, 0.4); animation: pulseHeart 3s ease-in-out infinite; }
-.hug-button { width: 116px; height: 116px; border-radius: 50%; background: linear-gradient(135deg, #f7bcd4, #ef91bb); border: 4px solid #fff; box-shadow: 0 12px 35px rgba(163, 56, 98, 0.28); display: grid; place-items: center; cursor: pointer; user-select: none; transition: transform .18s, box-shadow .18s, background .25s; z-index: 2; }
-.hug-button:hover { transform: scale(1.04); box-shadow: 0 16px 40px rgba(163, 56, 98, 0.35); }
-.hug-button:active, .hug-button.holding { transform: scale(0.92); box-shadow: 0 6px 18px rgba(163, 56, 98, 0.2); }
-.hug-button.hug-complete { background: linear-gradient(135deg, #973d65, #b84f7e); }
-.hug-icon { font-size: 48px; color: #fff; line-height: 1; transition: transform .2s; }
-.hug-button.holding .hug-icon { transform: scale(1.15); }
-
-.hug-progress-wrap { max-width: 280px; margin: 0 auto 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.hug-progress-bar { width: 100%; height: 7px; background: #f2e2ed; border-radius: 99px; overflow: hidden; }
-.hug-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #e47ea8, var(--rose)); transition: width 0.08s linear; }
-.hug-hint-pill { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: #876483; }
-
-.hug-message-box { min-height: 54px; display: flex; align-items: center; justify-content: center; }
-.hug-message { font: 500 24px/1.35 var(--hand); color: var(--rose); margin: 0; transition: color .2s; }
-
-.hug-result-card { 
-  margin-top: 24px; 
-  padding: 26px 28px; 
-  background: linear-gradient(140deg, rgba(255, 248, 252, 0.95), rgba(255, 243, 249, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; 
-  border: 1px solid #ebd2e2; 
-  border-radius: 20px; 
-  text-align: center; 
-  animation: soft-arrival .5s ease both; 
-  overflow: hidden;
-}
-.hug-result-card .hug-sparkle { font-size: 28px; display: block; margin-bottom: 8px; }
-.hug-result-card h4 { font: 500 30px/1.2 var(--hand); color: var(--rose); margin-bottom: 10px; }
-.hug-result-card p { font-size: 14px; line-height: 1.85; color: #624b64; margin: 0 0 16px; }
-.hug-again-btn { font-size: 12px; font-weight: 500; padding: 8px 18px; border-radius: 99px; background: #fae7f2; color: var(--rose); border: 1px solid #e7cddf; cursor: pointer; transition: background .2s; }
-.hug-again-btn:hover { background: #f2d2e6; }
-
-/* Breathing Space Guide */
-.breathing-space { margin-top: 32px; border-top: 1px dashed #e8d0e1; padding-top: 22px; }
-.breathe-toggle-btn { background: transparent; font-size: 13px; font-weight: 500; color: #7f5c7c; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 99px; border: 1px solid #d9c4d6; cursor: pointer; transition: all .2s; }
-.breathe-toggle-btn:hover { background: #fbf0f7; color: var(--rose); border-color: var(--rose); }
-.breathe-guide-box { margin-top: 22px; padding: 24px; background: #fcf6fa; border-radius: 22px; border: 1px solid #ebdbe7; animation: soft-arrival .4s ease both; }
-.breathe-circle { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 16px; background: radial-gradient(circle, #f7c7dc, #eec0d7); display: grid; place-items: center; box-shadow: 0 0 24px rgba(247, 199, 220, 0.7); animation: breatheAnim 16s ease-in-out infinite; }
-.breathe-state-text { font: 500 26px var(--hand); color: #783758; }
-.breathe-guide-note { font-size: 13px; color: #735975; margin: 0 0 14px; }
-.breathe-close-btn { font-size: 12px; padding: 5px 14px; border-radius: 99px; background: #fff; border: 1px solid #d5c0d3; color: #694e6b; cursor: pointer; }
-
-@keyframes breatheAnim {
-  0%, 100% { transform: scale(0.85); box-shadow: 0 0 12px rgba(247, 199, 220, 0.4); }
-  25% { transform: scale(1.2); box-shadow: 0 0 35px rgba(247, 199, 220, 0.9); }
-  50% { transform: scale(1.2); box-shadow: 0 0 35px rgba(247, 199, 220, 0.9); }
-  75% { transform: scale(0.85); box-shadow: 0 0 12px rgba(247, 199, 220, 0.4); }
-}
 
 /* Section 04: The Main Apology Letter & Diary */
 .letter-section { background: var(--sky-wash); position: relative; }
@@ -833,46 +673,6 @@ main, footer { position: relative; z-index: 2; }
 .reply-preview #replyText { font-size: 13px; min-height: 140px; background: #fcf7fa; border-radius: 12px; }
 .restart-final { text-align: center; font: 500 27px/1.4 var(--hand); color: #865478; margin: 34px 15px 0; }
 
-/* ========================================================
-   MOOD CHECK-IN WIDGET ("Kaisa feel ho raha hai?")
-   ======================================================== */
-.mood-checkin-wrap { margin-top: 36px; }
-.mood-checkin-card { background: rgba(255, 253, 251, 0.95); border: 1px solid #e7d1e3; border-radius: 26px; padding: 32px 28px; text-align: center; box-shadow: var(--shadow-sm); }
-.mood-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: #8c577b; background: #fae6f2; padding: 6px 14px; border-radius: 99px; margin-bottom: 12px; }
-.mood-title { font: 500 28px/1.2 var(--hand); color: var(--rose); margin: 0 0 20px; }
-.mood-title em { font-style: normal; color: #684b6c; font-size: 22px; }
-.mood-btn-group { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.mood-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 99px; background: #fff8fb; border: 1.5px solid #e4cfe0; color: #694f6c; font-size: 13px; font-weight: 500; transition: all 0.25s ease; cursor: pointer; }
-.mood-btn:hover { background: #fdf0f7; border-color: var(--rose-soft); transform: translateY(-2px); }
-.mood-btn.active { background: #f2dbe9; border-color: var(--rose); color: #863560; font-weight: 600; box-shadow: 0 4px 14px rgba(153, 56, 95, 0.15); }
-.mood-btn .m-emoji { font-size: 18px; line-height: 1; }
-.mood-feedback-box { margin-top: 22px; padding: 22px 26px; background: #fdf7fa; border-radius: 18px; border: 1px dashed #e2c2da; animation: soft-arrival 0.35s ease both; text-align: left; }
-.mood-feedback-content h4 { font: 500 25px/1.2 var(--hand); color: var(--rose); margin: 0 0 8px; }
-.mood-feedback-content p { font-size: 14px; line-height: 1.85; color: #5c435f; margin: 0; }
-
-/* ========================================================
-   AAJ KA SUKOON NOTE / GENTLE FORTUNE COOKIE
-   ======================================================== */
-.sukoon-cookie-wrap { margin-top: 45px; text-align: center; }
-.sukoon-cookie-card { 
-  max-width: 640px; 
-  margin: 0 auto; 
-  background: linear-gradient(145deg, rgba(255, 252, 249, 0.95), rgba(255, 245, 250, 0.92)), url('assets/pink-sky.webp') center/cover no-repeat; 
-  border: 1px solid #edd5e5; 
-  border-radius: 28px; 
-  padding: 34px 30px; 
-  box-shadow: var(--shadow-sm); 
-  overflow: hidden;
-}
-.cookie-header { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 18px; }
-.cookie-icon { font-size: 38px; line-height: 1; animation: pulseHeart 2.5s ease-in-out infinite; }
-.cookie-header h3 { font: 500 32px/1.1 var(--serif); color: var(--rose); margin: 0 0 4px; }
-.cookie-header p { font-size: 13px; color: var(--muted); margin: 0; }
-.cookie-note-box { min-height: 72px; padding: 20px 24px; background: rgba(255, 255, 255, 0.92); border-radius: 16px; border: 1px solid #ebd8e7; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 2px 6px rgba(0,0,0,0.02); margin-bottom: 20px; transition: transform 0.25s; }
-.cookie-note-box p { font: 500 24px/1.4 var(--hand); color: #873d63; margin: 0; text-align: center; }
-.cookie-draw-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; border-radius: 99px; background: linear-gradient(135deg, #f5bcd3, #e591b9); color: white; font-size: 13px; font-weight: 600; box-shadow: 0 6px 18px rgba(163, 56, 98, 0.22); border: 0; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-.cookie-draw-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 24px rgba(163, 56, 98, 0.3); }
-
 /* Cursor Sparkle Trail */
 .cursor-sparkle { position: fixed; pointer-events: none; z-index: 998; font-size: 15px; line-height: 1; user-select: none; animation: cursorFloat 0.75s ease-out forwards; }
 @keyframes cursorFloat { from { opacity: 0.9; transform: translate(-50%, -50%) scale(1); } to { opacity: 0; transform: translate(calc(-50% + var(--drift-x)), calc(-50% + var(--drift-y))) scale(0.3); } }
@@ -1005,9 +805,8 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
 /* Media Queries */
 @media (max-width: 1080px) {
   .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 36px; }
-  .open-grid, .sticky-grid, .promise-grid { grid-template-columns: repeat(2, 1fr); }
+  .open-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery { gap: 36px 24px; }
-  .truth-layout { gap: 40px; }
   .reply-options { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1023,11 +822,6 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
   .hero-actions { justify-content: center; }
   .scene-picker { justify-content: center; }
   .cover-keepsake { margin: 20px auto 0; }
-  .truth-layout { grid-template-columns: 1fr; gap: 40px; }
-  .truth-copy { text-align: center; }
-  .word-keepsake { display: block; text-align: center; padding: 28px 24px; }
-  .word-tabs { flex-direction: row; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-  .word-panel { border-left: 0; padding-left: 0; }
   .album-header { grid-template-columns: 1fr; text-align: center; gap: 18px; }
   .album-header .intro { margin-inline: auto; }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
@@ -1049,10 +843,18 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
   .control { min-height: 38px; padding: 6px 8px; font-size: 11px; }
   .control-state { display: none; }
   .hero h1 { font-size: clamp(66px, 18vw, 92px); }
-  .open-grid, .sticky-grid, .promise-grid { grid-template-columns: 1fr; }
+  .open-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; gap: 36px; }
   .chapter-dock { max-width: calc(100% - 16px); }
   .chapter-dock a { font-size: 11px; padding: 7px 10px; }
+}
+
+/* Reduced Motion Mode */
+body.reduced-motion *,
+body.reduced-motion *::before,
+body.reduced-motion *::after {
+  animation: none !important;
+  transition: none !important;
 }
 </style>
 </head>
@@ -1462,7 +1264,7 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
  <div class="book-progress" aria-hidden="true"><span id="bookProgress"></span></div>
  <div class="book-controls">
   <button type="button" id="bookPrev" aria-label="Previous page">Previous</button>
-  <span id="bookCounter" role="status" aria-live="polite">Page 1 of 5</span>
+  <span id="bookCounter" role="status" aria-live="polite">Page 1 of 3</span>
   <button type="button" id="bookNext" aria-label="Next page">Next</button>
  </div>
 </dialog>
@@ -1597,7 +1399,7 @@ $('#skyMood').addEventListener('change', e => applyMood(e.target.value));
 
 const sceneAssets = { dawn: 'assets/rose-dawn.webp', clouds: 'assets/pink-sky.webp', garden: 'assets/quiet-garden.webp' };
 function applyScene(sc) {
-  const scene = Object.hasOwn(sceneAssets, sc) ? sc : 'dawn';
+  const scene = Boolean(sceneAssets[sc]) ? sc : 'dawn';
   if ($('#heroScene').getAttribute('src') !== sceneAssets[scene]) $('#heroScene').src = sceneAssets[scene];
   body.dataset.scene = scene;
   document.querySelectorAll('[data-scene]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.scene === scene)));
@@ -1656,6 +1458,24 @@ $('#lightsToggle').addEventListener('click', () => {
   savePref('lights', !cur);
 });
 
+// Pause Animations / Motion Toggle
+const motionBtn = $('#motionToggle');
+function reflectMotion(reduced) {
+  if (!motionBtn) return;
+  motionBtn.setAttribute('aria-pressed', String(reduced));
+  motionBtn.textContent = reduced ? 'Resume animations' : 'Pause animations';
+  body.classList.toggle('reduced-motion', reduced);
+}
+reflectMotion(Boolean(preferences.reducedMotion));
+if (motionBtn) {
+  motionBtn.addEventListener('click', () => {
+    const isReduced = motionBtn.getAttribute('aria-pressed') !== 'true';
+    reflectMotion(isReduced);
+    savePref('reducedMotion', isReduced);
+    notice(isReduced ? 'Animations paused.' : 'Animations resumed.');
+  });
+}
+
 // Toast Notice Helper
 let noticeTimer;
 function notice(msg) {
@@ -1673,7 +1493,10 @@ let audioCtx = null;
 // ========================================================
 const audio = $('#soundtrack');
 const musicBtn = $('#musicToggle');
-const musicTimeKey = 'harshu-music-time-pos';
+function getMusicKey(songSrc) {
+  const clean = (songSrc || 'soundtrack.mp3').split('/').pop().replace('.mp3', '') || 'default';
+  return 'harshu-music-pos-' + clean;
+}
 let musicActive = true; // Enabled by default on open
 let musicReq = 0;
 let fadeTimer;
@@ -1690,7 +1513,7 @@ function getInitialOffset(songSrc) {
 function getSavedPosition(songSrc) {
   const minOffset = getInitialOffset(songSrc);
   try {
-    const saved = parseFloat(localStorage.getItem(musicTimeKey));
+    const saved = parseFloat(localStorage.getItem(getMusicKey(songSrc)));
     if (Number.isFinite(saved) && saved >= minOffset && (!audio.duration || saved < audio.duration - 4)) {
       return saved;
     }
@@ -1781,7 +1604,6 @@ $('#song').value = initialSong;
 $('#song').addEventListener('change', e => {
   audio.src = e.target.value;
   savePref('song', e.target.value);
-  try { localStorage.removeItem(musicTimeKey); } catch {}
   applyStartOffset(audio.src);
   if (musicActive) playMusic();
   else updateMusicUI(false);
@@ -1793,7 +1615,7 @@ audio.addEventListener('timeupdate', () => {
   const now = Date.now();
   if (now - lastSaveTime > 1200 && audio.currentTime >= getInitialOffset(audio.src)) {
     lastSaveTime = now;
-    try { localStorage.setItem(musicTimeKey, audio.currentTime.toFixed(1)); } catch {}
+    try { localStorage.setItem(getMusicKey(audio.src), audio.currentTime.toFixed(1)); } catch {}
   }
 });
 
@@ -1965,151 +1787,12 @@ $('#photoPrev').addEventListener('click', () => { currentPhoto = (currentPhoto -
 $('#photoNext').addEventListener('click', () => { currentPhoto = (currentPhoto + 1) % CONFIG.photos.length; renderPhotoModal(); });
 
 // ========================================================
-// ========================================================
-// 07 · ENHANCED VIRTUAL WARM HUG & CALM BREATHING SPACE
-// ========================================================
-const hugBtn = $('#hugBtn');
-const hugIcon = $('#hugIcon');
-const hugFill = $('#hugFill');
-const hugMsg = $('#hugMessage');
-const hugResultCard = $('#hugResultCard');
-const hugAgainBtn = $('#hugAgainBtn');
-const hugHintBadge = $('#hugHintBadge');
-let hugHoldTimer = null, hugStart = 0, hugCompleted = false;
-
-function startHug() {
-  if (hugCompleted) return;
-  hugBtn.classList.add('holding');
-  hugStart = performance.now();
-  
-  function frame(now) {
-    const elapsed = now - hugStart;
-    const prog = Math.min(100, (elapsed / 2800) * 100);
-    hugFill.style.width = prog + '%';
-    
-    if (elapsed < 900) {
-      hugMsg.textContent = 'Dheere se saans andar lo... Inhale softly 🌸';
-      if (hugHintBadge) hugHintBadge.textContent = 'Hold chalu rakho… 1/3';
-    } else if (elapsed < 1900) {
-      hugMsg.textContent = 'Saari bechaini aur gussa chhod do... Hold gently 🕊️';
-      if (hugHintBadge) hugHintBadge.textContent = 'Thoda sa aur… 2/3';
-    } else if (prog < 100) {
-      hugMsg.textContent = 'Almost there... Feeling a gentle warmth ✨';
-      if (hugHintBadge) hugHintBadge.textContent = 'Ready… 3/3';
-    } else {
-      hugCompleted = true;
-      hugBtn.classList.remove('holding');
-      hugBtn.classList.add('hug-complete');
-      if (hugIcon) hugIcon.textContent = '🫂';
-      hugMsg.textContent = 'Sending you a big warm hug... ♡';
-      if (hugHintBadge) hugHintBadge.textContent = 'Completed ♡';
-      
-      try { navigator.vibrate?.([50, 80, 50]); } catch {}
-      burstHearts(hugBtn);
-      burstConfetti(window.innerWidth / 2, window.innerHeight * 0.5);
-      playChime('bell');
-      
-      setTimeout(() => {
-        if (hugResultCard) hugResultCard.hidden = false;
-        burstHearts(hugBtn);
-      }, 350);
-      return;
-    }
-    
-    hugHoldTimer = requestAnimationFrame(frame);
-  }
-  hugHoldTimer = requestAnimationFrame(frame);
-}
-
-function cancelHug() {
-  if (hugCompleted) return;
-  cancelAnimationFrame(hugHoldTimer);
-  hugBtn.classList.remove('holding');
-  if (parseFloat(hugFill.style.width) < 100) {
-    hugFill.style.width = '0%';
-    hugMsg.textContent = 'Dheere se button ko press karke hold karein…';
-    if (hugHintBadge) hugHintBadge.textContent = 'Press & hold for 3 seconds';
-  }
-}
-
-if (hugBtn) {
-  hugBtn.addEventListener('pointerdown', startHug);
-  hugBtn.addEventListener('pointerup', cancelHug);
-  hugBtn.addEventListener('pointerleave', cancelHug);
-}
-
-if (hugAgainBtn) {
-  hugAgainBtn.addEventListener('click', () => {
-    hugCompleted = false;
-    hugBtn.classList.remove('hug-complete');
-    if (hugIcon) hugIcon.textContent = '♡';
-    hugFill.style.width = '0%';
-    hugMsg.textContent = 'Dheere se button ko press karke hold karein…';
-    if (hugHintBadge) hugHintBadge.textContent = 'Press & hold for 3 seconds';
-    if (hugResultCard) hugResultCard.hidden = true;
-  });
-}
-
-// 1-Minute Calm Box Breathing Space
-const breatheToggleBtn = $('#breatheToggleBtn');
-const breatheGuideBox = $('#breatheGuideBox');
-const breatheCloseBtn = $('#breatheCloseBtn');
-const breatheCircle = $('#breatheCircle');
-const breatheStateText = $('#breatheStateText');
-const breatheGuideNote = $('#breatheGuideNote');
-let breatheInterval = null;
-
-if (breatheToggleBtn && breatheGuideBox) {
-  breatheToggleBtn.addEventListener('click', () => {
-    const isHidden = breatheGuideBox.hidden;
-    breatheGuideBox.hidden = !isHidden;
-    if (!breatheGuideBox.hidden) {
-      startBreathingGuide();
-    } else {
-      stopBreathingGuide();
-    }
-  });
-}
-
-if (breatheCloseBtn) {
-  breatheCloseBtn.addEventListener('click', () => {
-    if (breatheGuideBox) breatheGuideBox.hidden = true;
-    stopBreathingGuide();
-  });
-}
-
-function startBreathingGuide() {
-  stopBreathingGuide();
-  const phases = [
-    { text: 'Inhale 🌸', note: 'Dheere se saans andar lo... relax your shoulders (4s)' },
-    { text: 'Hold 🕊️', note: 'Saans ko shaanti se roko... feel the stillness (4s)' },
-    { text: 'Exhale 🌿', note: 'Saari thakaan aur bojh bahar chhod do... (4s)' },
-    { text: 'Rest 💫', note: 'Bas shaant raho... relax (4s)' }
-  ];
-  let currentPhase = 0;
-  function runPhase() {
-    if (!breatheStateText || !breatheGuideNote) return;
-    const p = phases[currentPhase];
-    breatheStateText.textContent = p.text;
-    breatheGuideNote.textContent = p.note;
-    currentPhase = (currentPhase + 1) % phases.length;
-  }
-  runPhase();
-  breatheInterval = setInterval(runPhase, 4000);
-}
-
-function stopBreathingGuide() {
-  clearInterval(breatheInterval);
-  breatheInterval = null;
-}
-
-// ========================================================
-// 10 · APOLOGY LETTER & 5-PAGE DIARY
+// 10 · APOLOGY LETTER & 3-PAGE DIARY
 // ========================================================
 const bookParagraphs = [...document.querySelectorAll('.letter-sheet > p')];
 const bookPages = [];
 for (let i = 0; i < bookParagraphs.length; i += 2) bookPages.push(bookParagraphs.slice(i, i + 2));
-const bookChapters = ['Galti meri thi', 'Sach ye hai', 'Missing you', 'Sirf ek mauka', 'Hamesha ke liye sorry'];
+const bookChapters = ['Galti meri thi', 'Sach ye hai', 'Sirf ek mauka'];
 let bookIndex = 0;
 
 function renderBook() {
@@ -2250,7 +1933,11 @@ if (copyBtnEl) {
 
 const waBtnEl = $('#whatsappReply');
 if (waBtnEl) {
-  waBtnEl.addEventListener('click', () => {
+  waBtnEl.addEventListener('click', e => {
+    if (waBtnEl.classList.contains('disabled') || !generateReplyText()) {
+      e.preventDefault();
+      return;
+    }
     burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
     playChime('bell');
   });
@@ -2348,83 +2035,6 @@ window.addEventListener('pointermove', e => {
   setTimeout(() => sp.remove(), 750);
 }, { passive: true });
 
-// ========================================================
-// 🧸 MOOD CHECK-IN HANDLER
-// ========================================================
-const moodResponses = {
-  angry: {
-    title: 'Tumhara gussa 100% sahi hai 🌸',
-    text: 'Gussa hona tumhara poora haq hai, Harshu. Maine jo gusse mein galat bola, uska mere paas koi justification nahi hai. Main yahan safai dene nahi aaya. Take all the time you need, gussa nikaalna ya baat na karna bilkul natural hai.'
-  },
-  hurt: {
-    title: 'I am really so sorry Harshu 🤍',
-    text: 'Mera intention kabhi tumhe dukh dena nahi tha, par mere shabdon ne tumhe dukh diya. Is baat ka afsos mujhe hamesha rahega. Kaash main us waqt ruk jaata. Please apna khayal rakhna.'
-  },
-  tired: {
-    title: 'Pehle shaanti se rest karo Harshu 🌿',
-    text: 'Agar aaj ka din ya yeh sab bohot tiring lag raha hai, toh phone side rakh do. Paani piyo aur aaram karo. Is website ka reply karna ya padhna bhi zaroori nahi hai. Tumhari mental peace sabse pehle hai.'
-  },
-  space: {
-    title: 'Poori izzat tumhari space ki 🕊️',
-    text: 'Agar tumhe shaanti aur doori chahiye, toh main bina baar-baar message kiye us boundary ki 100% respect karunga. Meri taraf se koi pressure nahi aayega. Tumhara sukoon sabse upar hai.'
-  }
-};
-
-document.querySelectorAll('.mood-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const moodKey = btn.dataset.mood;
-    const resp = moodResponses[moodKey];
-    if (resp) {
-      playChime('pop');
-      const box = $('#moodFeedbackBox');
-      const content = $('#moodFeedbackContent');
-      content.innerHTML = `<h4>${resp.title}</h4><p>${resp.text}</p>`;
-      box.hidden = false;
-    }
-  });
-});
-
-// ========================================================
-// 🥠 AAJ KA SUKOON NOTE GENERATOR
-// ========================================================
-const sukoonNotesList = [
-  '“Chahe aaj ka din kaisa bhi raha ho, tum bohot precious ho. Thoda sa paani piyo aur relax karo. 🌸”',
-  '“Har cheez ko aaj hi theek karna zaroori nahi hai. Take your own sweet time. Tumhara sukoon sabse pehle hai. ☕”',
-  '“Tumhari muskaan duniya ki sabse pyari cheez hai. Kabhi kisi ki wajah se use mat khona. ✨”',
-  '“Agar aaj thakan lag rahi hai, toh bas itna yaad rakhna ki kal ek bilkul naya din hoga. Good vibes to you! 🕊️”',
-  '“Tum bohot strong ho, lekin har waqt sab kuch sambhalna zaroori nahi. Kabhi-kabhi bas shaant baithna bhi enough hota hai. 🌿”',
-  '“Gussa aur narazgi natural hai. Apne feelings ko dabaana mat. Tum jo feel karti ho, valid hai. 🤍”',
-  '“Dheere se saans lo... drop your shoulders. Sab theek ho jayega, Harshu. 🌸”',
-  '“Tumhara dil bohot saaf hai. Hamesha waisi hi rehna, jaise tum ho. 💖”',
-  '“Kisi bhi baat ka pressure mat lena. No expectations, only care for you. 🧸”',
-  '“Ek pyari si coffee ya chai piyo aur apni favorite cheez dekho. Tumhara sukoon deserve karti ho. ☕”',
-  '“Waqt har zakhm ko dheere-dheere bhar deta hai. Apne aap par gentle raho. 🌷”',
-  '“Sending you pure peace and positive energy, Harshu. Hamesha muskuraati raho. 💫”'
-];
-let currentNoteIndex = 0;
-const cookieBtn = $('#cookieDrawBtn');
-const cookieText = $('#cookieNoteText');
-const cookieBox = $('#cookieNoteBox');
-
-if (cookieBtn && cookieText) {
-  cookieBtn.addEventListener('click', () => {
-    let nextIndex;
-    do {
-      nextIndex = Math.floor(Math.random() * sukoonNotesList.length);
-    } while (nextIndex === currentNoteIndex && sukoonNotesList.length > 1);
-    currentNoteIndex = nextIndex;
-    playChime('bell');
-    cookieBox.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      cookieText.textContent = sukoonNotesList[currentNoteIndex];
-      cookieBox.style.transform = 'scale(1)';
-      burstHearts(cookieBtn);
-    }, 150);
-  });
-}
-
 // General Dialog Helper
 let lastFocus = null;
 function openDialog(dlg) {
@@ -2518,16 +2128,6 @@ if (photoPreviewEl) {
     }
   }, { passive: true });
 }
-
-// Truth Word Tabs
-document.querySelectorAll('[data-word]').forEach((tab, idx) => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('[data-word]').forEach((t, i) => {
-      t.setAttribute('aria-selected', String(i === idx));
-      document.getElementById('wordsPanel' + i).hidden = (i !== idx);
-    });
-  });
-});
 
 // Scroll Progress & Nav Highlight
 const navLinks = [...document.querySelectorAll('.chapter-dock a')];
