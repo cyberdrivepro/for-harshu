@@ -1,2 +1,5 @@
-﻿index.html.bak
+index.html.bak
 *.log
+telegram_bot.js
+telegram_setup.py
+scratch/
