@@ -111,10 +111,6 @@ img { max-width: 100%; display: block; }
 /* Toast */
 .toast { position: fixed; top: 96px; left: 50%; transform: translateX(-50%); z-index: 150; width: max-content; max-width: calc(100% - 32px); background: #fffcfd; border: 1px solid #efd7e4; border-radius: 16px; box-shadow: 0 10px 40px rgba(67, 35, 67, 0.2); padding: 12px 22px; font-size: 14px; text-align: center; }
 
-/* Floating Music Hint Pill */
-.music-floating-pill { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 99; display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; background: rgba(255, 252, 250, 0.96); backdrop-filter: blur(12px); border: 1px solid rgba(220, 160, 195, 0.5); border-radius: 99px; box-shadow: 0 10px 35px rgba(110, 52, 90, 0.18); font-size: 13px; font-weight: 500; color: var(--rose); cursor: pointer; animation: pulsePill 2s ease-in-out infinite; transition: opacity 0.35s ease, transform 0.35s ease; user-select: none; }
-.music-floating-pill.hidden { opacity: 0; transform: translate(-50%, 16px); pointer-events: none; }
-@keyframes pulsePill { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.03); } }
 
 /* Global Container */
 main, footer { position: relative; z-index: 2; }
@@ -612,6 +608,7 @@ main, footer { position: relative; z-index: 2; }
 .reply-option:nth-child(2) { background: rgba(247, 251, 255, 0.85); }
 .reply-option:nth-child(3) { background: rgba(252, 248, 255, 0.85); }
 .reply-option:nth-child(4) { background: rgba(255, 250, 245, 0.85); }
+.reply-option:nth-child(5) { background: rgba(255, 245, 251, 0.9); grid-column: 1 / -1; }
 .reply-option:has(input:checked) { border-color: #975275; background: #fbf0f7; box-shadow: 0 6px 18px rgba(151, 82, 117, 0.2), inset 0 0 0 1.5px #975275; }
 .reply-option:focus-within { outline: 3px solid #7559a8; outline-offset: 4px; }
 .reply-option input { appearance: auto; margin: 0 0 8px; width: 17px; height: 17px; accent-color: #945375; }
@@ -927,7 +924,6 @@ body.reduced-motion *::after {
 
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="soundtrack" preload="auto" src="assets/aarzu.mp3"></audio>
-<div class="music-floating-pill hidden" id="musicFloatingPill" role="button" tabindex="0"><span>🎵 Aarzu sunne ke liye screen par tap karein ♡</span></div>
 
 <main>
 <!-- HERO SECTION -->
@@ -1168,10 +1164,10 @@ body.reduced-motion *::after {
  <img class="restart-scene" src="assets/quiet-garden.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="">
  <div class="container">
   <div class="restart-header reveal">
-    <span class="eyebrow">Ab Tu Bol ♡</span>
-    <h2 class="section-heading" id="restartTitle">Harshu, please ek baar…<br><em>ek aakhri chance?</em></h2>
-    <p class="restart-hand">Sirf agar tu bhi chahe toh…</p>
-    <p class="intro">Main bas ek baar sab theek karna chahta hoon Harshu. Bina kisi ladai ke, bina kisi behes ke. Main tujhe kabhi hurt nahi karna chahta tha. Agar abhi bhi gussa hai, daant le mujhe yahin par. Aur agar time chahiye, main wait karunga.</p>
+    <span class="eyebrow">Humara Rishta ♡</span>
+    <h2 class="section-heading" id="restartTitle">Harshu, mujhe sirf baat nahi karni…<br><em>mujhe humara rishta bachana hai.</em></h2>
+    <p class="restart-hand">Sirf agar tu bhi yahi chahe toh…</p>
+    <p class="intro">Tujhe khone ke darr se bada darr mere liye koi nahi hai Harshu. Main bas ek formal sorry bol kar baat taalna nahi chahta — main sach me sab theek karna chahta hoon. Chahe daantna ho, gussa nikaalna ho, ya thoda waqt lena ho... Ab sab kuch tere hisaab se hoga. Bas humare is rishte ko aise khatam mat hone de.</p>
   </div>
   
   <!-- Suraj's Confession Card -->
@@ -1180,10 +1176,10 @@ body.reduced-motion *::after {
       <img src="assets/gifs/hug.gif" alt="warm hug bear" class="confession-hug-gif" loading="lazy">
     </div>
     <span class="confession-badge">Ek Baat Dil Se</span>
-    <h3 class="confession-title">“Harshu, tu mere liye koi temporary insaan nahi hai… tu sach me bohot special hai.”</h3>
-    <p class="confession-quote">“Mujhe pata hai mera gussa kitna kharab hai, par main sach me apne gusse par kabu karna seekh raha hoon — sirf isliye taaki meri wajah se tere chehre ki smile kabhi na chheene. <strong>Agar tune mujhe ek aakhri chance diya na, toh main tujhe kabhi regret nahi hone dunga.</strong>”</p>
+    <h3 class="confession-title">“Harshu, tu mere liye koi temporary insaan nahi hai… Tu meri sabse pyari priority hai.”</h3>
+    <p class="confession-quote">“Mujhe pata hai mera gussa kitna bekaar hai aur us din maine jo bola usne tera dil kitna dukhaya. Par sach ye hai ki main tere bina nahi reh sakta. <strong>Agar tune humare rishte ko ek aakhri chance diya na, toh main tujhe kabhi regret nahi hone dunga — har ladai aur gusse se bacha kar rakhunga humein.</strong>”</p>
     <div class="confession-foot">
-      <span>Tere bina sab ajeeb sa lagta hai.</span>
+      <span>Tere bina sab ajeeb sa aur sunsaan lagta hai.</span>
       <strong>— Tera Suraj ♡</strong>
     </div>
   </div>
@@ -1193,44 +1189,49 @@ body.reduced-motion *::after {
      <span aria-hidden="true">💌</span>
      <div>
        <h3 id="replyTitle">Ab jo bhi dil me hai, bol de…</h3>
-       <p>Chahe daantna ho, gussa nikalna ho ya kuch bhi kehna ho.</p>
+       <p>Chahe daantna ho, gussa nikalna ho, ya rishta sambhalna ho — faisla tera hai.</p>
      </div>
    </div>
    <fieldset>
-     <legend>Abhi kya kehna chahti hai?</legend>
+     <legend>Tu abhi kahan khadi hai humare rishte ko le kar?</legend>
      <div class="reply-options">
       <label class="reply-option">
-        <input type="radio" name="replyChoice" value="talk">
-        <strong>Chalo ek baar baat karte hain ☕</strong>
-        <small>Bina kisi ladai ke, normal tareeke se sunte hain.</small>
+        <input type="radio" name="replyChoice" value="restart">
+        <strong>Chal ek fresh start karte hain 💫</strong>
+        <small>Bina kisi purani ladai ke, humare rishte ko dubara sambhalte hain.</small>
       </label>
       <label class="reply-option">
-        <input type="radio" name="replyChoice" value="friends">
-        <strong>Dheere-dheere normal hote hain 🌸</strong>
-        <small>Bina kisi pressure ke, normal tareeke se.</small>
+        <input type="radio" name="replyChoice" value="read">
+        <strong>Maine sab padh liya, neeche likh rahi hoon 💌</strong>
+        <small>Teri saari baatein dekh li hain, ab neeche mera reply dhyan se padhna.</small>
       </label>
       <label class="reply-option">
         <input type="radio" name="replyChoice" value="time">
-        <strong>Thoda time chahiye mujhe ⏳</strong>
-        <small>Abhi thoda chill hone de, jaldi nahi hai.</small>
+        <strong>Thoda time chahiye mujhe sochne ke liye ⏳</strong>
+        <small>Abhi thoda chill hone de mujhe, koi jaldbaazi ya pressure nahi hai.</small>
       </label>
       <label class="reply-option">
-        <input type="radio" name="replyChoice" value="listen">
-        <strong>Gussa hoon par padh liya 🕊️</strong>
-        <small>Gussa apni jagah hai, par message dekh liya tera.</small>
+        <input type="radio" name="replyChoice" value="save">
+        <strong>Gussa bohot hoon, par rishta khona nahi chahti 🕊️</strong>
+        <small>Gussa apni jagah hai kyunki hurt hua, par tujhe khona nahi hai.</small>
+      </label>
+      <label class="reply-option">
+        <input type="radio" name="replyChoice" value="normal">
+        <strong>Dheere-dheere pehle jaise normal hote hain 🌸</strong>
+        <small>Bina kisi rush ke, pehle baat shuru karte hain aur sab theek karte hain.</small>
       </label>
      </div>
    </fieldset>
    <p class="reply-hint" id="replyHint" aria-live="polite">Upar kisi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡</p>
    
-   <label class="message-label" for="replyMessage">Apne words me kuch bolna ho toh… <span>(optional)</span></label>
-   <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi dil me hai likh de — daant le, gussa nikaal le, ya jo bhi bolna ho... Main har ek lafz sununga. ♡" autocomplete="off"></textarea>
+   <label class="message-label" for="replyMessage">Apne dil ki baat likh de... ✍️ <span>(Chahe daant le ya jo bhi kehna ho)</span></label>
+   <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi tere dil me hai bina jhijhak likh de — daant le, gussa nikaal le, ya jo bhi bolna ho... Main har ek lafz sununga aur humara rishta sambhalunga. ♡" autocomplete="off"></textarea>
    
    <p class="reply-privacy" id="replyPrivacy">Neeche button dabate hi ye message seedha Suraj tak pahunch jaayega. Koi app kholne ki zaroorat nahi hai. ♡</p>
    
    <div class="reply-actions">
      <button type="button" class="btn-send-hero disabled" id="sendReplyBtn">
-       <span class="btn-icon">💌</span> <span id="sendBtnText">Message Bhej Do</span>
+       <span class="btn-icon">💌</span> <span id="sendBtnText">Suraj Tak Bhej Do</span>
      </button>
      <div class="reply-actions-row">
        <button type="button" class="clear-reply" id="clearReply">Clear text ↺</button>
@@ -1240,7 +1241,7 @@ body.reduced-motion *::after {
    <p class="reply-status" id="replyStatus" role="status" aria-live="polite"></p>
   </form>
   
-  <p class="restart-final">Umeed hai. Jaldi nahi.<br>Teri marzi, hamesha. ♡</p>
+  <p class="restart-final">Umeed hai. Jaldi nahi.<br>Humara rishta, hamesha. ♡</p>
  </div>
 </section>
 </main>
@@ -1530,7 +1531,6 @@ let audioCtx = null;
 // ========================================================
 const audio = $('#soundtrack');
 const musicBtn = $('#musicToggle');
-const musicPromptPill = $('#musicFloatingPill');
 
 function getMusicKey(songSrc) {
   const clean = (songSrc || 'soundtrack.mp3').split('/').pop().replace('.mp3', '') || 'default';
@@ -1631,9 +1631,6 @@ function updateMusicUI(isPlaying) {
     ? 'Playing · Choo Lo (The Local Train)'
     : 'Playing · Pink Sky Piano';
   $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, tap anywhere to play ♫';
-  if (isPlaying && musicPromptPill) {
-    musicPromptPill.classList.add('hidden');
-  }
 }
 
 async function playMusic() {
@@ -1651,7 +1648,6 @@ async function playMusic() {
     // Autoplay held by browser policy on load/refresh until first user interaction
     musicActive = true;
     updateMusicUI(true);
-    if (musicPromptPill) musicPromptPill.classList.remove('hidden');
     armAutoplayFallback();
   }
 }
@@ -1662,7 +1658,6 @@ function pauseMusic() {
   try { localStorage.setItem('harshu_music_was_playing', 'false'); } catch {}
   updateMusicUI(false);
   fadeAudio(0, true);
-  if (musicPromptPill) musicPromptPill.classList.add('hidden');
 }
 
 musicBtn.addEventListener('click', (e) => {
@@ -1751,7 +1746,6 @@ function armAutoplayFallback() {
 
   function removeFallbackListeners() {
     fallbackArmed = false;
-    if (musicPromptPill) musicPromptPill.classList.add('hidden');
     window.removeEventListener('click', startOnInteraction, true);
     window.removeEventListener('pointerdown', startOnInteraction, true);
     window.removeEventListener('pointerup', startOnInteraction, true);
@@ -1768,15 +1762,6 @@ function armAutoplayFallback() {
   window.addEventListener('touchend', startOnInteraction, true);
   window.addEventListener('scroll', startOnInteraction, true);
   window.addEventListener('keydown', startOnInteraction, true);
-}
-
-// Pill click listener
-if (musicPromptPill) {
-  musicPromptPill.addEventListener('click', (e) => {
-    e.stopPropagation();
-    musicActive = true;
-    playMusic();
-  });
 }
 
 // Start immediately on load / refresh
@@ -1950,21 +1935,25 @@ $('#readSecret').addEventListener('click', triggerSecret);
 // 12 · RESTART & REPLY ACTIONS (WHATSAPP, COPY, SHARE)
 // ========================================================
 const replyChoices = {
-  talk: {
-    text: 'Suraj, maine sab padh liya... theek hai chal, ek baar normal baat karte hain bina kisi ladai ke. ☕',
-    hint: 'Ek normal, bina ladai wali baat. Suraj bas chup chaap sunega. ♡'
+  restart: {
+    text: 'Suraj, jo hua so hua... par main humara rishta aise khatam nahi hone dena chahti. Chal ek fresh start karte hain dubara se, bina kisi purani galti ya toxic behes ke. 💫',
+    hint: 'Ek nayi shuruat — jisme sirf samajh, respect aur pyaar ho. Suraj har pal tere saath hai ♡'
   },
-  friends: {
-    text: 'Maine dekh liya sab... theek hai Suraj, dheere-dheere normal baat shuru karte hain pehle bina kisi pressure ke. 🌸',
-    hint: 'Dheere-dheere normal hone ki taraf ek step. ♡'
+  read: {
+    text: 'Suraj, maine teri poori website aur har ek letter bohot achhe se padh liya hai... samajh gaya mujhe sab kuch. Neeche jo maine likha hai usko dhyan se padhna. 💌',
+    hint: 'Jo bhi dil me hai Harshu, bina kisi jhijhak ke likh de. Suraj har ek lafz qadar se padhega ♡'
   },
   time: {
-    text: 'Suraj, maine dekh liya jo tune likha... par abhi thoda time de mujhe, thoda chill hone de. ⏳',
-    hint: 'Suraj chup chaap wait karega jab tak tera mann na ho. ♡'
+    text: 'Suraj, maine dekh liya jo tune itne dil se likha hai... par abhi mujhe thoda waqt chahiye khud ko sambhalne ke liye. Thoda chill hone de mujhe, jaldi mat kar. ⏳',
+    hint: 'Suraj bina kisi pressure ke, chup-chaap wait karega jab tak tu ready na ho ♡'
   },
-  listen: {
-    text: 'Bohot gussa aa raha tha mujhe tujh par... par theek hai, tera message padh liya maine. 🕊️',
-    hint: 'Tera gussa hona 100% banta hai Harshu. Thank you padhne ke liye. ♡'
+  save: {
+    text: 'Tujh par gussa bohot hai Suraj, tune bohot zyada hurt kiya tha... par sach ye hai ki main humare rishte ko khona nahi chahti. Dheere-dheere sab theek karte hain. 🕊️',
+    hint: 'Tere gusse ka har hisab banta hai Harshu. Suraj tera har gussa sehne ko tayyar hai ♡'
+  },
+  normal: {
+    text: 'Suraj, ek jhatke me sab theek nahi hoga, par chal dheere-dheere pehle jaise normal hote hain. Bina kisi pressure ke ek dusre ko samajhte hain. 🌸',
+    hint: 'Bina kisi jaldbaazi ke, step-by-step hum wapas pehle jaise banenge ♡'
   }
 };
 const draftKey = 'harshu-reply-draft-v2';
