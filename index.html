@@ -903,7 +903,8 @@ body.reduced-motion *::after {
     </label>
     <label for="song"><span>Background Song</span>
       <select id="song">
-        <option value="soundtrack.mp3" selected>Choo Lo · The Local Train (Full Emotional)</option>
+        <option value="assets/aarzu.mp3" selected>Aarzu · Noor, Khan, Madhurxo (From 0:50 ♡)</option>
+        <option value="assets/choo-lo.mp3">Choo Lo · The Local Train</option>
         <option value="assets/choo-lo-clip.mp3">Choo Lo · Chorus Clip ("Khade hain aaj bhi wahin")</option>
         <option value="assets/pink-sky.mp3">Pink Sky · Gentle Piano Instrumental</option>
       </select>
@@ -920,7 +921,7 @@ body.reduced-motion *::after {
 </header>
 
 <div class="toast" id="toast" role="status" hidden></div>
-<audio id="soundtrack" loop preload="auto" src="soundtrack.mp3"></audio>
+<audio id="soundtrack" preload="auto" src="assets/aarzu.mp3"></audio>
 
 <main>
 <!-- HERO SECTION -->
@@ -1536,8 +1537,10 @@ $('#volume').value = Math.round(currentVol * 100);
 $('#volumeValue').textContent = Math.round(currentVol * 100) + '%';
 
 function getInitialOffset(songSrc) {
+  if (songSrc && (songSrc.includes('aarzu') || songSrc.includes('soundtrack'))) return 50.0; // 0:50 sec - the exact best emotional drop!
   if (songSrc && songSrc.includes('choo-lo-clip')) return 0;
-  return 40.0; // 0:40 sec where the iconic emotional vocals begin
+  if (songSrc && songSrc.includes('choo-lo')) return 40.0;
+  return 0;
 }
 
 function getSavedPosition(songSrc) {
@@ -1576,10 +1579,12 @@ function updateMusicUI(isPlaying) {
   musicBtn.setAttribute('aria-pressed', String(isPlaying));
   $('#musicState').textContent = isPlaying ? 'ON' : 'OFF';
   body.classList.toggle('music-on', isPlaying);
-  const songName = audio.src.includes('choo-lo-clip') 
+  const songName = (audio.src.includes('aarzu') || audio.src.includes('soundtrack'))
+    ? 'Playing · Aarzu (Noor, Khan, Madhurxo)' 
+    : audio.src.includes('choo-lo-clip') 
     ? 'Playing · Choo Lo (Chorus Clip)' 
-    : audio.src.includes('soundtrack') 
-    ? 'Playing · Choo Lo (The Local Train)' 
+    : audio.src.includes('choo-lo')
+    ? 'Playing · Choo Lo (The Local Train)'
     : 'Playing · Pink Sky Piano';
   $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, whenever you want.';
 }
@@ -1626,8 +1631,8 @@ $('#volume').addEventListener('input', e => {
   if (musicActive) audio.volume = currentVol;
 });
 
-const knownSongs = ['soundtrack.mp3', 'assets/choo-lo-clip.mp3', 'assets/pink-sky.mp3'];
-const initialSong = knownSongs.includes(preferences.song) ? preferences.song : 'soundtrack.mp3';
+const knownSongs = ['assets/aarzu.mp3', 'soundtrack.mp3', 'assets/choo-lo.mp3', 'assets/choo-lo-clip.mp3', 'assets/pink-sky.mp3'];
+const initialSong = knownSongs.includes(preferences.song) ? preferences.song : 'assets/aarzu.mp3';
 audio.src = initialSong;
 $('#song').value = initialSong;
 
@@ -1649,13 +1654,14 @@ audio.addEventListener('timeupdate', () => {
   }
 });
 
-// When song loops/ends, restart from 0:40 (where vocals begin)
+// When song loops/ends, restart from offset (0:50 for Aarzu)
+audio.loop = false;
 audio.addEventListener('ended', () => {
   audio.currentTime = getInitialOffset(audio.src);
-  audio.play();
+  audio.play().catch(() => {});
 });
 
-// Seek to saved position / 0:40 when metadata is loaded or ready
+// Seek to saved position / initial offset when metadata is loaded or playback begins
 audio.addEventListener('loadedmetadata', () => {
   applyStartOffset(audio.src);
 });
@@ -1664,6 +1670,11 @@ audio.addEventListener('canplay', () => {
     applyStartOffset(audio.src);
   }
 }, { once: true });
+audio.addEventListener('playing', () => {
+  if (audio.currentTime < getInitialOffset(audio.src)) {
+    applyStartOffset(audio.src);
+  }
+});
 
 // Autoplay on Website Open
 let fallbackArmed = false;
