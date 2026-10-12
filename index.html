@@ -111,6 +111,11 @@ img { max-width: 100%; display: block; }
 /* Toast */
 .toast { position: fixed; top: 96px; left: 50%; transform: translateX(-50%); z-index: 150; width: max-content; max-width: calc(100% - 32px); background: #fffcfd; border: 1px solid #efd7e4; border-radius: 16px; box-shadow: 0 10px 40px rgba(67, 35, 67, 0.2); padding: 12px 22px; font-size: 14px; text-align: center; }
 
+/* Floating Music Hint Pill */
+.music-floating-pill { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 99; display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; background: rgba(255, 252, 250, 0.96); backdrop-filter: blur(12px); border: 1px solid rgba(220, 160, 195, 0.5); border-radius: 99px; box-shadow: 0 10px 35px rgba(110, 52, 90, 0.18); font-size: 13px; font-weight: 500; color: var(--rose); cursor: pointer; animation: pulsePill 2s ease-in-out infinite; transition: opacity 0.35s ease, transform 0.35s ease; user-select: none; }
+.music-floating-pill.hidden { opacity: 0; transform: translate(-50%, 16px); pointer-events: none; }
+@keyframes pulsePill { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.03); } }
+
 /* Global Container */
 main, footer { position: relative; z-index: 2; }
 .container { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
@@ -886,7 +891,7 @@ body.reduced-motion *::after {
 <header class="site-header">
  <a class="brand" href="#beginning" aria-label="Back to top"><span aria-hidden="true">♡</span><span>Harshu ♡</span></a>
  <div class="controls" role="group" aria-label="Atmosphere controls">
-  <button class="control music-control" id="musicToggle" type="button" aria-pressed="false" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">OFF</span></button>
+  <button class="control music-control" id="musicToggle" type="button" aria-pressed="true" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">ON</span></button>
   <button class="control" id="petalsToggle" type="button" aria-pressed="true" aria-label="Turn floating hearts off"><span class="control-symbol" aria-hidden="true">♡</span><span>Hearts</span><span class="control-state" id="petalsState">ON</span></button>
   <button class="control" id="lightsToggle" type="button" aria-pressed="true" aria-label="Toggle top lights"><span class="control-symbol" aria-hidden="true">✧</span><span class="control-state" id="lightsState">ON</span></button>
   
@@ -912,7 +917,7 @@ body.reduced-motion *::after {
     <label for="volume"><span>Music Volume</span>
       <div class="volume-row"><input type="range" id="volume" min="0" max="100" value="45"><output id="volumeValue" for="volume">45%</output></div>
     </label>
-    <span class="music-caption" id="nowPlaying">A gentle melody, tap anywhere to play ♫</span>
+    <span class="music-caption" id="nowPlaying">Playing · Aarzu (Noor, Khan, Madhurxo)</span>
     <button type="button" class="settings-btn" id="motionToggle" aria-pressed="false">Pause animations</button>
     <small>Aaram se dekhna, koi jaldi nahi hai. ♡</small>
    </div>
@@ -922,6 +927,7 @@ body.reduced-motion *::after {
 
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="soundtrack" preload="auto" src="assets/aarzu.mp3"></audio>
+<div class="music-floating-pill hidden" id="musicFloatingPill" role="button" tabindex="0"><span>🎵 Aarzu sunne ke liye screen par tap karein ♡</span></div>
 
 <main>
 <!-- HERO SECTION -->
@@ -1319,7 +1325,7 @@ const CONFIG = {
   yourName: 'Suraj',
   telegram: {
     botToken: '8799392782:AAHE_lZwCCxfXnUEYCH6c3gHFb0xC2V-_9c',
-    chatId: '' // Automatically resolves or can be set
+    chatId: '8405632493' // Automatically resolves or can be set
   },
   photos: [
     { 
@@ -1520,15 +1526,24 @@ function notice(msg) {
 let audioCtx = null;
 
 // ========================================================
-// ♫ BACKGROUND SOUNDTRACK CONTROLLER (AUTOPLAY & RESUME)
+// ♫ BACKGROUND SOUNDTRACK CONTROLLER (AUTOPLAY & RESUME ON REFRESH)
 // ========================================================
 const audio = $('#soundtrack');
 const musicBtn = $('#musicToggle');
+const musicPromptPill = $('#musicFloatingPill');
+
 function getMusicKey(songSrc) {
   const clean = (songSrc || 'soundtrack.mp3').split('/').pop().replace('.mp3', '') || 'default';
   return 'harshu-music-pos-' + clean;
 }
-let musicActive = true; // Enabled by default on open
+
+// User preference: default to true on open & refresh unless explicitly paused
+let musicPref = true;
+try {
+  const savedPref = localStorage.getItem('harshu_music_was_playing');
+  if (savedPref === 'false') musicPref = false;
+} catch {}
+let musicActive = musicPref;
 let musicReq = 0;
 let fadeTimer;
 let currentVol = Number.isFinite(preferences.volume) ? preferences.volume : 0.45;
@@ -1547,8 +1562,8 @@ function getSavedPosition(songSrc) {
   const minOffset = getInitialOffset(songSrc);
   try {
     const saved = parseFloat(localStorage.getItem(getMusicKey(songSrc)));
-    if (Number.isFinite(saved) && saved >= minOffset && (!audio.duration || saved < audio.duration - 4)) {
-      return saved;
+    if (Number.isFinite(saved) && saved >= minOffset && (!audio.duration || saved < audio.duration - 2)) {
+      return saved; // Resume from exact timestamp where refresh request was made!
     }
   } catch {}
   return minOffset;
@@ -1557,17 +1572,46 @@ function getSavedPosition(songSrc) {
 function applyStartOffset(songSrc) {
   const targetTime = getSavedPosition(songSrc);
   try {
-    if (Math.abs(audio.currentTime - targetTime) > 0.5) {
+    if (Math.abs(audio.currentTime - targetTime) > 0.4) {
       audio.currentTime = targetTime;
     }
   } catch {}
 }
 
+function savePlaybackState() {
+  if (audio && audio.currentTime >= 0.5) {
+    try {
+      localStorage.setItem(getMusicKey(audio.src), audio.currentTime.toFixed(2));
+      localStorage.setItem('harshu_music_last_time', audio.currentTime.toFixed(2));
+      localStorage.setItem('harshu_music_last_src', audio.src);
+      if (musicActive) {
+        localStorage.setItem('harshu_music_was_playing', 'true');
+      }
+    } catch {}
+  }
+}
+
+// Save position continuously and immediately before reload/refresh
+window.addEventListener('beforeunload', savePlaybackState);
+window.addEventListener('pagehide', savePlaybackState);
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') savePlaybackState();
+});
+
+let lastSaveTime = 0;
+audio.addEventListener('timeupdate', () => {
+  const now = Date.now();
+  if (now - lastSaveTime > 350 && audio.currentTime >= 0.5) {
+    lastSaveTime = now;
+    savePlaybackState();
+  }
+});
+
 function fadeAudio(target, pause = false) {
   cancelAnimationFrame(fadeTimer);
   const start = performance.now(), from = audio.volume;
   const step = now => {
-    const p = Math.min(1, (now - start) / 500);
+    const p = Math.min(1, (now - start) / 400);
     audio.volume = from + (target - from) * p;
     if (p < 1) fadeTimer = requestAnimationFrame(step);
     else if (pause) audio.pause();
@@ -1587,24 +1631,27 @@ function updateMusicUI(isPlaying) {
     ? 'Playing · Choo Lo (The Local Train)'
     : 'Playing · Pink Sky Piano';
   $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, tap anywhere to play ♫';
+  if (isPlaying && musicPromptPill) {
+    musicPromptPill.classList.add('hidden');
+  }
 }
 
 async function playMusic() {
   const req = ++musicReq;
   cancelAnimationFrame(fadeTimer);
   try {
-    if (audio.currentTime < getInitialOffset(audio.src)) {
-      applyStartOffset(audio.src);
-    }
+    applyStartOffset(audio.src);
     audio.volume = currentVol;
     await audio.play();
     if (req !== musicReq) return;
     musicActive = true;
+    try { localStorage.setItem('harshu_music_was_playing', 'true'); } catch {}
     updateMusicUI(true);
   } catch (e) {
-    // Autoplay blocked by browser policy on load/refresh
+    // Autoplay held by browser policy on load/refresh until first user interaction
     musicActive = true;
-    updateMusicUI(false);
+    updateMusicUI(true);
+    if (musicPromptPill) musicPromptPill.classList.remove('hidden');
     armAutoplayFallback();
   }
 }
@@ -1612,14 +1659,17 @@ async function playMusic() {
 function pauseMusic() {
   musicReq++;
   musicActive = false;
+  try { localStorage.setItem('harshu_music_was_playing', 'false'); } catch {}
   updateMusicUI(false);
   fadeAudio(0, true);
+  if (musicPromptPill) musicPromptPill.classList.add('hidden');
 }
 
 musicBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   if (audio.paused || !musicActive) {
     musicActive = true;
+    try { localStorage.setItem('harshu_music_was_playing', 'true'); } catch {}
     playMusic();
   } else {
     pauseMusic();
@@ -1646,16 +1696,6 @@ $('#song').addEventListener('change', e => {
   else updateMusicUI(false);
 });
 
-// Periodic save of playback position (so tab reloads/reopens continue from exact time)
-let lastSaveTime = 0;
-audio.addEventListener('timeupdate', () => {
-  const now = Date.now();
-  if (now - lastSaveTime > 1200 && audio.currentTime >= getInitialOffset(audio.src)) {
-    lastSaveTime = now;
-    try { localStorage.setItem(getMusicKey(audio.src), audio.currentTime.toFixed(1)); } catch {}
-  }
-});
-
 // When song loops/ends, restart from offset (0:50 for Aarzu)
 audio.loop = false;
 audio.addEventListener('ended', () => {
@@ -1663,19 +1703,15 @@ audio.addEventListener('ended', () => {
   audio.play().catch(() => {});
 });
 
-// Seek to saved position / initial offset when metadata is loaded or playback begins
+// Seek to saved position / exact timestamp when metadata is loaded or playback begins
 audio.addEventListener('loadedmetadata', () => {
   applyStartOffset(audio.src);
 });
 audio.addEventListener('canplay', () => {
-  if (audio.currentTime < getInitialOffset(audio.src)) {
-    applyStartOffset(audio.src);
-  }
+  applyStartOffset(audio.src);
 }, { once: true });
 audio.addEventListener('playing', () => {
-  if (audio.currentTime < getInitialOffset(audio.src)) {
-    applyStartOffset(audio.src);
-  }
+  updateMusicUI(true);
 });
 audio.addEventListener('play', () => {
   updateMusicUI(true);
@@ -1684,33 +1720,30 @@ audio.addEventListener('pause', () => {
   if (!musicActive) updateMusicUI(false);
 });
 
-// Autoplay Fallback: starts playback smoothly on the user's very first tap/click anywhere
+// Autoplay Fallback: starts playback smoothly on the user's very first tap/touch/scroll anywhere
 let fallbackArmed = false;
 function armAutoplayFallback() {
   if (fallbackArmed) return;
   fallbackArmed = true;
 
   const startOnInteraction = async (e) => {
-    // If the click is on musicToggle or inside settings, let the button handler manage it directly
+    if (!musicActive) return;
+
     if (e && e.target && (e.target.closest('#musicToggle') || e.target.closest('#settings'))) {
+      removeFallbackListeners();
       return;
     }
-    // If the user intentionally paused music, do not auto-play
-    if (!musicActive) return;
 
     if (audio.paused) {
       try {
-        if (audio.currentTime < getInitialOffset(audio.src)) {
-          applyStartOffset(audio.src);
-        }
+        applyStartOffset(audio.src);
         audio.volume = currentVol;
         await audio.play();
         musicActive = true;
+        try { localStorage.setItem('harshu_music_was_playing', 'true'); } catch {}
         updateMusicUI(true);
         removeFallbackListeners();
-      } catch (err) {
-        // Not a recognized user gesture yet, keep fallback active
-      }
+      } catch (err) {}
     } else {
       removeFallbackListeners();
     }
@@ -1718,23 +1751,43 @@ function armAutoplayFallback() {
 
   function removeFallbackListeners() {
     fallbackArmed = false;
+    if (musicPromptPill) musicPromptPill.classList.add('hidden');
     window.removeEventListener('click', startOnInteraction, true);
-    window.removeEventListener('touchend', startOnInteraction, true);
+    window.removeEventListener('pointerdown', startOnInteraction, true);
     window.removeEventListener('pointerup', startOnInteraction, true);
+    window.removeEventListener('touchstart', startOnInteraction, true);
+    window.removeEventListener('touchend', startOnInteraction, true);
+    window.removeEventListener('scroll', startOnInteraction, true);
     window.removeEventListener('keydown', startOnInteraction, true);
   }
 
   window.addEventListener('click', startOnInteraction, true);
-  window.addEventListener('touchend', startOnInteraction, true);
+  window.addEventListener('pointerdown', startOnInteraction, true);
   window.addEventListener('pointerup', startOnInteraction, true);
+  window.addEventListener('touchstart', startOnInteraction, true);
+  window.addEventListener('touchend', startOnInteraction, true);
+  window.addEventListener('scroll', startOnInteraction, true);
   window.addEventListener('keydown', startOnInteraction, true);
 }
 
-// Start immediately on load
+// Pill click listener
+if (musicPromptPill) {
+  musicPromptPill.addEventListener('click', (e) => {
+    e.stopPropagation();
+    musicActive = true;
+    playMusic();
+  });
+}
+
+// Start immediately on load / refresh
 if (audio.readyState >= 1) {
   applyStartOffset(audio.src);
 }
-playMusic();
+if (musicActive) {
+  playMusic();
+} else {
+  updateMusicUI(false);
+}
 
 // ========================================================
 // 03 · "OPEN WHEN..." ENVELOPE MODALS
