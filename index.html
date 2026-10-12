@@ -886,7 +886,7 @@ body.reduced-motion *::after {
 <header class="site-header">
  <a class="brand" href="#beginning" aria-label="Back to top"><span aria-hidden="true">♡</span><span>Harshu ♡</span></a>
  <div class="controls" role="group" aria-label="Atmosphere controls">
-  <button class="control music-control" id="musicToggle" type="button" aria-pressed="true" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">ON</span></button>
+  <button class="control music-control" id="musicToggle" type="button" aria-pressed="false" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">OFF</span></button>
   <button class="control" id="petalsToggle" type="button" aria-pressed="true" aria-label="Turn floating hearts off"><span class="control-symbol" aria-hidden="true">♡</span><span>Hearts</span><span class="control-state" id="petalsState">ON</span></button>
   <button class="control" id="lightsToggle" type="button" aria-pressed="true" aria-label="Toggle top lights"><span class="control-symbol" aria-hidden="true">✧</span><span class="control-state" id="lightsState">ON</span></button>
   
@@ -912,7 +912,7 @@ body.reduced-motion *::after {
     <label for="volume"><span>Music Volume</span>
       <div class="volume-row"><input type="range" id="volume" min="0" max="100" value="45"><output id="volumeValue" for="volume">45%</output></div>
     </label>
-    <span class="music-caption" id="nowPlaying">Background me gaana chalu hai 🎵</span>
+    <span class="music-caption" id="nowPlaying">A gentle melody, tap anywhere to play ♫</span>
     <button type="button" class="settings-btn" id="motionToggle" aria-pressed="false">Pause animations</button>
     <small>Aaram se dekhna, koi jaldi nahi hai. ♡</small>
    </div>
@@ -1586,11 +1586,12 @@ function updateMusicUI(isPlaying) {
     : audio.src.includes('choo-lo')
     ? 'Playing · Choo Lo (The Local Train)'
     : 'Playing · Pink Sky Piano';
-  $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, whenever you want.';
+  $('#nowPlaying').textContent = isPlaying ? songName : 'A gentle melody, tap anywhere to play ♫';
 }
 
 async function playMusic() {
   const req = ++musicReq;
+  cancelAnimationFrame(fadeTimer);
   try {
     if (audio.currentTime < getInitialOffset(audio.src)) {
       applyStartOffset(audio.src);
@@ -1601,9 +1602,9 @@ async function playMusic() {
     musicActive = true;
     updateMusicUI(true);
   } catch (e) {
-    // If play is blocked by autoplay policy, keep UI ON and wait for first interaction
+    // Autoplay blocked by browser policy on load/refresh
     musicActive = true;
-    updateMusicUI(true);
+    updateMusicUI(false);
     armAutoplayFallback();
   }
 }
@@ -1615,8 +1616,9 @@ function pauseMusic() {
   fadeAudio(0, true);
 }
 
-musicBtn.addEventListener('click', () => {
-  if (!musicActive || audio.paused) {
+musicBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (audio.paused || !musicActive) {
     musicActive = true;
     playMusic();
   } else {
@@ -1675,35 +1677,57 @@ audio.addEventListener('playing', () => {
     applyStartOffset(audio.src);
   }
 });
+audio.addEventListener('play', () => {
+  updateMusicUI(true);
+});
+audio.addEventListener('pause', () => {
+  if (!musicActive) updateMusicUI(false);
+});
 
-// Autoplay on Website Open
+// Autoplay Fallback: starts playback smoothly on the user's very first tap/click anywhere
 let fallbackArmed = false;
 function armAutoplayFallback() {
   if (fallbackArmed) return;
   fallbackArmed = true;
-  const startOnInteraction = async () => {
-    if (musicActive) {
+
+  const startOnInteraction = async (e) => {
+    // If the click is on musicToggle or inside settings, let the button handler manage it directly
+    if (e && e.target && (e.target.closest('#musicToggle') || e.target.closest('#settings'))) {
+      return;
+    }
+    // If the user intentionally paused music, do not auto-play
+    if (!musicActive) return;
+
+    if (audio.paused) {
       try {
-        if (audio.currentTime < getInitialOffset(audio.src)) applyStartOffset(audio.src);
+        if (audio.currentTime < getInitialOffset(audio.src)) {
+          applyStartOffset(audio.src);
+        }
         audio.volume = currentVol;
         await audio.play();
+        musicActive = true;
         updateMusicUI(true);
-      } catch {}
+        removeFallbackListeners();
+      } catch (err) {
+        // Not a recognized user gesture yet, keep fallback active
+      }
+    } else {
+      removeFallbackListeners();
     }
-    removeFallbackListeners();
   };
+
   function removeFallbackListeners() {
-    window.removeEventListener('pointerdown', startOnInteraction, true);
-    window.removeEventListener('touchstart', startOnInteraction, true);
+    fallbackArmed = false;
     window.removeEventListener('click', startOnInteraction, true);
-    window.removeEventListener('scroll', startOnInteraction, true);
+    window.removeEventListener('touchend', startOnInteraction, true);
+    window.removeEventListener('pointerup', startOnInteraction, true);
     window.removeEventListener('keydown', startOnInteraction, true);
   }
-  window.addEventListener('pointerdown', startOnInteraction, { once: true, capture: true });
-  window.addEventListener('touchstart', startOnInteraction, { once: true, capture: true });
-  window.addEventListener('click', startOnInteraction, { once: true, capture: true });
-  window.addEventListener('scroll', startOnInteraction, { once: true, capture: true });
-  window.addEventListener('keydown', startOnInteraction, { once: true, capture: true });
+
+  window.addEventListener('click', startOnInteraction, true);
+  window.addEventListener('touchend', startOnInteraction, true);
+  window.addEventListener('pointerup', startOnInteraction, true);
+  window.addEventListener('keydown', startOnInteraction, true);
 }
 
 // Start immediately on load
