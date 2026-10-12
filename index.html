@@ -90,7 +90,6 @@ img { max-width: 100%; display: block; }
 .control-symbol { font-size: 20px; line-height: 1; color: var(--rose); }
 .control-state { font-size: 10px; font-weight: 600; color: #735478; text-transform: uppercase; }
 .music-on .music-symbol { animation: pulseHeart 1.8s ease-in-out infinite; }
-.rain-on .rain-symbol { animation: glimmer 1.5s ease-in-out infinite; }
 
 /* Settings Modal/Dropdown */
 .settings { position: relative; }
@@ -954,7 +953,6 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
  <a class="brand" href="#beginning" aria-label="Back to top"><span aria-hidden="true">♡</span><span>for <span data-her-name>Harshu</span></span></a>
  <div class="controls" role="group" aria-label="Atmosphere controls">
   <button class="control music-control" id="musicToggle" type="button" aria-pressed="true" aria-label="Music on/off"><span class="control-symbol music-symbol" aria-hidden="true">♫</span><span>Music</span><span class="control-state" id="musicState">ON</span></button>
-  <button class="control rain-control" id="rainToggle" type="button" aria-pressed="false" aria-label="Turn gentle rain ambience on"><span class="control-symbol rain-symbol" aria-hidden="true">🌧️</span><span>Rain</span><span class="control-state" id="rainState">OFF</span></button>
   <button class="control" id="petalsToggle" type="button" aria-pressed="true" aria-label="Turn floating hearts off"><span class="control-symbol" aria-hidden="true">♡</span><span>Hearts</span><span class="control-state" id="petalsState">ON</span></button>
   <button class="control" id="lightsToggle" type="button" aria-pressed="true" aria-label="Toggle top lights"><span class="control-symbol" aria-hidden="true">✧</span><span class="control-state" id="lightsState">ON</span></button>
   
@@ -978,9 +976,6 @@ footer span.footer-name { font: 500 28px var(--hand); display: block; color: var
     </label>
     <label for="volume"><span>Music Volume</span>
       <div class="volume-row"><input type="range" id="volume" min="0" max="100" value="45"><output id="volumeValue" for="volume">45%</output></div>
-    </label>
-    <label for="rainVolume"><span>Rain Ambience Volume</span>
-      <div class="volume-row"><input type="range" id="rainVolume" min="0" max="100" value="35"><output id="rainVolumeValue" for="rainVolume">35%</output></div>
     </label>
     <span class="music-caption" id="nowPlaying">A gentle melody, whenever you want.</span>
     <button type="button" class="settings-btn" id="motionToggle" aria-pressed="false">Pause animations</button>
@@ -1536,69 +1531,7 @@ function notice(msg) {
   noticeTimer = setTimeout(() => el.hidden = true, 4500);
 }
 
-// ========================================================
-// 🌧️ WEB AUDIO AMBIENT RAIN GENERATOR (OFFLINE & SYNTHESIZED)
-// ========================================================
-let audioCtx = null, rainGain = null, rainActive = false;
-function initRainAudio() {
-  if (audioCtx) return;
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  audioCtx = new AudioContext();
-  
-  // Create pink noise buffer for realistic rain
-  const bufferSize = audioCtx.sampleRate * 2;
-  const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-  const output = noiseBuffer.getChannelData(0);
-  let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
-  for (let i = 0; i < bufferSize; i++) {
-    const white = Math.random() * 2 - 1;
-    b0 = 0.99886 * b0 + white * 0.0555179;
-    b1 = 0.99332 * b1 + white * 0.0750759;
-    b2 = 0.96900 * b2 + white * 0.1538520;
-    b3 = 0.86650 * b3 + white * 0.3104856;
-    b4 = 0.55000 * b4 + white * 0.5329522;
-    b5 = -0.7616 * b5 - white * 0.0168980;
-    output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.05;
-    b6 = white * 0.115926;
-  }
-  
-  const whiteNoise = audioCtx.createBufferSource();
-  whiteNoise.buffer = noiseBuffer;
-  whiteNoise.loop = true;
-  
-  const filter = audioCtx.createBiquadFilter();
-  filter.type = 'lowpass';
-  filter.frequency.value = 1200;
-  
-  rainGain = audioCtx.createGain();
-  rainGain.gain.value = 0;
-  
-  whiteNoise.connect(filter);
-  filter.connect(rainGain);
-  rainGain.connect(audioCtx.destination);
-  whiteNoise.start(0);
-}
-
-const rainBtn = $('#rainToggle');
-rainBtn.addEventListener('click', async () => {
-  try {
-    initRainAudio();
-    if (audioCtx.state === 'suspended') await audioCtx.resume();
-    rainActive = !rainActive;
-    rainBtn.setAttribute('aria-pressed', String(rainActive));
-    $('#rainState').textContent = rainActive ? 'ON' : 'OFF';
-    body.classList.toggle('rain-on', rainActive);
-    const target = Number($('#rainVolume').value) / 100 * 0.35;
-    rainGain.gain.setTargetAtTime(rainActive ? target : 0, audioCtx.currentTime, 0.4);
-  } catch (e) {
-    notice('Rain ambience enable nahi hua browser permission ki wajah se.');
-  }
-});
-$('#rainVolume').addEventListener('input', e => {
-  const val = Number(e.target.value);
-  $('#rainVolumeValue').textContent = val + '%';
-  if (rainGain && rainActive) rainGain.gain.setTargetAtTime((val / 100) * 0.35, audioCtx.currentTime, 0.1);
-});
+let audioCtx = null;
 
 // ========================================================
 // ♫ BACKGROUND SOUNDTRACK CONTROLLER (AUTOPLAY & RESUME)
