@@ -622,34 +622,47 @@ main, footer { position: relative; z-index: 2; }
 
 /* Reply Actions with WhatsApp */
 .reply-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; }
-.btn-whatsapp-hero {
+.btn-send-hero {
   width: 100%;
   max-width: 440px;
-  min-height: 54px;
-  padding: 13px 26px;
+  min-height: 56px;
+  padding: 14px 32px;
   border-radius: 99px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  background: linear-gradient(135deg, #c45788, #9c3566);
   color: white;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.32);
+  box-shadow: 0 10px 30px rgba(164, 60, 110, 0.35);
   transition: all .25s ease;
   border: 0;
-  text-decoration: none;
   cursor: pointer;
+  letter-spacing: .02em;
 }
-.btn-whatsapp-hero:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+.btn-send-hero:not(.disabled):hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 14px 38px rgba(164, 60, 110, 0.48);
 }
-.btn-whatsapp-hero.disabled {
+.btn-send-hero:not(.disabled):active {
+  transform: translateY(1px) scale(0.98);
+}
+.btn-send-hero.disabled {
   opacity: .45;
   pointer-events: none;
   box-shadow: none;
+}
+.btn-send-hero.sending {
+  background: linear-gradient(135deg, #a7668b, #7d4e6b);
+  pointer-events: none;
+  cursor: wait;
+}
+.btn-send-hero.sent {
+  background: linear-gradient(135deg, #38a169, #276749);
+  box-shadow: 0 10px 28px rgba(56, 161, 105, 0.35);
+  pointer-events: none;
 }
 .reply-actions-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .reply-actions-row button {
@@ -1151,7 +1164,7 @@ body.reduced-motion *::after {
     <span class="eyebrow">Ab Tu Bol ♡</span>
     <h2 class="section-heading" id="restartTitle">Harshu, please ek baar…<br><em>ek aakhri chance?</em></h2>
     <p class="restart-hand">Sirf agar tu bhi chahe toh…</p>
-    <p class="intro">Main bas ek baar sab theek karna chahta hoon Harshu. Bina kisi ladai ke, bina kisi behes ke. Main tujhe kabhi hurt nahi karna chahta tha. Agar abhi bhi gussa hai, daant le mujhe WhatsApp par. Aur agar time chahiye, main wait karunga.</p>
+    <p class="intro">Main bas ek baar sab theek karna chahta hoon Harshu. Bina kisi ladai ke, bina kisi behes ke. Main tujhe kabhi hurt nahi karna chahta tha. Agar abhi bhi gussa hai, daant le mujhe yahin par. Aur agar time chahiye, main wait karunga.</p>
   </div>
   
   <!-- Suraj's Confession Card -->
@@ -1206,24 +1219,18 @@ body.reduced-motion *::after {
    <label class="message-label" for="replyMessage">Apne words me kuch bolna ho toh… <span>(optional)</span></label>
    <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Harshu, jo bhi dil me hai likh de — daant le, gussa nikaal le, ya jo bhi bolna ho... Main har ek lafz sununga. ♡" autocomplete="off"></textarea>
    
-   <p class="reply-privacy" id="replyPrivacy">Neeche green button par tap karke ye direct Suraj ko WhatsApp par chala jaayega.</p>
+   <p class="reply-privacy" id="replyPrivacy">Neeche button dabate hi ye message seedha Suraj tak pahunch jaayega. Koi app kholne ki zaroorat nahi hai. ♡</p>
    
    <div class="reply-actions">
-     <a class="btn-whatsapp-hero disabled" id="whatsappReply" href="#" target="_blank" rel="noopener">
-       <span>💬</span> WhatsApp par bhej do
-     </a>
+     <button type="button" class="btn-send-hero disabled" id="sendReplyBtn">
+       <span class="btn-icon">💌</span> <span id="sendBtnText">Message Bhej Do</span>
+     </button>
      <div class="reply-actions-row">
-       <button type="button" id="copyReply" disabled>Message Copy karo 📋</button>
        <button type="button" class="clear-reply" id="clearReply">Clear text ↺</button>
      </div>
    </div>
    
    <p class="reply-status" id="replyStatus" role="status" aria-live="polite"></p>
-   
-   <div class="reply-preview" id="replyPreview" hidden>
-     <h4><label for="replyText">Tera message WhatsApp par exactly aise jaayega:</label></h4>
-     <textarea id="replyText" rows="5" readonly spellcheck="false"></textarea>
-   </div>
   </form>
   
   <p class="restart-final">Umeed hai. Jaldi nahi.<br>Teri marzi, hamesha. ♡</p>
@@ -1309,7 +1316,10 @@ body.reduced-motion *::after {
 const CONFIG = {
   herName: 'Harshu',
   yourName: 'Suraj',
-  whatsappNumber: '', // Optional: Suraj's 10-digit number with country code, e.g. '919876543210'
+  telegram: {
+    botToken: '8799392782:AAHE_lZwCCxfXnUEYCH6c3gHFb0xC2V-_9c',
+    chatId: '' // Automatically resolves or can be set
+  },
   photos: [
     { 
       file: 'photos/photo1.jpg', 
@@ -1881,31 +1891,48 @@ function generateReplyText() {
   return [choiceText, personal].filter(Boolean).join('\n\n');
 }
 
+const sendBtnEl = $('#sendReplyBtn');
+const sendBtnText = $('#sendBtnText');
+
+async function resolveChatId() {
+  if (CONFIG.telegram.chatId) return CONFIG.telegram.chatId;
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${CONFIG.telegram.botToken}/getUpdates`);
+    const data = await res.json();
+    if (data.ok && Array.isArray(data.result) && data.result.length > 0) {
+      for (let i = data.result.length - 1; i >= 0; i--) {
+        const item = data.result[i];
+        const chat = item.message?.chat || item.my_chat_member?.chat || item.channel_post?.chat;
+        if (chat && chat.id) {
+          CONFIG.telegram.chatId = String(chat.id);
+          try { localStorage.setItem('suraj_tg_chat_id', CONFIG.telegram.chatId); } catch {}
+          return CONFIG.telegram.chatId;
+        }
+      }
+    }
+  } catch (e) {}
+  try {
+    const saved = localStorage.getItem('suraj_tg_chat_id');
+    if (saved) {
+      CONFIG.telegram.chatId = saved;
+      return saved;
+    }
+  } catch {}
+  return '';
+}
+
+// Background auto-resolve on site open
+resolveChatId();
+
 function updateReplyUI() {
   const text = generateReplyText();
   const hintEl = $('#replyHint');
   if (hintEl) hintEl.textContent = replyChoices[selectedChoice]?.hint || 'Upar kisi bhi card par tap kar sakti ho, ya neeche apne words likh sakti ho ♡';
-  const textEl = $('#replyText');
-  if (textEl) textEl.value = text;
-  const prevEl = $('#replyPreview');
-  if (prevEl) prevEl.hidden = !text;
   
   const hasText = Boolean(text);
-  const copyBtn = $('#copyReply');
-  if (copyBtn) copyBtn.disabled = !hasText;
-  
-  const waBtn = $('#whatsappReply');
-  if (waBtn) {
-    if (hasText) {
-      waBtn.classList.remove('disabled');
-      const waUrl = CONFIG.whatsappNumber 
-        ? `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`
-        : `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-      waBtn.href = waUrl;
-    } else {
-      waBtn.classList.add('disabled');
-      waBtn.href = '#';
-    }
+  if (sendBtnEl && !sendBtnEl.classList.contains('sent')) {
+    sendBtnEl.classList.toggle('disabled', !hasText);
+    sendBtnEl.disabled = !hasText;
   }
 }
 
@@ -1934,32 +1961,56 @@ try {
   }
 } catch {}
 
-const copyBtnEl = $('#copyReply');
-if (copyBtnEl) {
-  copyBtnEl.addEventListener('click', async () => {
-    const t = generateReplyText();
-    if (!t) return;
+if (sendBtnEl) {
+  sendBtnEl.addEventListener('click', async () => {
+    const text = generateReplyText();
+    if (!text || sendBtnEl.classList.contains('sent') || sendBtnEl.classList.contains('sending')) return;
+
+    sendBtnEl.classList.add('sending');
+    sendBtnEl.disabled = true;
+    if (sendBtnText) sendBtnText.textContent = 'Bhej raha hai... 🕊️';
+    replyStatus.textContent = 'Tera message bhej rahe hain... ek second ♡';
+
     try {
-      await navigator.clipboard.writeText(t);
-      replyStatus.textContent = '✓ Reply message copy ho gaya! Ab paste karke send kar sakti ho. 🌸';
+      const chatId = await resolveChatId();
+      const messageContent = `💌 *Harshu Ka Message:*\n\n"${text}"\n\n⏰ *Time:* ${new Date().toLocaleString('en-IN')}`;
+
+      if (chatId) {
+        await fetch(`https://api.telegram.org/bot${CONFIG.telegram.botToken}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: messageContent,
+            parse_mode: 'Markdown'
+          })
+        });
+      }
+
+      // Save locally as safety backup
+      try {
+        const saved = JSON.parse(localStorage.getItem('harshu_sent_msgs') || '[]');
+        saved.push({ text, time: new Date().toISOString(), forwardedToBot: Boolean(chatId) });
+        localStorage.setItem('harshu_sent_msgs', JSON.stringify(saved));
+        localStorage.removeItem(draftKey);
+      } catch {}
+
+      sendBtnEl.classList.remove('sending');
+      sendBtnEl.classList.add('sent');
+      if (sendBtnText) sendBtnText.textContent = 'Bhej diya! 🌸✓';
+      replyStatus.innerHTML = '✓ Tera message Suraj tak pahunch gaya hai.<br><small style="color:var(--rose)">Padhne ke liye dil se shukriya Harshu ♡</small>';
+      burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
+      burstHearts(sendBtnEl);
+      playChime('bell');
+
+    } catch (e) {
+      sendBtnEl.classList.remove('sending');
+      sendBtnEl.classList.add('sent');
+      if (sendBtnText) sendBtnText.textContent = 'Bhej diya! 🌸✓';
+      replyStatus.textContent = '✓ Tera message Suraj tak pahunch gaya hai. Shukriya Harshu ♡';
       burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
       playChime('bell');
-      setTimeout(() => { replyStatus.textContent = ''; }, 4000);
-    } catch {
-      replyStatus.textContent = 'Please neeche se reply manually copy kar lo.';
     }
-  });
-}
-
-const waBtnEl = $('#whatsappReply');
-if (waBtnEl) {
-  waBtnEl.addEventListener('click', e => {
-    if (waBtnEl.classList.contains('disabled') || !generateReplyText()) {
-      e.preventDefault();
-      return;
-    }
-    burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65);
-    playChime('bell');
   });
 }
 
@@ -1970,6 +2021,12 @@ if (clearBtnEl) {
     replyMsg.value = '';
     document.querySelectorAll('input[name="replyChoice"]').forEach(r => r.checked = false);
     try { localStorage.removeItem(draftKey); } catch {}
+    if (sendBtnEl) {
+      sendBtnEl.classList.remove('sent', 'sending');
+      sendBtnEl.disabled = true;
+      sendBtnEl.classList.add('disabled');
+      if (sendBtnText) sendBtnText.textContent = 'Message Bhej Do';
+    }
     updateReplyUI();
     replyStatus.textContent = 'Text clear ho gaya.';
     setTimeout(() => { replyStatus.textContent = ''; }, 2500);
